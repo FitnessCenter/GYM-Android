@@ -109,13 +109,12 @@
             style="@style/AppTheme.RoundedCornerMaterialButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="87dp"
             android:text="@string/login_text"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/login_gl_bottom"
             app:layout_constraintEnd_toStartOf="@+id/login_gl_right"
-            app:layout_constraintStart_toStartOf="@+id/login_gl_left"
-            app:layout_constraintTop_toBottomOf="@+id/login_register_tv" />
+            app:layout_constraintStart_toStartOf="@+id/login_gl_left" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/login_gl_left"
@@ -130,6 +129,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/login_gl_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
