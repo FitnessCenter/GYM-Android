@@ -1,4 +1,4 @@
-package com.dsm.gym.presentation.ui.fragment
+package com.dsm.gym.presentation.ui.fragment.sign.register
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
