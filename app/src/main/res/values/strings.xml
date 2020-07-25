@@ -16,5 +16,10 @@
     <string name="register_complete_text">회원가입 완료</string>
     <string name="register_complete_description_text">이제부터 GMS를 사용하실 수 있습니다.</string>
 
+    <string name="navigation_home">홈</string>
+    <string name="navigation_apply_exercise">운동 신청</string>
+    <string name="navigation_apply_equipment">운동기구 신청</string>
+    <string name="navigation_mypage">마이페이지</string>
+
 
 </resources>
