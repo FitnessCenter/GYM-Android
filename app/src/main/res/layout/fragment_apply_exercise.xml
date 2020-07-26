@@ -146,7 +146,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
-                android:id="@+id/apply_exercise_ten_to_ten_thirty_personnel_apply_btn"
+                android:id="@+id/apply_exercise_ten_to_ten_thirty_apply_btn"
                 android:layout_width="52dp"
                 android:layout_height="22dp"
                 android:layout_marginTop="68dp"
