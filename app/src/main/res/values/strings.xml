@@ -20,6 +20,8 @@
     <string name="navigation_apply_exercise">운동 신청</string>
     <string name="navigation_apply_equipment">운동기구 신청</string>
     <string name="navigation_mypage">마이페이지</string>
-
+    <string name="home_user_name_text">%s 님</string>
+    <string name="home_consecutive_exercise_days_text">365</string>
+    <string name="home_random_sentence_text">무거운 것을 들때에는 허리를 조심히 ~</string>
 
 </resources>
