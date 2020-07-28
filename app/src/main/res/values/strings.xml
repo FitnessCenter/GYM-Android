@@ -13,9 +13,24 @@
     <string name="my_page_equipment_history_description">기구 신청 내역을 확인합니다.</string>
 
     //기구 신청 내역
-    <string name="equipment_history_apply_cancel">신청 취소하기</string>
+    <string name="equipment_history_apply_cancel_title">신청 취소하기</string>
     <string name="equipment_history_apply_cancel_question">신청을 취소하시겠습니까?</string>
     <string name="equipment_history_apply_cancel_confirm">확인</string>
-    <string name="equipment_history_apply_cancel_cancel">취소</string>
+    <string name="equipment_history_apply_cancel">취소</string>
+
+    //비밀번호 변경
+    <string name="change_password_title">비밀번호 변경</string>
+    <string name="change_password_current_password">현재 비밀번호를 입력해주세요</string>
+    <string name="change_password_new_password">새 비밀번호를 입력해주세요</string>
+    <string name="change_password_new_password_confirm">새 비밀번호를 다시 입력해 주세요</string>
+    <string name="change_password_confirm">확인</string>
+    <string name="change_password_cancel">취소</string>
+    <string name="change_password">비밀번호 변경</string>
+
+    //로그아웃
+    <string name="logout_confirm">확인</string>
+    <string name="logout_cancel">취소</string>
+    <string name="logout_title">로그아웃 하시겠습니까?</string>
+
 
 </resources>

@@ -33,7 +33,7 @@
         android:layout_marginStart="88dp"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="14dp"
-        android:text="@string/equipment_history_apply_cancel_cancel"
+        android:text="@string/equipment_history_apply_cancel"
         android:textSize="14sp"
         android:textColor="@color/colorBlack"
         android:fontFamily="@font/notosanscjkkrregular"
