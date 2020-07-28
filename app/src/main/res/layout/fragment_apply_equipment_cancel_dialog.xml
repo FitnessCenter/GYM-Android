@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/equipment_history_apply_cancel_question_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/equipment_history_apply_cancel_cancel_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
@@ -43,7 +43,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView5" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/equipment_history_apply_cancel_confirm_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
