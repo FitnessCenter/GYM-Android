@@ -131,6 +131,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="56dp"
+                android:fontFamily="@font/notosanscjkkrregular"
                 android:background="@color/colorWhite"
                 android:text="@string/equipment_apply_text"
                 android:textColor="@color/colorBlack"
