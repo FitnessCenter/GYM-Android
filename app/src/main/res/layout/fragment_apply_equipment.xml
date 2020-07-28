@@ -11,10 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="@string/apply_equipment_text"
         android:fontFamily="@font/notosanscjkkrbold"
-        android:textColor="@color/colorDefault"
         android:includeFontPadding="false"
+        android:text="@string/apply_equipment_text"
+        android:textColor="@color/colorDefault"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/equipment_gl_left"
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toStartOf="@+id/equipment_gl_right"
         app:layout_constraintStart_toStartOf="@+id/equipment_gl_left"
         app:layout_constraintTop_toBottomOf="@+id/equipment_title_tv"
-        tools:listitem="@layout/item_apply_equipment"/>
+        tools:listitem="@layout/item_apply_equipment" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_equipment_btn"
