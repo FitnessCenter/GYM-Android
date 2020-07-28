@@ -21,7 +21,7 @@
         android:textColor="@color/colorBlack"
         android:fontFamily="@font/notosanscjkkrregular"
         android:includeFontPadding="false"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintBottom_toTopOf="@+id/equipment_history_apply_cancel_confirm_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,7 +40,7 @@
         android:includeFontPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView5" />
+        app:layout_constraintStart_toEndOf="@+id/equipment_history_apply_cancel_confirm_tv" />
 
     <TextView
         android:id="@+id/equipment_history_apply_cancel_confirm_tv"
