@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">DSM-GYM</string>
+
+
+    //마이페이지
+    <string name="my_page_logout">로그아웃</string>
+    <string name="my_page_logout_description">기기내에 계정에서 로그아웃합니다.</string>
+    <string name="my_page_exercise_history">운동 내역</string>
+    <string name="my_page_exercise_history_description">운동 내역을 확인합니다.</string>
+    <string name="my_page_change_password">비밀번호 변경</string>
+    <string name="my_page_change_password_description">비밀번호를 변경합니다.</string>
+    <string name="my_page_equipment_history">기구 신청 내역</string>
+    <string name="my_page_equipment_history_description">기구 신청 내역을 확인합니다.</string>
+
+    //기구 신청 내역
+    <string name="equipment_history_apply_cancel">신청 취소하기</string>
+    <string name="equipment_history_apply_cancel_question">신청을 취소하시겠습니까?</string>
+    <string name="equipment_history_apply_cancel_confirm">확인</string>
+    <string name="equipment_history_apply_cancel_cancel">취소</string>
+
 </resources>
