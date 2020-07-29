@@ -26,18 +26,22 @@
 
 
     //apply-exercise
-    <string name="apply_exercise_title">운동 신청</string>
-    <string name="apply_exercise">신청</string>
-    <string name="apply_exercise_show_personnel">인원보기</string>
-    <string name="apply_exercise_nine_thirty_to_ten">9 : 30 ~ 10 : 00</string>
-    <string name="apply_exercise_ten_to_ten_thirty">10 : 00 ~ 10 : 30</string>
-    <string name="apply_exercise_ten_thirty_to_eleven">10 : 30 ~ 11 : 00</string>
-    <string name="apply_exercise_personnel">0/15</string>
-    <string name="apply_exercise_confirm_question">운동 신청을 하시겠습니까?</string>
+    <string name="apply_exercise_title_tv">운동 신청</string>
+    <string name="apply_exercise_tv">신청</string>
+    <string name="apply_exercise_show_personnel_tv">인원보기</string>
+    <string name="apply_exercise_nine_thirty_to_ten_tv">9 : 30 ~ 10 : 00</string>
+    <string name="apply_exercise_ten_to_ten_thirty_tv">10 : 00 ~ 10 : 30</string>
+    <string name="apply_exercise_ten_thirty_to_eleven_tv">10 : 30 ~ 11 : 00</string>
+    <string name="apply_exercise_nine_thirty_to_ten_personnel_tv">%s/15</string>
+    <string name="apply_exercise_ten_to_ten_thirty_personnel_tv">%s/15</string>
+    <string name="apply_exercise_ten_thirty_to_eleven_personnel_tv">%s/15</string>
+    <string name="apply_exercise_time_tv">%s</string>
+
+    <string name="apply_exercise_question_tv">운동 신청을 하시겠습니까?</string>
     <string name="apply_exercise_cancel_question">신청을 취소하시겠습니까?</string>
-    <string name="apply_exercise_confirm">확인</string>
-    <string name="apply_exercise_cancel">취소</string>
-    <string name="apply_exercise_personnel_list">신청자 명단</string>
+    <string name="apply_exercise_confirm_tv">확인</string>
+    <string name="apply_exercise_cancel_tv">취소</string>
+    <string name="apply_exercise_personnel_list_tv">신청자 명단</string>
 
 
 </resources>

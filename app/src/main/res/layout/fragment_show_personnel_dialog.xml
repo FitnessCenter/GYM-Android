@@ -15,7 +15,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="143dp"
-        android:text="@string/apply_exercise_personnel_list"
+        android:text="@string/apply_exercise_personnel_list_tv"
         android:textSize="16sp"
         android:textColor="@color/colorBlack"
         android:includeFontPadding="false"
@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/dialog_close"
+        android:id="@+id/ic_close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
