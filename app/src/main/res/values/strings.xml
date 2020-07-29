@@ -23,7 +23,16 @@
     <string name="navigation_apply_exercise">운동 신청</string>
     <string name="navigation_apply_equipment">운동기구 신청</string>
     <string name="navigation_mypage">마이페이지</string>
-
+    <string name="apply_equipment_text">기구 신청</string>
+    <string name="equipment_link_copy_text"> <u>링크복사</u> </string>
+    <string name="equipment_price_format_text">가격 : %s원</string>
+    <string name="equipment_amount_format_text">수량 : %s개</string>
+    <string name="equipment_person_format_text">주문자 : %s</string>
+    <string name="equipment_name_text">기구 이름</string>
+    <string name="equipment_link_text">링크</string>
+    <string name="equipment_amount_text">수량</string>
+    <string name="equipment_price_text">가격</string>
+    <string name="equipment_apply_text">신청</string>
 
     //apply-exercise
     <string name="apply_exercise_title">운동 신청</string>
