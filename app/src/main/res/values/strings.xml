@@ -13,6 +13,7 @@
     <string name="my_page_equipment_history_description">기구 신청 내역을 확인합니다.</string>
 
     //기구 신청 내역
+    <string name="equipment_history_title">000님의 기구 신청</string>
     <string name="equipment_history_apply_cancel_title">신청 취소하기</string>
     <string name="equipment_history_apply_cancel_question">신청을 취소하시겠습니까?</string>
     <string name="equipment_history_apply_cancel_confirm">확인</string>
