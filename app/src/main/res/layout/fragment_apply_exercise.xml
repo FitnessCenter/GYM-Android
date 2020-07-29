@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.ui.fragment.ApplyExerciseFragment">
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/apply_exercise_tv"
         android:layout_width="wrap_content"
@@ -41,7 +42,6 @@
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/notosanscjkkrmedium"
                 android:includeFontPadding="false"
-
                 android:text="@string/apply_exercise_nine_thirty_to_ten"
                 android:textColor="@color/colorBlack"
                 android:textSize="14sp"
@@ -63,7 +63,6 @@
                 android:id="@+id/apply_exercise_nine_thirty_to_ten_apply_btn"
                 android:layout_width="52dp"
                 android:layout_height="22dp"
-
                 android:layout_marginTop="68dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="10dp"
@@ -79,12 +78,8 @@
                 android:id="@+id/apply_exercise_show_personnel_nine_thirty_to_ten_btn"
                 android:layout_width="74dp"
                 android:layout_height="22dp"
-
                 android:layout_marginTop="68dp"
                 android:layout_marginEnd="15dp"
-
-
-                android:layout_marginRight="15dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/btn_round_apply_exercise"
                 android:fontFamily="@font/notosanscjkkrregular"
@@ -103,7 +98,6 @@
         android:id="@+id/apply_exercise_ten_to_ten_thirty_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-
         app:cardCornerRadius="12dp"
         app:cardElevation="6dp"
         app:layout_constraintBottom_toTopOf="@+id/apply_exercise_ten_thirty_to_eleven_card"
@@ -218,7 +212,6 @@
                 android:id="@+id/apply_exercise_ten_thirty_to_eleven_apply_btn"
                 android:layout_width="52dp"
                 android:layout_height="22dp"
-
                 android:layout_marginTop="68dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="10dp"
