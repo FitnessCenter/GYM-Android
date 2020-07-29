@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.ui.fragment.ApplyExerciseFragment">
-    <TextView
-        android:id="@+id/apply_exercise"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/apply_exercise_tv"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginBottom="47dp"
@@ -33,8 +33,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/apply_exercise_nine_thirty_to_ten"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/apply_exercise_nine_thirty_to_ten_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -50,7 +50,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/apply_exercise_nine_thirty_to_ten_personnel"
+                android:id="@+id/apply_exercise_nine_thirty_to_ten_personnel_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -61,7 +61,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/apply_exercise_nine_thirty_to_ten_apply_btn"
                 android:layout_width="52dp"
                 android:layout_height="22dp"
@@ -75,11 +75,11 @@
                 android:textColor="@color/colorDefault"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/apply_exercise_show_personnel_nine_thirty_to_ten"
+                app:layout_constraintEnd_toStartOf="@+id/apply_exercise_show_personnel_nine_thirty_to_ten_btn"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/apply_exercise_show_personnel_nine_thirty_to_ten"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/apply_exercise_show_personnel_nine_thirty_to_ten_btn"
                 android:layout_width="74dp"
                 android:layout_height="22dp"
 
@@ -118,8 +118,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/apply_exercise_ten_to_ten_thirty"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/apply_exercise_ten_to_ten_thirty_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -134,7 +134,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/apply_exercise_ten_to_ten_thirty_personnel"
+                android:id="@+id/apply_exercise_ten_to_ten_thirty_personnel_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -145,7 +145,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/apply_exercise_ten_to_ten_thirty_apply_btn"
                 android:layout_width="52dp"
                 android:layout_height="22dp"
@@ -158,11 +158,11 @@
                 android:textColor="@color/colorDefault"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/apply_exercise_show_personnel_ten_to_ten_thirty_personnel"
+                app:layout_constraintEnd_toStartOf="@+id/apply_exercise_show_personnel_ten_to_ten_thirty_personnel_btn"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/apply_exercise_show_personnel_ten_to_ten_thirty_personnel"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/apply_exercise_show_personnel_ten_to_ten_thirty_personnel_btn"
                 android:layout_width="74dp"
                 android:layout_height="22dp"
                 android:layout_marginTop="68dp"
@@ -196,8 +196,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/apply_exercise_ten_thirty_to_eleven"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/apply_exercise_ten_thirty_to_eleven_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -212,7 +212,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/apply_exercise_ten_thirty_to_eleven_personnel"
+                android:id="@+id/apply_exercise_ten_thirty_to_eleven_personnel_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -223,7 +223,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/apply_exercise_ten_thirty_to_eleven_apply_btn"
                 android:layout_width="52dp"
                 android:layout_height="22dp"
@@ -237,11 +237,11 @@
                 android:textColor="@color/colorDefault"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/apply_exercise_show_personnel_ten_thirty_to_eleven_personnel"
+                app:layout_constraintEnd_toStartOf="@+id/apply_exercise_show_personnel_ten_thirty_to_eleven_personnel_btn"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/apply_exercise_show_personnel_ten_thirty_to_eleven_personnel"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/apply_exercise_show_personnel_ten_thirty_to_eleven_personnel_btn"
                 android:layout_width="74dp"
                 android:layout_height="22dp"
                 android:layout_marginTop="68dp"
