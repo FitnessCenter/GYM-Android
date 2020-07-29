@@ -1,21 +1,24 @@
 <resources>
     <string name="app_name">DSM-GYM</string>
+
+    //로그인
     <string name="login_text">로그인</string>
     <string name="login_auto_login">자동 로그인</string>
     <string name="login_register"> <u>회원가입</u> </string>
     <string name="login_id_hint">아이디를 입력해주세요</string>
     <string name="login_pw_hint">비밀번호를 입력해주세요</string>
-
     <string name="register_text">회원가입</string>
     <string name="register_school_number_hint">학번을 입력해주세요</string>
     <string name="register_name_hint">이름을 입력해주세요</string>
     <string name="next">다음</string>
 
+    //회원가입
     <string name="register_pw_check_hint">비밀번호를 다시 입력해주세요</string>
     <string name="complete">완료</string>
     <string name="register_complete_text">회원가입 완료</string>
     <string name="register_complete_description_text">이제부터 GMS를 사용하실 수 있습니다.</string>
 
+    //홈
     <string name="navigation_home">홈</string>
     <string name="navigation_apply_exercise">운동 신청</string>
     <string name="navigation_apply_equipment">운동기구 신청</string>
@@ -35,9 +38,6 @@
     <string name="apply_exercise_confirm">확인</string>
     <string name="apply_exercise_cancel">취소</string>
     <string name="apply_exercise_personnel_list">신청자 명단</string>
-
-
-
 
 
 </resources>
