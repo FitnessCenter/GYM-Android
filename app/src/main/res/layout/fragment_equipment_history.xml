@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toStartOf="@+id/gl_right"
         app:layout_constraintStart_toStartOf="@+id/gl_left"
         app:layout_constraintTop_toTopOf="@+id/gl_top"
-        tools:listitem="@layout/equipment_history_item"
+        tools:listitem="@layout/item_equipment_history"
         />
 
     <androidx.constraintlayout.widget.Guideline
