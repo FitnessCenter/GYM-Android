@@ -25,10 +25,8 @@
         app:cardElevation="8dp"
         app:layout_constraintBottom_toTopOf="@+id/home_gl_middle"
         app:layout_constraintEnd_toStartOf="@+id/home_gl_right"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/home_gl_left"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="@+id/view">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -45,7 +43,6 @@
                 android:text="@string/home_user_name_text"
                 android:textColor="@color/colorDefault"
                 android:textSize="22sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -79,7 +76,6 @@
         android:text="@string/home_consecutive_exercise_days_text"
         android:textColor="@color/colorDefault"
         android:textSize="88sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/home_gl_right"
         app:layout_constraintStart_toStartOf="@+id/home_gl_left"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
@@ -105,7 +101,6 @@
         app:cardElevation="4dp"
         app:layout_constraintBottom_toTopOf="@+id/home_gl_bottom"
         app:layout_constraintEnd_toStartOf="@+id/home_gl_right"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/home_gl_left"
         app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
         app:layout_constraintVertical_bias="1.0">
