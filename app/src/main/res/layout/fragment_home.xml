@@ -7,7 +7,7 @@
     tools:context=".presentation.ui.fragment.main.HomeFragment">
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/home_background_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/colorDefault"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/home_cardView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="72dp"
@@ -26,7 +26,7 @@
         app:layout_constraintBottom_toTopOf="@+id/home_gl_middle"
         app:layout_constraintEnd_toStartOf="@+id/home_gl_right"
         app:layout_constraintStart_toStartOf="@+id/home_gl_left"
-        app:layout_constraintTop_toTopOf="@+id/view">
+        app:layout_constraintTop_toTopOf="@+id/home_background_view">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -78,7 +78,7 @@
         android:textSize="88sp"
         app:layout_constraintEnd_toStartOf="@+id/home_gl_right"
         app:layout_constraintStart_toStartOf="@+id/home_gl_left"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/home_cardView" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/appCompatTextView"
