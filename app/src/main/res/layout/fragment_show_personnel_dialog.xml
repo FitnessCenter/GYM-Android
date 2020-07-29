@@ -8,15 +8,13 @@
     tools:context=".presentation.ui.dialog.ShowPersonnelDialogFragment">
 
 
-    <TextView
-        android:id="@+id/textView"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/apply_exercise_personnel_list_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="143dp"
-        android:layout_marginRight="143dp"
         android:text="@string/apply_exercise_personnel_list"
         android:textSize="16sp"
         android:textColor="@color/colorBlack"
@@ -27,14 +25,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageView"
+        android:id="@+id/dialog_close"
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:layout_marginStart="235dp"
-        android:layout_marginLeft="235dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
         android:src="@drawable/dialog_close"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

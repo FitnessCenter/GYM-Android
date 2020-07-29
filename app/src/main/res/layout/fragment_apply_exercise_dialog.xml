@@ -12,10 +12,8 @@
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:layout_marginStart="235dp"
-        android:layout_marginLeft="235dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
         android:layout_marginBottom="140dp"
         android:src="@drawable/dialog_close"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,35 +21,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/apply_exercise_time"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/apply_exercise_time_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
         android:layout_marginBottom="30dp"
         android:fontFamily="@font/notosanscjkkrmedium"
         android:includeFontPadding="false"
         android:text="@string/apply_exercise_nine_thirty_to_ten"
         android:textColor="@color/colorBlack"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/apply_exercise_question"
+        app:layout_constraintBottom_toTopOf="@+id/apply_exercise_question_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/apply_exercise_question"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/apply_exercise_question_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="107dp"
-        android:layout_marginRight="107dp"
         android:fontFamily="@font/notosanscjkkrregular"
         android:includeFontPadding="false"
         android:text="@string/apply_exercise_confirm_question"
@@ -59,18 +53,15 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apply_exercise_time" />
+        app:layout_constraintTop_toBottomOf="@+id/apply_exercise_time_tv" />
 
-    <TextView
-        android:id="@+id/apply_exercise_confirm"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/apply_exercise_confirm_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-
-        android:layout_marginLeft="50dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="108dp"
-        android:layout_marginRight="108dp"
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/notosanscjkkrregular"
         android:includeFontPadding="false"
@@ -78,17 +69,16 @@
         android:textColor="@color/colorBlack"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/apply_exercise_cancel"
+        app:layout_constraintEnd_toStartOf="@+id/apply_exercise_cancel_tv"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apply_exercise_question" />
+        app:layout_constraintTop_toBottomOf="@+id/apply_exercise_question_tv" />
 
-    <TextView
-        android:id="@+id/apply_exercise_cancel"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/apply_exercise_cancel_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/notosanscjkkrregular"
         android:includeFontPadding="false"
@@ -97,7 +87,7 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apply_exercise_question" />
+        app:layout_constraintTop_toBottomOf="@+id/apply_exercise_question_tv" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
