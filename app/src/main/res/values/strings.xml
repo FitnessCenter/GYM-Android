@@ -18,11 +18,18 @@
     <string name="register_complete_text">회원가입 완료</string>
     <string name="register_complete_description_text">이제부터 GMS를 사용하실 수 있습니다.</string>
 
-    //home
+    //navigation
     <string name="navigation_home">홈</string>
     <string name="navigation_apply_exercise">운동 신청</string>
     <string name="navigation_apply_equipment">운동기구 신청</string>
     <string name="navigation_mypage">마이페이지</string>
+
+    //home
+    <string name="home_user_name_text">%s 님</string>
+    <string name="home_consecutive_exercise_days_text">365</string>
+    <string name="home_random_sentence_text">무거운 것을 들때에는 허리를 조심히 ~</string>
+
+    //apply-equipment
     <string name="apply_equipment_text">기구 신청</string>
     <string name="equipment_link_copy_text"> <u>링크복사</u> </string>
     <string name="equipment_price_format_text">가격 : %s원</string>
@@ -34,7 +41,7 @@
     <string name="equipment_price_text">가격</string>
     <string name="equipment_apply_text">신청</string>
   
-    //마이페이지
+    //mypage
     <string name="my_page_logout_tv">로그아웃</string>
     <string name="my_page_logout_description_tv">기기내에 계정에서 로그아웃합니다.</string>
     <string name="my_page_exercise_history_tv">운동 내역</string>
@@ -46,7 +53,7 @@
     <string name="my_page_student_name_tv">%s</string>
     <string name="my_page_student_id_tv">%s학년 %s반 %s번</string>
 
-    //기구 신청 내역
+    //apply-equipment-history
     <string name="equipment_history_title_tv">%s님의 기구 신청</string>
     <string name="equipment_history_equipment_name_tv">기구 이름 : %s</string>
     <string name="equipment_history_equipment_price_tv">가격 : %s</string>
@@ -57,14 +64,14 @@
     <string name="equipment_history_apply_cancel_confirm_tv">확인</string>
     <string name="equipment_history_apply_cancel_tv">취소</string>
 
-    //비밀번호 변경
+    //change password
     <string name="change_password_title_tv">비밀번호 변경</string>
     <string name="change_password_current_password_et">현재 비밀번호를 입력해주세요</string>
     <string name="change_password_new_password_et">새 비밀번호를 입력해주세요</string>
     <string name="change_password_new_password_confirm_et">새 비밀번호를 다시 입력해 주세요</string>
     <string name="change_password_btn">비밀번호 변경</string>
 
-    //로그아웃
+    //logout
     <string name="logout_title_tv">로그아웃 하시겠습니까?</string>
     <string name="logout_confirm_tv">확인</string>
     <string name="logout_cancel_tv">취소</string>
@@ -86,6 +93,5 @@
     <string name="apply_exercise_confirm_tv">확인</string>
     <string name="apply_exercise_cancel_tv">취소</string>
     <string name="apply_exercise_personnel_list_tv">신청자 명단</string>
-
 
 </resources>
