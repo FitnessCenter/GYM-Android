@@ -1,43 +1,25 @@
 <resources>
     <string name="app_name">DSM-GYM</string>
-
-    //login
     <string name="login_text">로그인</string>
     <string name="login_auto_login">자동 로그인</string>
     <string name="login_register"> <u>회원가입</u> </string>
     <string name="login_id_hint">아이디를 입력해주세요</string>
     <string name="login_pw_hint">비밀번호를 입력해주세요</string>
+
     <string name="register_text">회원가입</string>
     <string name="register_school_number_hint">학번을 입력해주세요</string>
     <string name="register_name_hint">이름을 입력해주세요</string>
     <string name="next">다음</string>
 
-    //register
     <string name="register_pw_check_hint">비밀번호를 다시 입력해주세요</string>
     <string name="complete">완료</string>
     <string name="register_complete_text">회원가입 완료</string>
     <string name="register_complete_description_text">이제부터 GMS를 사용하실 수 있습니다.</string>
 
-    //home
     <string name="navigation_home">홈</string>
     <string name="navigation_apply_exercise">운동 신청</string>
     <string name="navigation_apply_equipment">운동기구 신청</string>
     <string name="navigation_mypage">마이페이지</string>
-
-
-    //apply-exercise
-    <string name="apply_exercise_title">운동 신청</string>
-    <string name="apply_exercise">신청</string>
-    <string name="apply_exercise_show_personnel">인원보기</string>
-    <string name="apply_exercise_nine_thirty_to_ten">9 : 30 ~ 10 : 00</string>
-    <string name="apply_exercise_ten_to_ten_thirty">10 : 00 ~ 10 : 30</string>
-    <string name="apply_exercise_ten_thirty_to_eleven">10 : 30 ~ 11 : 00</string>
-    <string name="apply_exercise_personnel">0/15</string>
-    <string name="apply_exercise_confirm_question">운동 신청을 하시겠습니까?</string>
-    <string name="apply_exercise_cancel_question">신청을 취소하시겠습니까?</string>
-    <string name="apply_exercise_confirm">확인</string>
-    <string name="apply_exercise_cancel">취소</string>
-    <string name="apply_exercise_personnel_list">신청자 명단</string>
 
 
 </resources>
