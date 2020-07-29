@@ -1,4 +1,3 @@
-
 <resources>
 <string name="app_name">DSM-GYM</string>
 <string name="login_text">로그인</string>
@@ -36,4 +35,5 @@
 <string name="apply_exercise_personnel_list">신청자 명단</string>
 
     
+
 </resources>
