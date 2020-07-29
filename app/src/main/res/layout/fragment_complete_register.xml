@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.fragment.sign.register.complete.CompleteRegisterFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/register_complete_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_complete_text"
+        android:textColor="@color/colorDefault"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/register_complete_gl_right"
+        app:layout_constraintStart_toStartOf="@+id/register_complete_gl_left"
+        app:layout_constraintTop_toTopOf="@+id/register_complete_gl_top" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/register_complete_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="18sp"
+        android:textColor="@color/colorBlack"
+        android:text="@string/register_complete_description_text"
+        app:layout_constraintEnd_toStartOf="@+id/register_complete_gl_right"
+        app:layout_constraintStart_toStartOf="@+id/register_complete_gl_left"
+        app:layout_constraintTop_toBottomOf="@+id/register_complete_tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/register_complete_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back_layout_shape_round"
+        android:text="@string/complete"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/register_complete_gl_bottom"
+        app:layout_constraintEnd_toStartOf="@+id/register_complete_gl_right"
+        app:layout_constraintStart_toStartOf="@+id/register_complete_gl_left" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/register_complete_gl_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.82" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/register_complete_gl_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/register_complete_gl_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/register_complete_gl_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+</androidx.constraintlayout.widget.ConstraintLayout>
