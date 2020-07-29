@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/notosanscjkkrmedium"
                 android:includeFontPadding="false"
-                android:text="@string/my_page_logout"
+                android:text="@string/my_page_logout_tv"
                 android:textColor="@color/colorDefault"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
                 android:layout_marginTop="13dp"
                 android:fontFamily="@font/notosanscjkkrregular"
                 android:includeFontPadding="false"
-                android:text="@string/my_page_logout_description"
+                android:text="@string/my_page_logout_description_tv"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/my_page_logout_tv" />
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/notosanscjkkrmedium"
                 android:includeFontPadding="false"
-                android:text="@string/my_page_exercise_history"
+                android:text="@string/my_page_exercise_history_tv"
                 android:textColor="@color/colorDefault"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -92,7 +92,7 @@
                 android:layout_marginTop="13dp"
                 android:fontFamily="@font/notosanscjkkrregular"
                 android:includeFontPadding="false"
-                android:text="@string/my_page_exercise_history_description"
+                android:text="@string/my_page_exercise_history_description_tv"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/my_page_exercise_history_tv" />
@@ -123,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/notosanscjkkrmedium"
                 android:includeFontPadding="false"
-                android:text="@string/my_page_change_password"
+                android:text="@string/my_page_change_password_tv"
                 android:textColor="@color/colorDefault"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -136,7 +136,7 @@
                 android:layout_marginTop="13dp"
                 android:fontFamily="@font/notosanscjkkrregular"
                 android:includeFontPadding="false"
-                android:text="@string/my_page_change_password_description"
+                android:text="@string/my_page_change_password_description_tv"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/my_page_change_password_tv" />
@@ -167,7 +167,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/notosanscjkkrmedium"
                 android:includeFontPadding="false"
-                android:text="@string/my_page_equipment_history"
+                android:text="@string/my_page_equipment_history_tv"
                 android:textColor="@color/colorDefault"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -180,7 +180,7 @@
                 android:layout_marginTop="13dp"
                 android:fontFamily="@font/notosanscjkkrregular"
                 android:includeFontPadding="false"
-                android:text="@string/my_page_equipment_history_description"
+                android:text="@string/my_page_equipment_history_description_tv"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/my_page_equipment_history_tv" />
@@ -198,7 +198,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/student_name_tv"
+        android:id="@+id/my_page_student_name_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="37dp"
@@ -206,7 +206,7 @@
         android:layout_marginBottom="40dp"
         android:fontFamily="@font/notosanscjkkrmedium"
         android:includeFontPadding="false"
-        android:text="용석현"
+        android:text="@string/my_page_student_name_tv"
         android:textColor="@color/colorWhite"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/my_page_gl_top"
@@ -214,7 +214,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/student_id_tv"
+        android:id="@+id/my_page_student_id_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -222,11 +222,11 @@
         android:layout_marginBottom="42dp"
         android:fontFamily="@font/notosanscjkkrregular"
         android:includeFontPadding="false"
-        android:text="2학년 1반 13번"
+        android:text="@string/my_page_student_id_tv"
         android:textColor="@color/colorWhite"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/my_page_gl_top"
-        app:layout_constraintStart_toEndOf="@+id/student_name_tv"
+        app:layout_constraintStart_toEndOf="@+id/my_page_student_name_tv"
         app:layout_constraintTop_toTopOf="parent" />
 
 

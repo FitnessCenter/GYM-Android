@@ -16,7 +16,7 @@
         android:layout_marginTop="56dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="46dp"
-        android:text="@string/equipment_history_apply_cancel_question"
+        android:text="@string/equipment_history_apply_cancel_question_tv"
         android:textSize="16sp"
         android:textColor="@color/colorBlack"
         android:fontFamily="@font/notosanscjkkrregular"
@@ -27,13 +27,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/equipment_history_apply_cancel_cancel_tv"
+        android:id="@+id/equipment_history_apply_cancel_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="14dp"
-        android:text="@string/equipment_history_apply_cancel"
+        android:text="@string/equipment_history_apply_cancel_tv"
         android:textSize="14sp"
         android:textColor="@color/colorBlack"
         android:fontFamily="@font/notosanscjkkrregular"
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginBottom="14dp"
-        android:text="@string/equipment_history_apply_cancel_confirm"
+        android:text="@string/equipment_history_apply_cancel_confirm_tv"
         android:textSize="14sp"
         android:textColor="@color/colorBlack"
         android:fontFamily="@font/notosanscjkkrregular"
