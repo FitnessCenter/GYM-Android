@@ -42,46 +42,129 @@
             app:layout_constraintStart_toStartOf="@+id/register_first_gl_left"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/register_school_number_edit"
-            style="@style/SignEditTextStyle"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/register_school_number_edit_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="71dp"
-            android:drawableStart="@drawable/register_focused"
-            android:drawablePadding="16dp"
-            android:fontFamily="@font/notosanscjkkrregular"
-            android:hint="@string/register_school_number_hint"
+            android:layout_marginTop="48dp"
+            android:hint=" "
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/register_first_gl_right"
+            app:layout_constraintStart_toStartOf="@+id/register_first_gl_left"
+            app:layout_constraintTop_toBottomOf="@+id/register_title_tv">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_school_number_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/register_focused"
+                android:drawablePadding="16dp"
+                android:fontFamily="@font/notosanscjkkrregular"
+                android:hint="@string/register_school_number_hint"
+                android:includeFontPadding="false"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:textColor="@color/colorBlack"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/apply_equipment_detail_link_layout" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/register_name_edit_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint=" "
+            app:counterMaxLength="16"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/register_first_gl_right"
+            app:layout_constraintStart_toStartOf="@+id/register_first_gl_left"
+            app:layout_constraintTop_toBottomOf="@+id/register_school_number_edit_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_name_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/register_focused"
+                android:drawablePadding="16dp"
+                android:fontFamily="@font/notosanscjkkrregular"
+                android:hint="@string/register_name_hint"
+                android:includeFontPadding="false"
+                android:inputType="textPassword"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:textColor="@color/colorBlack"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_school_number_edit_layout" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/register_sex_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/notosanscjkkrmedium"
             android:includeFontPadding="false"
             android:paddingStart="4dp"
             android:paddingEnd="4dp"
-            android:textColor="@color/colorBlack"
-            android:textCursorDrawable="@drawable/color_cursor"
-            android:textSize="14sp"
-            android:theme="@style/SignEditTextStyle"
-            app:layout_constraintEnd_toStartOf="@+id/register_first_gl_right"
+            android:text="@string/register_gender_text"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/register_first_gl_left"
-            app:layout_constraintTop_toBottomOf="@+id/register_title_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/register_name_edit_layout" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/register_name_edit"
+        <RadioGroup
+            android:id="@+id/register_gender_radio_group"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
-            android:drawableStart="@drawable/register_focused"
-            android:drawablePadding="16dp"
-            android:fontFamily="@font/notosanscjkkrregular"
-            android:hint="@string/register_name_hint"
-            android:includeFontPadding="false"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp"
-            android:textColor="@color/colorBlack"
-            android:textSize="14sp"
-            android:theme="@style/SignEditTextStyle"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toStartOf="@+id/register_first_gl_right"
             app:layout_constraintStart_toStartOf="@+id/register_first_gl_left"
-            app:layout_constraintTop_toBottomOf="@+id/register_school_number_edit" />
+            app:layout_constraintTop_toBottomOf="@+id/register_sex_title">
 
+            <RadioButton
+                android:id="@+id/register_man_radio_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/notosanscjkkrregular"
+                android:includeFontPadding="false"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                android:text="@string/register_gender_man_text"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/register_first_gl_left"
+                app:layout_constraintTop_toBottomOf="@+id/register_sex_title" />
+
+            <RadioButton
+                android:id="@+id/register_woman_radio_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/notosanscjkkrregular"
+                android:includeFontPadding="false"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                android:text="@string/register_gender_woman_text"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/register_man_radio_btn"
+                app:layout_constraintTop_toBottomOf="@+id/register_sex_title" />
+
+        </RadioGroup>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/register_first_next_btn"
@@ -117,7 +200,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.8" />
+            app:layout_constraintGuide_begin="468dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
