@@ -135,6 +135,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             style="@style/AppTheme.RoundedCornerMaterialButton"
+            android:id="@+id/login_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/notosanscjkkrregular"
