@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.dsm.gym.R
+import kotlinx.android.synthetic.main.fragment_second_register.view.*
 
 class SecondRegisterFragment : Fragment() {
 
@@ -14,6 +16,10 @@ class SecondRegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second_register, container, false)
+        val view = inflater.inflate(R.layout.fragment_second_register, container, false)
+        view.register_btn.setOnClickListener {
+            findNavController().navigate(R.id.action_secondRegisterFragment_to_completeRegisterFragment)
+        }
+        return view
     }
 }
