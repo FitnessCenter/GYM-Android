@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.dsm.gym.R
 
-class SecondRegisterFragment : Fragment() {
+class SecondSignUpFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
