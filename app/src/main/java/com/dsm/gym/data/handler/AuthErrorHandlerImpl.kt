@@ -9,11 +9,10 @@ import java.net.SocketTimeoutException
 
 class AuthErrorHandlerImpl: AuthErrorHandler{
     override fun signInErrorHandle(throwable: Throwable): ErrorHandlerEntity{
-        Log.d("df",throwable.toString())
         return when(throwable){
             is HttpException -> when(throwable.code()){
                 200 -> ErrorHandlerEntity(isSuccess = true)
-                404 -> ErrorHandlerEntity(message = "404 에러")
+                400 -> ErrorHandlerEntity(message = "유저 정보가 일치하지 않습니다.")
                 500 -> ErrorHandlerEntity(message = "서버 에러가 발생했습니다")
                 else -> ErrorHandlerEntity(message = "unknown error execute")
             }
@@ -32,5 +31,4 @@ class AuthErrorHandlerImpl: AuthErrorHandler{
         is ConnectException -> ErrorHandlerEntity(message = "인터넷 연결이 되지 않았습니다")
         else -> ErrorHandlerEntity()
     }
-
 }
