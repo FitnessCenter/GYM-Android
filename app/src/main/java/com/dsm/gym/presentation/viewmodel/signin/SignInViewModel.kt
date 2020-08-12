@@ -71,8 +71,4 @@ class SignInViewModel(
 
     private fun checkFullText(): Boolean =
         idText.isNotValueBlank() && passwordText.isNotValueBlank()
-
-    override fun apply(event: Lifecycle.Event) {
-
-    }
 }
