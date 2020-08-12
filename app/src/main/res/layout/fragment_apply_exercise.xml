@@ -10,12 +10,12 @@
         android:id="@+id/apply_exercise_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginBottom="47dp"
+        android:layout_marginBottom="40dp"
         android:fontFamily="@font/notosanscjkkrbold"
         android:includeFontPadding="false"
         android:text="@string/apply_exercise_title_tv"
         android:textColor="#915cd5"
-        android:textSize="24sp"
+        android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/gl_top"
         app:layout_constraintStart_toStartOf="@+id/gl_left" />
 
