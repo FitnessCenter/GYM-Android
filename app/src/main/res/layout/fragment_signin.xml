@@ -154,6 +154,8 @@
                 android:fontFamily="@font/notosanscjkkrregular"
                 android:includeFontPadding="false"
                 android:text="@string/login_text"
+                android:clickable="@{vm.btnClickable}"
+                android:background="@{vm.btnClickable == false ? @drawable/radius_gray_view : @drawable/radius_default_view}"
                 android:textColor="@color/colorWhite"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/login_gl_bottom"

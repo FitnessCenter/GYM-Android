@@ -2,6 +2,7 @@ package com.dsm.gym.presentation.viewmodel.signin
 
 import android.util.Log
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import com.dsm.gym.domain.base.ErrorHandlerEntity
 import com.dsm.gym.domain.entity.TokenEntity
@@ -18,6 +19,10 @@ class SignInViewModel(
 ) : BaseViewModel() {
     val idText = MutableLiveData<String>()
     val passwordText = MutableLiveData<String>()
+    val btnClickable = MediatorLiveData<Boolean>().apply {
+        addSource(idText) { value = checkFullText() }
+        addSource(passwordText) { value = checkFullText() }
+    }
 
     val startMainEvent = SingleLiveEvent<Unit>()
     val startSignUpEvent = SingleLiveEvent<Unit>()
@@ -45,7 +50,6 @@ class SignInViewModel(
             }
 
             override fun onError(t: Throwable?) {
-                Log.d("dsfsf","onError")
                 createToastEvent.value = "오류 발생"
             }
         })
@@ -61,7 +65,6 @@ class SignInViewModel(
     }
 
     fun loginFail(message: String) {
-        Log.d("fail",message+"d")
         idErrorEvent.value = message
         passwordErrorEvent.value = message
     }
