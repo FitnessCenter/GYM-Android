@@ -16,10 +16,7 @@ class CompleteRegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_complete_register, container, false)
-        view.register_complete_btn.setOnClickListener {
-            findNavController().navigate(R.id.action_completeRegisterFragment_to_signInFragment)
-        }
-        return view
+        return inflater.inflate(R.layout.fragment_complete_register, container, false)
+
     }
 }

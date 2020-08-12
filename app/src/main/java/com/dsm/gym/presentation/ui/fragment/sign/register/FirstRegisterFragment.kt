@@ -16,14 +16,8 @@ class FirstRegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_first_register, container, false)
-        view.register_first_next_btn.setOnClickListener {
-            findNavController().navigate(R.id.action_firstRegisterFragment_to_secondRegisterFragment)
-        }
+        return inflater.inflate(R.layout.fragment_first_register, container, false)
 
-        return view
     }
-    fun observe(){
-        findNavController().navigate(R.id.action_firstRegisterFragment_to_secondRegisterFragment)
-    }
+
 }
