@@ -43,11 +43,11 @@ class MainFragment : Fragment() {
     private fun selectHome() : Boolean{
 
         when(main_navigation.selectedItemId){
-            R.id.apply_exercise_fragment-> replaceFragment(R.id.action_applyExerciseFragment_to_homeFragment)
+            R.id.apply_exercise_fragment-> replaceFragment(R.id.action_global_homeFragment)
 
-            R.id.apply_equipment_fragment-> replaceFragment(R.id.action_applyEquipmentFragment_to_homeFragment)
+            R.id.apply_equipment_fragment-> replaceFragment(R.id.action_global_homeFragment)
 
-            R.id.mypage_fragment-> replaceFragment(R.id.action_myPageFragment_to_homeFragment)
+            R.id.mypage_fragment-> replaceFragment(R.id.action_global_homeFragment)
         }
         return true
 
@@ -55,11 +55,11 @@ class MainFragment : Fragment() {
     private fun selectApplyExercise(): Boolean{
 
         when(main_navigation.selectedItemId){
-            R.id.home_fragment-> replaceFragment(R.id.action_homeFragment_to_applyExerciseFragment)
+            R.id.home_fragment-> replaceFragment(R.id.action_global_applyExerciseFragment)
 
-            R.id.apply_equipment_fragment-> replaceFragment(R.id.action_applyEquipmentFragment_to_applyExerciseFragment)
+            R.id.apply_equipment_fragment-> replaceFragment(R.id.action_global_applyExerciseFragment)
 
-            R.id.mypage_fragment-> replaceFragment(R.id.action_myPageFragment_to_applyExerciseFragment)
+            R.id.mypage_fragment-> replaceFragment(R.id.action_global_applyExerciseFragment)
 
 
         }
@@ -70,11 +70,11 @@ class MainFragment : Fragment() {
     private fun selectApplyEquipment(): Boolean{
 
         when(main_navigation.selectedItemId){
-            R.id.home_fragment-> replaceFragment(R.id.action_homeFragment_to_applyEquipmentFragment)
+            R.id.home_fragment-> replaceFragment(R.id.action_global_applyEquipmentFragment)
 
-            R.id.apply_exercise_fragment-> replaceFragment(R.id.action_applyExerciseFragment_to_applyEquipmentFragment)
+            R.id.apply_exercise_fragment-> replaceFragment(R.id.action_global_applyEquipmentFragment)
 
-            R.id.mypage_fragment-> replaceFragment(R.id.action_myPageFragment_to_applyEquipmentFragment)
+            R.id.mypage_fragment-> replaceFragment(R.id.action_global_applyEquipmentFragment)
 
 
         }
@@ -84,11 +84,11 @@ class MainFragment : Fragment() {
     private fun selectMyPage(): Boolean{
 
         when(main_navigation.selectedItemId){
-            R.id.home_fragment-> replaceFragment(R.id.action_homeFragment_to_myPageFragment)
+            R.id.home_fragment-> replaceFragment(R.id.action_global_myPageFragment)
 
-            R.id.apply_exercise_fragment-> replaceFragment(R.id.action_applyExerciseFragment_to_myPageFragment)
+            R.id.apply_exercise_fragment-> replaceFragment(R.id.action_global_myPageFragment)
 
-            R.id.apply_equipment_fragment-> replaceFragment(R.id.action_applyEquipmentFragment_to_myPageFragment)
+            R.id.apply_equipment_fragment-> replaceFragment(R.id.action_global_myPageFragment)
 
 
         }
