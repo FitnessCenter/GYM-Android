@@ -41,62 +41,20 @@ class MainFragment : Fragment() {
 
     }
     private fun selectHome() : Boolean{
-
-        when(main_navigation.selectedItemId){
-            R.id.apply_exercise_fragment-> replaceFragment(R.id.action_global_homeFragment)
-
-            R.id.apply_equipment_fragment-> replaceFragment(R.id.action_global_homeFragment)
-
-            R.id.mypage_fragment-> replaceFragment(R.id.action_global_homeFragment)
-        }
+        replaceFragment(R.id.action_global_homeFragment)
         return true
 
     }
     private fun selectApplyExercise(): Boolean{
-
-        when(main_navigation.selectedItemId){
-            R.id.home_fragment-> replaceFragment(R.id.action_global_applyExerciseFragment)
-
-            R.id.apply_equipment_fragment-> replaceFragment(R.id.action_global_applyExerciseFragment)
-
-            R.id.mypage_fragment-> replaceFragment(R.id.action_global_applyExerciseFragment)
-
-
-        }
+        replaceFragment(R.id.action_global_applyExerciseFragment)
         return true
-
-
     }
     private fun selectApplyEquipment(): Boolean{
-
-        when(main_navigation.selectedItemId){
-            R.id.home_fragment-> replaceFragment(R.id.action_global_applyEquipmentFragment)
-
-            R.id.apply_exercise_fragment-> replaceFragment(R.id.action_global_applyEquipmentFragment)
-
-            R.id.mypage_fragment-> replaceFragment(R.id.action_global_applyEquipmentFragment)
-
-
-        }
+        replaceFragment(R.id.action_global_applyEquipmentFragment)
         return true
-
     }
     private fun selectMyPage(): Boolean{
-
-        when(main_navigation.selectedItemId){
-            R.id.home_fragment-> replaceFragment(R.id.action_global_myPageFragment)
-
-            R.id.apply_exercise_fragment-> replaceFragment(R.id.action_global_myPageFragment)
-
-            R.id.apply_equipment_fragment-> replaceFragment(R.id.action_global_myPageFragment)
-
-
-        }
+        replaceFragment(R.id.action_global_myPageFragment)
         return true
-
     }
-
-
-
-
 }
