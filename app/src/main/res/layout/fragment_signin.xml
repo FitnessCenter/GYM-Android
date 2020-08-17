@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="vm"
+            type="com.dsm.gym.presentation.viewmodel.signin.SignInViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorDefault"
+        tools:context=".presentation.ui.fragment.signin.SignInFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:background="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/back_layout_half_round"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/login_gl_top"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/login_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                android:fontFamily="@font/notosanscjkkrbold"
+                android:includeFontPadding="false"
+                android:text="@string/login_text"
+                android:textColor="@color/colorDefault"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/login_gl_left"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/login_id_edit_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:hint=" "
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/login_gl_right"
+                app:layout_constraintStart_toStartOf="@+id/login_gl_left"
+                app:layout_constraintTop_toBottomOf="@+id/login_title_tv">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/login_id_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:drawableStart="@drawable/login_id_focused"
+                    android:drawablePadding="16dp"
+                    android:text="@={vm.idText}"
+                    android:fontFamily="@font/notosanscjkkrregular"
+                    android:hint="@string/login_id_hint"
+                    android:includeFontPadding="false"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:textColor="@color/colorBlack"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/login_pw_edit_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint=" "
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/login_gl_right"
+                app:layout_constraintStart_toStartOf="@+id/login_gl_left"
+                app:layout_constraintTop_toBottomOf="@+id/login_id_edit_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/login_pw_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/login_pw_focused"
+                    android:drawablePadding="16dp"
+                    android:text="@={vm.passwordText}"
+                    android:fontFamily="@font/notosanscjkkrregular"
+                    android:hint="@string/login_pw_hint"
+                    android:includeFontPadding="false"
+                    android:paddingStart="4dp"
+                    android:inputType="textPassword"
+                    android:paddingEnd="4dp"
+                    android:textColor="@color/colorBlack"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/login_auto_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/notosanscjkkrregular"
+                android:includeFontPadding="false"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:scaleX="0.9"
+                android:scaleY="0.9"
+                android:text="@string/login_auto_login"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="14sp"
+                android:theme="@style/SignCheckBoxTheme"
+                app:layout_constraintStart_toStartOf="@+id/login_gl_left"
+                app:layout_constraintTop_toBottomOf="@+id/login_pw_edit_layout" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/login_register_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/notosanscjkkrregular"
+                android:includeFontPadding="false"
+                android:onClick="@{() -> vm.clickSignUp()}"
+                android:text="@string/login_register"
+                android:textColor="@color/colorDefault"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/login_gl_right"
+                app:layout_constraintTop_toBottomOf="@+id/login_pw_edit_layout" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                android:layout_width="0dp"
+                android:onClick="@{() -> vm.clickLogin()}"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanscjkkrregular"
+                android:includeFontPadding="false"
+                android:text="@string/login_text"
+                android:clickable="@{vm.btnClickable}"
+                android:background="@{vm.btnClickable == false ? @drawable/radius_gray_view : @drawable/radius_default_view}"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/login_gl_bottom"
+                app:layout_constraintEnd_toStartOf="@+id/login_gl_right"
+                app:layout_constraintStart_toStartOf="@+id/login_gl_left" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/login_gl_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/login_gl_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/login_gl_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.8" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/login_gl_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
