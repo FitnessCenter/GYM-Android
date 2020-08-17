@@ -1,4 +1,4 @@
-package com.dsm.gym.presentation.ui.fragment.sign.login
+package com.dsm.gym.presentation.ui.fragment.signup
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.dsm.gym.R
 import kotlinx.android.synthetic.main.fragment_login.*
 
-class SignInFragment : Fragment() {
+class FirstSignUpFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -17,7 +17,7 @@ class SignInFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        return inflater.inflate(R.layout.fragment_first_signup, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

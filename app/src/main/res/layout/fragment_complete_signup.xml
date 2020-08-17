@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.fragment.sign.register.complete.CompleteRegisterFragment">
+    tools:context=".presentation.ui.fragment.signup.complete.CompleteSignUpFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/register_complete_tv"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorDefault"
-    tools:context=".presentation.ui.fragment.sign.register.FirstRegisterFragment">
+    tools:context=".presentation.ui.fragment.signup.FirstSignUpFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="76dp"
@@ -62,6 +62,8 @@
                 android:fontFamily="@font/notosanscjkkrregular"
                 android:hint="@string/register_school_number_hint"
                 android:includeFontPadding="false"
+                android:inputType="number"
+                android:maxLength="4"
                 android:paddingStart="4dp"
                 android:paddingEnd="4dp"
                 android:textColor="@color/colorBlack"
@@ -94,7 +96,7 @@
                 android:fontFamily="@font/notosanscjkkrregular"
                 android:hint="@string/register_name_hint"
                 android:includeFontPadding="false"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:paddingStart="4dp"
                 android:paddingEnd="4dp"
                 android:textColor="@color/colorBlack"
@@ -200,7 +202,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.8"/>
+            app:layout_constraintGuide_percent="0.8" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
