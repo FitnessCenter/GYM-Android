@@ -43,7 +43,7 @@
     <string name="equipment_amount_text">수량</string>
     <string name="equipment_price_text">가격</string>
     <string name="equipment_apply_text">신청</string>
-  
+
     //mypage
     <string name="my_page_logout_tv">로그아웃</string>
     <string name="my_page_logout_description_tv">기기내에 계정에서 로그아웃합니다.</string>
@@ -96,5 +96,6 @@
     <string name="apply_exercise_confirm_tv">확인</string>
     <string name="apply_exercise_cancel_tv">취소</string>
     <string name="apply_exercise_personnel_list_tv">신청자 명단</string>
+
 
 </resources>
