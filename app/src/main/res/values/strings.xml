@@ -1,20 +1,100 @@
 <resources>
     <string name="app_name">DSM-GYM</string>
+
+    //login
     <string name="login_text">로그인</string>
     <string name="login_auto_login">자동 로그인</string>
     <string name="login_register"> <u>회원가입</u> </string>
     <string name="login_id_hint">아이디를 입력해주세요</string>
     <string name="login_pw_hint">비밀번호를 입력해주세요</string>
 
+    //register
     <string name="register_text">회원가입</string>
     <string name="register_school_number_hint">학번을 입력해주세요</string>
     <string name="register_name_hint">이름을 입력해주세요</string>
     <string name="next">다음</string>
-
     <string name="register_pw_check_hint">비밀번호를 다시 입력해주세요</string>
     <string name="complete">완료</string>
+    <string name="register_gender_man_text">남</string>
+    <string name="register_gender_woman_text">여</string>
+    <string name="register_gender_text">성별</string>
     <string name="register_complete_text">회원가입 완료</string>
     <string name="register_complete_description_text">이제부터 GMS를 사용하실 수 있습니다.</string>
 
+    //navigation
+    <string name="navigation_home">홈</string>
+    <string name="navigation_apply_exercise">운동 신청</string>
+    <string name="navigation_apply_equipment">운동기구 신청</string>
+    <string name="navigation_mypage">마이페이지</string>
+
+    //home
+    <string name="home_user_name_text">%s 님</string>
+    <string name="home_consecutive_exercise_days_text">365</string>
+    <string name="home_random_sentence_text">무거운 것을 들때에는 허리를 조심히 ~</string>
+
+    //apply-equipment
+    <string name="apply_equipment_text">기구 신청</string>
+    <string name="equipment_link_copy_text"> <u>링크복사</u> </string>
+    <string name="equipment_price_format_text">가격 : %s원</string>
+    <string name="equipment_amount_format_text">수량 : %s개</string>
+    <string name="equipment_person_format_text">주문자 : %s</string>
+    <string name="equipment_name_text">기구 이름</string>
+    <string name="equipment_link_text">링크</string>
+    <string name="equipment_amount_text">수량</string>
+    <string name="equipment_price_text">가격</string>
+    <string name="equipment_apply_text">신청</string>
+  
+    //mypage
+    <string name="my_page_logout_tv">로그아웃</string>
+    <string name="my_page_logout_description_tv">기기내에 계정에서 로그아웃합니다.</string>
+    <string name="my_page_exercise_history_tv">운동 내역</string>
+    <string name="my_page_exercise_history_description_tv">운동 내역을 확인합니다.</string>
+    <string name="my_page_change_password_tv">비밀번호 변경</string>
+    <string name="my_page_change_password_description_tv">비밀번호를 변경합니다.</string>
+    <string name="my_page_equipment_history_tv">기구 신청 내역</string>
+    <string name="my_page_equipment_history_description_tv">기구 신청 내역을 확인합니다.</string>
+    <string name="my_page_student_name_tv">%s</string>
+    <string name="my_page_student_id_tv">%s학년 %s반 %s번</string>
+
+    //apply-equipment-history
+    <string name="equipment_history_title_tv">%s님의 기구 신청</string>
+    <string name="equipment_history_equipment_name_tv">기구 이름 : %s</string>
+    <string name="equipment_history_equipment_price_tv">가격 : %s</string>
+    <string name="equipment_history_equipment_amount_tv">수량 : %s</string>
+    <string name="equipment_history_equipment_apply_cancel_tv">신청 취소하기</string>
+    <string name="equipment_history_apply_cancel_title_tv">신청 취소하기</string>
+    <string name="equipment_history_apply_cancel_question_tv">신청을 취소하시겠습니까?</string>
+    <string name="equipment_history_apply_cancel_confirm_tv">확인</string>
+    <string name="equipment_history_apply_cancel_tv">취소</string>
+
+    //change password
+    <string name="change_password_title_tv">비밀번호 변경</string>
+    <string name="change_password_current_password_et">현재 비밀번호를 입력해주세요</string>
+    <string name="change_password_new_password_et">새 비밀번호를 입력해주세요</string>
+    <string name="change_password_new_password_confirm_et">새 비밀번호를 다시 입력해 주세요</string>
+    <string name="change_password_btn">비밀번호 변경</string>
+
+    //logout
+    <string name="logout_title_tv">로그아웃 하시겠습니까?</string>
+    <string name="logout_confirm_tv">확인</string>
+    <string name="logout_cancel_tv">취소</string>
+
+
+    //apply-exercise
+    <string name="apply_exercise_title_tv">운동 신청</string>
+    <string name="apply_exercise_tv">신청</string>
+    <string name="apply_exercise_show_personnel_tv">인원보기</string>
+    <string name="apply_exercise_nine_thirty_to_ten_tv">9 : 30 ~ 10 : 00</string>
+    <string name="apply_exercise_ten_to_ten_thirty_tv">10 : 00 ~ 10 : 30</string>
+    <string name="apply_exercise_ten_thirty_to_eleven_tv">10 : 30 ~ 11 : 00</string>
+    <string name="apply_exercise_nine_thirty_to_ten_personnel_tv">%s/15</string>
+    <string name="apply_exercise_ten_to_ten_thirty_personnel_tv">%s/15</string>
+    <string name="apply_exercise_ten_thirty_to_eleven_personnel_tv">%s/15</string>
+    <string name="apply_exercise_time_tv">%s</string>
+    <string name="apply_exercise_question_tv">운동 신청을 하시겠습니까?</string>
+    <string name="apply_exercise_cancel_question">신청을 취소하시겠습니까?</string>
+    <string name="apply_exercise_confirm_tv">확인</string>
+    <string name="apply_exercise_cancel_tv">취소</string>
+    <string name="apply_exercise_personnel_list_tv">신청자 명단</string>
 
 </resources>
