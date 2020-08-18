@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.dsm.gym.R
-import kotlinx.android.synthetic.main.fragment_first_register.view.*
 
 class SecondSignUpFragment : Fragment() {
 

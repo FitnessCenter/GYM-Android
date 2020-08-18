@@ -22,8 +22,6 @@ class FirstSignUpFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        login_btn.setOnClickListener {
-            findNavController().navigate(R.id.action_signInFragment_to_mainFragment)
-        }
+
     }
 }
