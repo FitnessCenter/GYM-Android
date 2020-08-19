@@ -7,6 +7,7 @@ import com.dsm.gym.domain.mapper.BaseMapper
 class TokenDataMapper: BaseMapper<TokenData,TokenEntity>{
     override fun mapFrom(from: TokenData): TokenEntity
             = TokenEntity(
-        token = from.token
+        accessToken = from.accessToken,
+        refreshToken = from.refreshToken
     )
 }
