@@ -31,8 +31,7 @@
     </style>
 
     <style name="MyThemeOverlayOutlinedDense">
-        <item name="editTextStyle">@style/MyTextInputEditText_outlinedBox_dense_h
-        </item>
+        <item name="editTextStyle">@style/MyTextInputEditText_outlinedBox_dense_h</item>
     </style>
 
     <style name="MyTextInputEditText_outlinedBox_dense_h" parent="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox.Dense">

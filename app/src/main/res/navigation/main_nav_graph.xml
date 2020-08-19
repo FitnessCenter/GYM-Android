@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/applyExerciseFragment"
+        android:name="com.dsm.gym.presentation.ui.fragment.ApplyExerciseFragment"
+        android:label="fragment_apply_exercise"
+        tools:layout="@layout/fragment_apply_exercise" />
+    <fragment
+        android:id="@+id/applyEquipmentFragment"
+        android:name="com.dsm.gym.presentation.ui.fragment.equipment.ApplyEquipmentFragment"
+        android:label="fragment_apply_equipment"
+        tools:layout="@layout/fragment_apply_equipment" />
+    <fragment
+        android:id="@+id/myPageFragment"
+        android:name="com.dsm.gym.presentation.ui.fragment.MyPageFragment"
+        android:label="fragment_my_page"
+        tools:layout="@layout/fragment_my_page" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.dsm.gym.presentation.ui.fragment.main.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+
+    <action android:id="@+id/action_global_applyExerciseFragment"
+        app:destination="@id/applyExerciseFragment"/>
+    <action android:id="@+id/action_global_applyEquipmentFragment"
+        app:destination="@id/applyEquipmentFragment"/>
+    <action android:id="@+id/action_global_myPageFragment"
+        app:destination="@id/myPageFragment"/>
+    <action android:id="@+id/action_global_homeFragment"
+        app:destination="@id/homeFragment"/>
+</navigation>

@@ -14,19 +14,19 @@ class AuthServiceImpl(
     private val authErrorHandler: AuthErrorHandler) : AuthService {
     override fun signIn(auth: AuthEntity): Flowable<Pair<TokenEntity, ErrorHandlerEntity>>
             = authRepository.signIn(auth).map{
-        TokenEntity(it.token) to ErrorHandlerEntity(isSuccess = true)
+        TokenEntity(it.accessToken) to ErrorHandlerEntity(isSuccess = true)
     }.doOnNext{
-        Log.d("token",it.first.token)
-        authRepository.saveToken(it.first.token)
+        Log.d("token",it.first.accessToken)
+        authRepository.saveToken(it.first.accessToken)
     }.onErrorReturn{
         TokenEntity(authRepository.getToken()) to authErrorHandler.signInErrorHandle(it)
     }
 
     override fun signUp(user: UserEntity): Flowable<Pair<TokenEntity, ErrorHandlerEntity>>
             = authRepository.signUp(user).map {
-        TokenEntity(it.token) to ErrorHandlerEntity(isSuccess = true)
+        TokenEntity(it.accessToken) to ErrorHandlerEntity(isSuccess = true)
     }.doOnNext{
-        authRepository.saveToken(it.first.token)
+        authRepository.saveToken(it.first.accessToken)
     }.onErrorReturn{
         TokenEntity(authRepository.getToken()) to authErrorHandler.signUpErrorHandle(it)
     }
