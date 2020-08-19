@@ -25,11 +25,15 @@ class SignInFragment : EndPointDataBindingFragment<FragmentSigninBinding>() {
 
     override fun observeEvent() {
         viewModel.startSignUpEvent.observe(this, Observer {
-            findNavController(view!!).navigate(R.id.action_signInFragment_to_firstRegisterFragment)
+            findNavController(requireView()).navigate(R.id.action_signInFragment_to_firstRegisterFragment)
         })
         viewModel.idErrorEvent.observe(this, Observer { login_id_edit_layout.error = it })
 
         viewModel.passwordErrorEvent.observe(this, Observer { login_pw_edit_layout.error = it })
+
+        viewModel.startMainEvent.observe(this, Observer {
+            findNavController(requireView()).navigate(R.id.action_signInFragment_to_mainFragment)
+        })
     }
 
 }
