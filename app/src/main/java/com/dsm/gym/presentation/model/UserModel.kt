@@ -1,6 +1,6 @@
-package com.dsm.gym.domain.entity
+package com.dsm.gym.presentation.model
 
-data class UserEntity(
+data class UserModel(
     val studentNumber: String = "",
     val studentName: String = "",
     val id: String = "",
