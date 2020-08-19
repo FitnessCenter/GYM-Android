@@ -9,6 +9,6 @@ interface Api {
     @POST("users/accounts/auth")
     fun signIn(@Body body: Any?): Flowable<TokenData>
 
-    @POST("signup")
+    @POST("users/accounts")
     fun signUp(@Body body: Any?): Flowable<TokenData>
 }

@@ -1,6 +1,5 @@
 package com.dsm.gym.data.handler
 
-import android.util.Log
 import com.dsm.gym.domain.base.ErrorHandlerEntity
 import com.dsm.gym.domain.handler.AuthErrorHandler
 import retrofit2.HttpException

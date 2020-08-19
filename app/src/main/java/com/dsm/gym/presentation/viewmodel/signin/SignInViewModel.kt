@@ -1,7 +1,6 @@
 package com.dsm.gym.presentation.viewmodel.signin
 
 import android.util.Log
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import com.dsm.gym.domain.base.ErrorHandlerEntity

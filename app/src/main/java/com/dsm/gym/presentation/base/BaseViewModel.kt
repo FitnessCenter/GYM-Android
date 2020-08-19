@@ -6,7 +6,5 @@ import androidx.lifecycle.ViewModel
 abstract class BaseViewModel : ViewModel(){
     val createToastEvent = SingleLiveEvent<String>()
 
-    fun MutableLiveData<String>.isNotValueBlank() = !this.isValueBlank()
-
-    fun MutableLiveData<String>.isValueBlank() = this.value.isNullOrBlank()
+    fun MutableLiveData<String>.isNotValueBlank() = !this.value.isNullOrBlank()
 }
