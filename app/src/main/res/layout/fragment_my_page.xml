@@ -10,13 +10,17 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/my_page_gl_top" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/my_page_gl_bottom"
         app:layout_constraintEnd_toStartOf="@+id/my_page_gl_right"
         app:layout_constraintStart_toStartOf="@+id/my_page_gl_left"
@@ -25,7 +29,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/my_page_logout_layout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/my_page_exercise_history_layout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -69,8 +74,9 @@
             android:id="@+id/my_page_exercise_history_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:layout_marginTop="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/my_page_change_password_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/my_page_logout_layout">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -113,8 +119,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/my_page_equipment_history_layout"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/my_page_exercise_history_layout">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -157,8 +164,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/my_page_change_password_layout">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -215,7 +223,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/my_page_student_id_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="91dp"
@@ -226,6 +234,7 @@
         android:textColor="@color/colorWhite"
         android:textSize="23sp"
         app:layout_constraintBottom_toTopOf="@+id/my_page_gl_top"
+        app:layout_constraintEnd_toStartOf="@+id/my_page_gl_right"
         app:layout_constraintStart_toEndOf="@+id/my_page_student_name_tv"
         app:layout_constraintTop_toTopOf="parent" />
 
