@@ -3,8 +3,8 @@ package com.dsm.gym.data.entity
 import com.google.gson.annotations.SerializedName
 
 data class TokenData(
-    @SerializedName("access_token")
+    @SerializedName("accessToken")
     val accessToken: String,
-    @SerializedName("refresh_token")
+    @SerializedName("refreshToken")
     val refreshToken: String
 )

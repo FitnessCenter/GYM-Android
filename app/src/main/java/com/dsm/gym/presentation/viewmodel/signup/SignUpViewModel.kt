@@ -94,7 +94,6 @@ class SignUpViewModel(
                 password = passwordText.value!!,
                 sex = true
             ))
-            startCompleteSignUpEvent.call()
         }
     }
 

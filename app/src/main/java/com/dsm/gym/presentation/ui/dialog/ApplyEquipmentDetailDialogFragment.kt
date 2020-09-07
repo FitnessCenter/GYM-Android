@@ -1,19 +1,28 @@
 package com.dsm.gym.presentation.ui.dialog
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.dsm.gym.R
+import com.dsm.gym.databinding.FragmentApplyEquipmentDetailDialogBinding
+import com.dsm.gym.presentation.base.DataBindingDialogFragment
+import com.dsm.gym.presentation.viewmodel.equipment.EquipmentViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ApplyEquipmentDetailDialogFragment : Fragment() {
+class ApplyEquipmentDetailDialogFragment : DataBindingDialogFragment<FragmentApplyEquipmentDetailDialogBinding>() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_apply_equipment_detail_dialog, container, false)
+    override val layoutId: Int
+        get() = R.layout.fragment_apply_equipment_detail_dialog
+
+    private val viewModel:EquipmentViewModel by viewModel()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.vm = viewModel
+
+        dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        viewModel.closeDialog.observe(this, Observer{dismiss()})
     }
 }
