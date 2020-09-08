@@ -7,6 +7,6 @@ import com.dsm.gym.domain.repository.EquipmentRepository
 import org.koin.dsl.module
 
 val repositoryModule = module {
-    factory<AuthRepository> { AuthRepositoryImpl(get(), get(), get(), get()) }
-    factory<EquipmentRepository> { EquipmentRepositoryImpl(get(), get())  }
+    factory<AuthRepository> { AuthRepositoryImpl(get()) }
+    factory<EquipmentRepository> { EquipmentRepositoryImpl(get())  }
 }

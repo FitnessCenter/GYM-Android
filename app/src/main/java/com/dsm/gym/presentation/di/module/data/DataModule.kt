@@ -17,14 +17,6 @@ import io.reactivex.disposables.CompositeDisposable
 import org.koin.dsl.module
 
 val dataModule = module {
-    factory { UserDataMapper() }
-    factory { TokenDataMapper() }
-    factory { AuthDataMapper() }
-    factory { AuthMapper() }
-    factory { UserMapper() }
-
-    factory { EquipmentMapper() }
-    factory { EquipmentDataMapper() }
 
     factory<SharedPrefStorage> { SharedPrefStorageImpl(get()) }
 

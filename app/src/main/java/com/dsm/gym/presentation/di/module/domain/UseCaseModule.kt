@@ -1,9 +1,7 @@
 package com.dsm.gym.presentation.di.module.domain
 
-import com.dsm.gym.data.handler.AuthErrorHandlerImpl
-import com.dsm.gym.data.handler.EquipmentErrorHandlerImpl
-import com.dsm.gym.domain.handler.AuthErrorHandler
-import com.dsm.gym.domain.handler.EquipmentErrorHandler
+import com.dsm.gym.data.base.ErrorHandlerImpl
+import com.dsm.gym.domain.base.ErrorHandler
 import com.dsm.gym.domain.service.AuthService
 import com.dsm.gym.domain.service.AuthServiceImpl
 import com.dsm.gym.domain.service.EquipmentService
@@ -18,9 +16,8 @@ val useCaseModule = module {
     factory { SignInUseCase(get(), get()) }
     factory { PostDetailEquipmentUseCase(get(), get()) }
 
-    factory<AuthErrorHandler> { AuthErrorHandlerImpl() }
-    factory<AuthService> { AuthServiceImpl(get(), get()) }
+    factory<ErrorHandler> { ErrorHandlerImpl() }
 
-    factory<EquipmentErrorHandler> { EquipmentErrorHandlerImpl() }
+    factory<AuthService> { AuthServiceImpl(get(), get()) }
     factory<EquipmentService> { EquipmentServiceImpl(get(),get()) }
 }
