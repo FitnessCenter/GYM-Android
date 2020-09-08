@@ -5,52 +5,29 @@ import android.content.SharedPreferences
 import android.util.Log
 
 class SharedPrefStorageImpl(val context: Context) : SharedPrefStorage {
-    override fun saveToken(token: String) {
-        Log.d("saveToken", getToken())
+    override fun saveToken(token: String, access: Boolean) {
+        Log.d("saveToken", getToken(access))
 
-        return getAuthPref(context).edit().let {
-            it.putString(getAuthKey(), token)
+        return getPref(context).edit().let {
+            it.putString(getKey(access), token)
             it.apply()
         }
     }
 
-    override fun getToken(): String {
-        return if(getAuthPref(context).getString(getAuthKey(),"")!!.isNotBlank()){
-            "Bearer ${getAuthPref(context).getString(getAuthKey(), "")}"
+    override fun getToken(isAccess: Boolean): String {
+        return if(getPref(context).getString(getKey(isAccess),"")!!.isNotBlank()){
+            "Bearer ${getPref(context).getString(getKey(isAccess), "")}"
         } else ""
     }
 
-
     override fun removeToken() =
-        getAuthPref(context).edit().let {
-            it.remove(getAuthKey())
+        getPref(context).edit().let {
+            it.remove(getKey(true))
             it.apply()
         }
 
-    override fun saveSex(sex: Boolean) {
-        return getSexPref(context).edit().let {
-            it.putBoolean(getSexKey(), sex)
-            it.apply()
-        }
-    }
+    private fun getPref(context: Context): SharedPreferences = context.getSharedPreferences("pref", Context.MODE_PRIVATE)
 
-    override fun getSex(): Boolean =
-        getSexPref(context).getBoolean(getSexKey(), true)
+    private fun getKey(isAccess: Boolean): String = if (isAccess) "Access" else "Refresh"
 
-    override fun removeSex() {
-        getSexPref(context).edit().let {
-            it.remove(getSexKey())
-            it.apply()
-        }
-    }
-
-    private fun getAuthPref(context: Context): SharedPreferences =
-        context.getSharedPreferences("AuthPref", Context.MODE_PRIVATE)
-
-    private fun getSexPref(context: Context): SharedPreferences =
-        context.getSharedPreferences("SexPref", Context.MODE_PRIVATE)
-
-    private fun getAuthKey(): String = "Access"
-
-    private fun getSexKey(): String = "Sex"
 }

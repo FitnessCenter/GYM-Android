@@ -9,7 +9,7 @@ class AuthorizationInterceptor(val pref: SharedPrefStorage): Interceptor {
 
         val request = chain.request()
             .newBuilder()
-            .addHeader("Authorization", pref.getToken())
+            .addHeader("Authorization", pref.getToken(true))
             .build()
 
         return chain.proceed(request)
