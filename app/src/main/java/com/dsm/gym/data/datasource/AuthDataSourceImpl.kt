@@ -6,7 +6,6 @@ import com.dsm.gym.data.entity.UserData
 import com.dsm.gym.data.local.pref.SharedPrefStorage
 import com.dsm.gym.data.remote.Api
 import io.reactivex.Completable
-import io.reactivex.Flowable
 import io.reactivex.Single
 
 class AuthDataSourceImpl(

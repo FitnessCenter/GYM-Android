@@ -4,7 +4,6 @@ import com.dsm.gym.data.entity.AuthData
 import com.dsm.gym.data.entity.TokenData
 import com.dsm.gym.data.entity.UserData
 import io.reactivex.Completable
-import io.reactivex.Flowable
 import io.reactivex.Single
 
 interface AuthDataSource{

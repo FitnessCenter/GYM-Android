@@ -1,12 +1,11 @@
 package com.dsm.gym.domain.service
 
-import com.dsm.gym.domain.base.ErrorHandlerEntity
+import com.dsm.gym.domain.base.Result
 import com.dsm.gym.domain.entity.EquipmentEntity
-import io.reactivex.Flowable
-import retrofit2.Response
+import io.reactivex.Single
 
 interface EquipmentService {
-    fun postDetailEquipment(equipmentEntity: EquipmentEntity): Flowable<Pair<Response<Unit>, ErrorHandlerEntity>>
+    fun postDetailEquipment(equipmentEntity: EquipmentEntity): Single<Result<Unit>>
 
-    fun getAllEquipment(): Flowable<Pair<List<EquipmentEntity>, ErrorHandlerEntity>>
+//    fun getAllEquipment(): Flowable<Pair<List<EquipmentEntity>, ErrorHandlerEntity>>
 }

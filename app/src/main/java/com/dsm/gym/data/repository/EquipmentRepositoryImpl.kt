@@ -1,23 +1,18 @@
 package com.dsm.gym.data.repository
 
-import android.util.Log
 import com.dsm.gym.data.datasource.EquipmentDataSource
-import com.dsm.gym.data.mapper.EquipmentDataMapper
+import com.dsm.gym.data.entity.toDataEntity
 import com.dsm.gym.domain.entity.EquipmentEntity
 import com.dsm.gym.domain.repository.EquipmentRepository
-import io.reactivex.Flowable
-import retrofit2.Response
+import io.reactivex.Completable
 
 class EquipmentRepositoryImpl(
-    private val equipmentDataSource: EquipmentDataSource,
-    private val equipmentDataMapper: EquipmentDataMapper
+    private val equipmentDataSource: EquipmentDataSource
 ):EquipmentRepository{
-    override fun postDetailEquipment(equipment: EquipmentEntity): Flowable<Response<Unit>> {
-        return equipmentDataSource.postDetailEquipment(equipmentDataMapper.mapFrom(equipment))
-    }
-
-
-    override fun getAllEquipment(): Flowable<List<EquipmentEntity>> =
-        equipmentDataSource.getAllEquipment().map{list -> list.map { equipmentDataMapper.mapDataToEntity(it) }}
+    override fun postDetailEquipment(equipment: EquipmentEntity): Completable =
+        equipmentDataSource.postDetailEquipment(equipment.toDataEntity())
+//
+//    override fun getAllEquipment(): Flowable<List<EquipmentEntity>> =
+//        equipmentDataSource.getAllEquipment().map{list -> list.map { equipmentDataMapper.mapDataToEntity(it) }}
 
 }

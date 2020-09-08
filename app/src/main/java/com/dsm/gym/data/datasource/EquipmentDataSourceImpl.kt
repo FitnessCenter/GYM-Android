@@ -3,7 +3,6 @@ package com.dsm.gym.data.datasource
 import com.dsm.gym.data.entity.EquipmentData
 import com.dsm.gym.data.remote.Api
 import io.reactivex.Completable
-import io.reactivex.Flowable
 
 class EquipmentDataSourceImpl(
     private val api: Api

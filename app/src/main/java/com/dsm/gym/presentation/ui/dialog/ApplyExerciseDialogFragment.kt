@@ -1,6 +1,5 @@
 package com.dsm.gym.presentation.ui.dialog
 
-
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -10,8 +9,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.dsm.gym.R
 import kotlinx.android.synthetic.main.fragment_apply_exercise_dialog.view.*
-import kotlinx.android.synthetic.main.fragment_show_personnel_dialog.view.*
-
 
 class ApplyExerciseDialogFragment : DialogFragment() {
 

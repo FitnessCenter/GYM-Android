@@ -2,18 +2,14 @@ package com.dsm.gym.presentation.viewmodel.signup
 
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
-import com.dsm.gym.domain.base.ErrorHandlerEntity
 import com.dsm.gym.domain.base.Message
 import com.dsm.gym.domain.base.Result
-import com.dsm.gym.domain.entity.TokenEntity
 import com.dsm.gym.domain.usecase.SignUpUseCase
 import com.dsm.gym.presentation.base.BaseViewModel
 import com.dsm.gym.presentation.base.SingleLiveEvent
-import com.dsm.gym.presentation.mapper.UserMapper
 import com.dsm.gym.presentation.model.UserModel
 import com.dsm.gym.presentation.model.toEntity
 import io.reactivex.observers.DisposableSingleObserver
-import io.reactivex.subscribers.DisposableSubscriber
 
 
 class SignUpViewModel(

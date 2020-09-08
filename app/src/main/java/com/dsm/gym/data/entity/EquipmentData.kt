@@ -1,6 +1,5 @@
 package com.dsm.gym.data.entity
 
-import com.dsm.gym.domain.entity.AuthEntity
 import com.dsm.gym.domain.entity.EquipmentEntity
 import com.google.gson.annotations.SerializedName
 

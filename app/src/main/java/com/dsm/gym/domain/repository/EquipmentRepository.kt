@@ -1,11 +1,11 @@
 package com.dsm.gym.domain.repository
 
 import com.dsm.gym.domain.entity.EquipmentEntity
+import io.reactivex.Completable
 import io.reactivex.Flowable
-import retrofit2.Response
 
 interface EquipmentRepository {
-    fun postDetailEquipment(equipment: EquipmentEntity): Flowable<Response<Unit>>
+    fun postDetailEquipment(equipment: EquipmentEntity): Completable
 
-    fun getAllEquipment(): Flowable<List<EquipmentEntity>>
+//    fun getAllEquipment(): Flowable<List<EquipmentEntity>>
 }

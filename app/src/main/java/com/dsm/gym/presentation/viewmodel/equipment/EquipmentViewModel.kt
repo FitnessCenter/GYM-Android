@@ -1,22 +1,15 @@
 package com.dsm.gym.presentation.viewmodel.equipment
 
+import PostDetailEquipmentUseCase
 import android.util.Log
-import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.dsm.gym.domain.base.ErrorHandlerEntity
 import com.dsm.gym.domain.base.Message
 import com.dsm.gym.domain.base.Result
-import com.dsm.gym.domain.entity.EquipmentEntity
-import com.dsm.gym.domain.usecase.PostDetailEquipmentUseCase
 import com.dsm.gym.presentation.base.BaseViewModel
 import com.dsm.gym.presentation.base.SingleLiveEvent
-import com.dsm.gym.presentation.mapper.EquipmentMapper
 import com.dsm.gym.presentation.model.EquipmentModel
 import com.dsm.gym.presentation.model.toEntity
-import com.dsm.gym.presentation.util.getEquipmentPrice
 import io.reactivex.observers.DisposableSingleObserver
-import io.reactivex.subscribers.DisposableSubscriber
 
 class EquipmentViewModel(
     private val equipmentUseCase: PostDetailEquipmentUseCase
