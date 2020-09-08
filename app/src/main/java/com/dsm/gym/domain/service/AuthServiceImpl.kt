@@ -1,6 +1,6 @@
 package com.dsm.gym.domain.service
 
-import AuthRepository
+import com.dsm.gym.domain.repository.AuthRepository
 import com.dsm.gym.domain.base.ErrorHandler
 import com.dsm.gym.domain.base.Result
 import com.dsm.gym.domain.entity.AuthEntity

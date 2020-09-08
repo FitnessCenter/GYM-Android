@@ -1,3 +1,4 @@
+package com.dsm.gym.domain.usecase
 
 import com.dsm.gym.domain.base.Result
 import com.dsm.gym.domain.base.UseCase

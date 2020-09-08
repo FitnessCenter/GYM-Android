@@ -1,3 +1,5 @@
+package com.dsm.gym.domain.repository
+
 import com.dsm.gym.domain.entity.AuthEntity
 import com.dsm.gym.domain.entity.TokenEntity
 import com.dsm.gym.domain.entity.UserEntity
