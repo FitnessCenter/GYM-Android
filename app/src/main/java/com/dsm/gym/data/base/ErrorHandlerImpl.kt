@@ -19,9 +19,9 @@ class ErrorHandlerImpl: ErrorHandler {
                 403 -> FORBIDDEN
                 409 -> CONFLICT
                 500 -> SERVER_ERROR
-                else -> UNKNOW_ERROR
+                else -> UNKNOWN_ERROR
             }
             is ConnectException, is SocketTimeoutException, is UnknownHostException -> NETWORK_ERROR
-            else -> UNKNOW_ERROR
+            else -> UNKNOWN_ERROR
         }
 }

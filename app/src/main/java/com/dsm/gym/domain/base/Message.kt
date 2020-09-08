@@ -8,7 +8,7 @@ enum class Message {
     FORBIDDEN,
     NOT_FOUND,
     CONFLICT,
-    UNKNOW_ERROR,
+    UNKNOWN_ERROR,
     SERVER_ERROR,
     NETWORK_ERROR
 }
