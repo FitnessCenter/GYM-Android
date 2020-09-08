@@ -3,14 +3,16 @@ package com.dsm.gym.data.datasource
 import com.dsm.gym.data.entity.AuthData
 import com.dsm.gym.data.entity.TokenData
 import com.dsm.gym.data.entity.UserData
+import io.reactivex.Completable
 import io.reactivex.Flowable
+import io.reactivex.Single
 
 interface AuthDataSource{
-    fun postSignIn(auth: AuthData): Flowable<TokenData>
+    fun postSignIn(auth: AuthData): Single<TokenData>
 
-    fun postSignUp(user: UserData): Flowable<TokenData>
+    fun postSignUp(user: UserData): Completable
 
-    fun saveToken(token: String)
+    fun saveToken(token: String, isAccess: Boolean)
 
-    fun getToken(): String
+    fun getToken(isAccess: Boolean): String
 }
