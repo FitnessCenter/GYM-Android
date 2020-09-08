@@ -1,5 +1,6 @@
 package com.dsm.gym.data.entity
 
+import com.dsm.gym.domain.entity.AuthEntity
 import com.google.gson.annotations.SerializedName
 
 data class AuthData(
@@ -8,3 +9,15 @@ data class AuthData(
     @SerializedName("password")
     val password: String
 )
+
+fun AuthEntity.toDataEntity() =
+    AuthData(
+        id = id,
+        password = password
+    )
+
+fun AuthData.toEntity() =
+    AuthEntity(
+        id = id,
+        password = password
+    )

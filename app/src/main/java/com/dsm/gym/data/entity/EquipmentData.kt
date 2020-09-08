@@ -1,5 +1,7 @@
 package com.dsm.gym.data.entity
 
+import com.dsm.gym.domain.entity.AuthEntity
+import com.dsm.gym.domain.entity.EquipmentEntity
 import com.google.gson.annotations.SerializedName
 
 data class EquipmentData(
@@ -12,3 +14,19 @@ data class EquipmentData(
     @SerializedName("numberOfApply")
     val equipmentQuantity: Int = 0
 )
+
+fun EquipmentEntity.toDataEntity() =
+    EquipmentData(
+        equipmentName = equipmentName,
+        equipmentLink = equipmentLink,
+        equipmentPrice = equipmentPrice,
+        equipmentQuantity = equipmentQuantity
+    )
+
+fun EquipmentData.toEntity() =
+    EquipmentEntity(
+        equipmentName = equipmentName,
+        equipmentLink = equipmentLink,
+        equipmentPrice = equipmentPrice,
+        equipmentQuantity = equipmentQuantity
+    )
