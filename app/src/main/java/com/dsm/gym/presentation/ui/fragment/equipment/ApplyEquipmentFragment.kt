@@ -1,11 +1,11 @@
 package com.dsm.gym.presentation.ui.fragment.equipment
 
-import ApplyEquipmentDetailDialogFragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.dsm.gym.R
+import com.dsm.gym.presentation.ui.dialog.ApplyEquipmentDetailDialogFragment
 import com.dsm.gym.presentation.ui.fragment.base.EndPointDataBindingFragment
 import kotlinx.android.synthetic.main.fragment_apply_equipment.view.*
 

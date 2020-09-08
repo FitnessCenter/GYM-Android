@@ -3,13 +3,10 @@ package com.dsm.gym.presentation.ui.fragment.base
 import android.content.Context
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.dsm.gym.R
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.Subject
-import kotlinx.android.synthetic.main.fragment_main.*
 import splitties.toast.toast
 
 abstract class EndPointDataBindingFragment : Fragment() {

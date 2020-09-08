@@ -1,6 +1,6 @@
 package com.dsm.gym.presentation.di.module
 
-import com.dsm.gym.BuildConfig
+import androidx.databinding.library.BuildConfig
 import com.dsm.gym.data.remote.Api
 import com.dsm.gym.data.remote.AuthorizationInterceptor
 import okhttp3.OkHttpClient

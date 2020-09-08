@@ -67,7 +67,7 @@ class SignInViewModel(
                 idErrorEvent.value = "네트워크 오류가 발생했습니다"
                 passwordErrorEvent.value = "네트워크 오류가 발생했습니다"
             }
-            Message.UNKNOW_ERROR -> {
+            Message.UNKNOWN_ERROR -> {
                 idErrorEvent.value = "알 수 없는 오류가 발생했습니다"
                 passwordErrorEvent.value = "알 수 없는 오류가 발생했습니다"
             }

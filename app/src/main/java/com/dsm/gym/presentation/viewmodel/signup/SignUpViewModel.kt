@@ -85,7 +85,7 @@ class SignUpViewModel(
             Message.NETWORK_ERROR -> {
                 createToastEvent.value = "네트워크 오류가 발생했습니다"
             }
-            Message.UNKNOW_ERROR -> {
+            Message.UNKNOWN_ERROR -> {
                 createToastEvent.value = "알 수 없는 오류가 발생했습니다"
             }
             Message.CONFLICT -> {

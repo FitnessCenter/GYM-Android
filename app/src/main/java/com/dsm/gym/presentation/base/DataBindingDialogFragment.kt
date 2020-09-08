@@ -10,7 +10,7 @@ import androidx.fragment.app.DialogFragment
 
 abstract class DataBindingDialogFragment<T : ViewDataBinding> : DialogFragment() {
 
-    lateinit var rootView: View
+    private lateinit var rootView: View
     lateinit var binding: T
 
     abstract val layoutId: Int
