@@ -55,7 +55,7 @@ class EquipmentViewModel(
 
             Message.NETWORK_ERROR -> createToastEvent.value = "네트워크 오류가 발생했습니다"
 
-            Message.UNKNOW_ERROR -> createToastEvent.value = "알 수 없는 오류가 발생했습니다"
+            Message.UNKNOWN_ERROR -> createToastEvent.value = "알 수 없는 오류가 발생했습니다"
 
             else -> createToastEvent.value = "알 수 없는 오류가 발생했습니다"
         }

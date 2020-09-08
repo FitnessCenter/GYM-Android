@@ -1,3 +1,5 @@
+package com.dsm.gym.presentation.ui.dialog
+
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
