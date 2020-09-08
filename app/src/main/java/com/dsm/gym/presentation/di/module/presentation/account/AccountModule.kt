@@ -7,6 +7,6 @@ import org.koin.core.module.Module
 import org.koin.dsl.module
 
 val accountModule: Module = module {
-    viewModel { SignUpViewModel(get(), get()) }
-    viewModel { SignInViewModel(get(), get()) }
+    viewModel { SignUpViewModel(get()) }
+    viewModel { SignInViewModel(get()) }
 }

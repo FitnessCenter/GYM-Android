@@ -20,10 +20,21 @@
         app:layout_constraintStart_toStartOf="@+id/equipment_gl_left"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/apply_equipment_swipe_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/apply_equipment_rv"
+        app:layout_constraintEnd_toEndOf="@id/equipment_gl_right"
+        app:layout_constraintStart_toStartOf="@+id/equipment_gl_left"
+        app:layout_constraintTop_toBottomOf="@+id/equipment_title_tv" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/apply_equipment_rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintBottom_toTopOf="@+id/equipment_gl_bottom"
         app:layout_constraintEnd_toStartOf="@+id/equipment_gl_right"
         app:layout_constraintStart_toStartOf="@+id/equipment_gl_left"
@@ -37,6 +48,7 @@
         android:backgroundTint="@color/colorWhite"
         android:src="@drawable/ic_add"
         app:borderWidth="2dp"
+        app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/equipment_gl_right"
         app:layout_constraintStart_toStartOf="@+id/equipment_gl_left"
