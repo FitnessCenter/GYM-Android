@@ -1,71 +1,73 @@
 package com.dsm.gym.presentation.viewmodel.equipment
 
 import android.util.Log
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.dsm.gym.domain.base.ErrorHandlerEntity
+import com.dsm.gym.domain.base.Message
+import com.dsm.gym.domain.base.Result
 import com.dsm.gym.domain.entity.EquipmentEntity
 import com.dsm.gym.domain.usecase.PostDetailEquipmentUseCase
 import com.dsm.gym.presentation.base.BaseViewModel
 import com.dsm.gym.presentation.base.SingleLiveEvent
 import com.dsm.gym.presentation.mapper.EquipmentMapper
 import com.dsm.gym.presentation.model.EquipmentModel
+import com.dsm.gym.presentation.model.toEntity
+import com.dsm.gym.presentation.util.getEquipmentPrice
+import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.subscribers.DisposableSubscriber
 
 class EquipmentViewModel(
-    private val equipmentUseCase: PostDetailEquipmentUseCase,
-    private val equipmentMapper: EquipmentMapper
+    private val equipmentUseCase: PostDetailEquipmentUseCase
 ): BaseViewModel(){
 
     val equipmentName = MutableLiveData<String>()
     val equipmentLink = MutableLiveData<String>()
-    val equipmentPrice = MutableLiveData(1)
-    val equipmentQuantity = MutableLiveData(1)
+    val equipmentPrice = MutableLiveData<Int>().apply { postValue(9) }
+    val equipmentQuantity = MutableLiveData<Int>().apply { postValue(9) }
 
-    //val goMainEquipmentPage = SingleLiveEvent<Unit>()
+    val goMainEquipmentPage = SingleLiveEvent<Unit>()
     val closeDialog = SingleLiveEvent<Unit>()
 
     fun clickApplyEquipment() {
-//        equipmentPrice.postValue(equipmentPrice.value!!)
 
         val equipmentModel = EquipmentModel(equipmentName.value!!,equipmentLink.value!!,equipmentPrice.value!! ,equipmentQuantity.value!!)
-        Log.d("hi","${equipmentMapper.mapFrom(equipmentModel)} || $equipmentModel")
 
-        equipmentUseCase.execute(equipmentMapper.mapFrom(equipmentModel), object:DisposableSubscriber<Pair<EquipmentEntity,ErrorHandlerEntity>>(){
-            override fun onNext(t: Pair<EquipmentEntity, ErrorHandlerEntity>) {
-                if(t.second.isSuccess) {
-                    Log.d("equipmentSuccess","asldfas")
-                    applySuccess("success")
-                }
-                else {
-                    Log.d("why","${t.second.isSuccess}")
-                    Log.d("equipmentFail","${t.second.message} + sd")
-                    applyFail(t.second.message)
+        equipmentUseCase.execute(equipmentModel.toEntity(),object: DisposableSingleObserver<Result<Unit>>(){
+            override fun onSuccess(result: Result<Unit>) {
+                when (result) {
+                    is Result.Success -> applySuccess()
+                    is Result.Error -> applyFail(result)
                 }
             }
 
-            override fun onError(t: Throwable?) {
-
-            }
-
-            override fun onComplete() {
-
+            override fun onError(e: Throwable) {
+                createToastEvent.value = "알 수 없는 오류가 발생했습니다"
             }
 
         })
+
     }
 
-    fun applySuccess(message: String){
-        createToastEvent.value = message
+    fun applySuccess(){
+        Log.d("df","jhi")
+        createToastEvent.value = "기구신청 성공"
+        goMainEquipmentPage.call()
     }
 
-    fun applyFail(message:String){
-        createToastEvent.value = message
+    fun applyFail(result:Result.Error<Unit>){
+        when(result.message) {
+            Message.SERVER_ERROR -> createToastEvent.value = "서버 오류가 발생했습니다"
+
+            Message.NETWORK_ERROR -> createToastEvent.value = "네트워크 오류가 발생했습니다"
+
+            Message.UNKNOW_ERROR -> createToastEvent.value = "알 수 없는 오류가 발생했습니다"
+
+            else -> createToastEvent.value = "알 수 없는 오류가 발생했습니다"
+        }
     }
 
-    fun closeDialog(){
-        Log.d("dfd","dfd")
-        closeDialog.call()
-    }
+    fun closeDialog()= closeDialog.call()
 }
 
