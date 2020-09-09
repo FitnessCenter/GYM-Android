@@ -34,6 +34,7 @@ class SignInViewModel(
         signInUseCase.execute(
             auth.toEntity(), object : DisposableSingleObserver<Result<Unit>>() {
                 override fun onSuccess(result: Result<Unit>) {
+                    Log.d("signIn Result",result.toString())
                     when (result) {
                         is Result.Success -> onSuccessSignIn()
                         is Result.Error -> onErrorSignIn(result)

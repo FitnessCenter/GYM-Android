@@ -9,7 +9,7 @@
 
         <variable
             name="vm"
-            type="com.dsm.gym.presentation.viewmodel.equipment.EquipmentViewModel" />
+            type="com.dsm.gym.presentation.viewmodel.equipment.EquipmentDetailViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -115,7 +115,7 @@
                         android:fontFamily="@font/notosanscjkkrregular"
                         android:includeFontPadding="false"
                         android:inputType="number"
-                        android:text="@{DataBindingUtilKt.getEquipmentPrice(vm.equipmentPrice)}"
+                        android:text="@={vm.equipmentPrice}"
                         android:textSize="13sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -141,7 +141,7 @@
                         android:fontFamily="@font/notosanscjkkrregular"
                         android:includeFontPadding="false"
                         android:inputType="number"
-                        android:text="@{DataBindingUtilKt.getEquipmentQuantity(vm.equipmentQuantity)"
+                        android:text="@={vm.equipmentQuantity}"
                         android:textSize="13sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
