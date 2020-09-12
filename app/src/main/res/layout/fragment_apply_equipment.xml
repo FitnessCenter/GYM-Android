@@ -12,17 +12,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorWhite"
         tools:context=".presentation.ui.fragment.equipment.ApplyEquipmentFragment">
-
-        <Button
-            android:id="@+id/test_btn"
-            android:onClick="@{()->vm.getData()}"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/apply_equipment_swipe_layout"
-            app:layout_constraintEnd_toStartOf="@+id/equipment_gl_right"
-            app:layout_constraintStart_toEndOf="@+id/equipment_title_tv"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/equipment_title_tv"
@@ -38,26 +29,17 @@
             app:layout_constraintStart_toStartOf="@+id/equipment_gl_left"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/apply_equipment_swipe_layout"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="48dp"
-            app:layout_constraintBottom_toBottomOf="@+id/apply_equipment_rv"
-            app:layout_constraintEnd_toEndOf="@id/equipment_gl_right"
-            app:layout_constraintStart_toStartOf="@+id/equipment_gl_left"
-            app:layout_constraintTop_toBottomOf="@+id/equipment_title_tv" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/apply_equipment_rv"
+            android:id="@+id/equipment_list"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:equipmentItems="@{vm.equipmentList}"
             android:layout_marginTop="48dp"
             app:layout_constraintBottom_toTopOf="@+id/equipment_gl_bottom"
             app:layout_constraintEnd_toStartOf="@+id/equipment_gl_right"
             app:layout_constraintStart_toStartOf="@+id/equipment_gl_left"
-            app:layout_constraintTop_toBottomOf="@+id/equipment_title_tv"
-            tools:listitem="@layout/item_apply_equipment" />
+            app:layout_constraintTop_toBottomOf="@+id/equipment_title_tv" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_equipment_btn"
