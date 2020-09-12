@@ -1,11 +1,13 @@
 package com.dsm.gym.presentation.ui.fragment.equipment
 
+import android.content.ClipboardManager
+import android.content.Context.CLIPBOARD_SERVICE
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.dsm.gym.R
 import com.dsm.gym.databinding.FragmentApplyEquipmentBinding
+import com.dsm.gym.presentation.adapter.EquipmentListAdapter
 import com.dsm.gym.presentation.base.EndPointDataBindingFragment
 import com.dsm.gym.presentation.ui.dialog.ApplyEquipmentDetailDialogFragment
 import com.dsm.gym.presentation.viewmodel.equipment.EquipmentListViewModel
@@ -21,8 +23,10 @@ class ApplyEquipmentFragment : EndPointDataBindingFragment<FragmentApplyEquipmen
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.vm = viewModel
+
+        binding.equipmentList.layoutManager = LinearLayoutManager(context)
+        binding.equipmentList.adapter = EquipmentListAdapter(viewModel)
 
         view.add_equipment_btn.setOnClickListener {
             showDialog()
