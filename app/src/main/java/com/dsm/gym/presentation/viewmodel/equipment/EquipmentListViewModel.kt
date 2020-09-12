@@ -32,7 +32,7 @@ class EquipmentListViewModel(
             }
 
             override fun onError(e: Throwable) {
-                Log.d("fail",e.message.toString())
+                createToastEvent.value = "알 수 없는 오류가 발생했습니다"
             }
 
         })
