@@ -1,8 +1,6 @@
 package com.dsm.gym.data.remote
 
-import io.reactivex.Flowable
 import com.dsm.gym.data.entity.*
-import com.dsm.gym.data.response.GetListEquipmentResponse
 import io.reactivex.Completable
 import io.reactivex.Single
 import retrofit2.http.Body
@@ -20,5 +18,5 @@ interface Api {
     fun postDetailEquipment(@Body body: Any?): Completable
 
     @GET("/equipment-applies")
-    fun getAllEquipment(): Single<GetListEquipmentResponse>
+    fun getAllEquipment(): Single<List<EquipmentListData>>
 }

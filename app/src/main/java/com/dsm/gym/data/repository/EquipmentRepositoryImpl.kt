@@ -17,7 +17,6 @@ class EquipmentRepositoryImpl(
 
     override fun getAllEquipment(): Single<List<EquipmentListEntity>> =
         equipmentDataSource.getAllEquipment().map{ it ->
-            it.equipmentList.map{ it.toEntity() }
+            it.map{ it.toEntity() }
         }
-
 }
