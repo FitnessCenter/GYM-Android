@@ -20,22 +20,11 @@ data class EquipmentListData(
     val appliedUser:AppliedUserData
 )
 
-fun EquipmentListEntity.toDataEntity() =
-    EquipmentListData(
-        id = id,
-        numberOfApply = numberOfApply,
-        price = price,
-        equipmentName = equipmentName,
-        sex = sex,
-        purchaseLink = purchaseLink,
-        appliedUser = appliedUser
-    )
-
 fun EquipmentListData.toEntity() =
     EquipmentListEntity(
         id = id,
-        numberOfApply = numberOfApply,
-        price = price,
+        numberOfApply = numberOfApply.toString(),
+        price = price.toString(),
         equipmentName = equipmentName,
         sex = sex,
         purchaseLink = purchaseLink,

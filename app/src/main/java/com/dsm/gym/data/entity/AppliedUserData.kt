@@ -7,14 +7,8 @@ data class AppliedUserData(
     val studentName: String = ""
 )
 
-fun AppliedUserEntity.toDataEntity() =
-    AppliedUserData(
-        studentNumber = studentNumber,
-        studentName = studentName
-    )
-
 fun AppliedUserData.toEntity() =
     AppliedUserEntity(
-        studentNumber = studentNumber,
+        studentNumber = studentNumber.toString(),
         studentName = studentName
     )

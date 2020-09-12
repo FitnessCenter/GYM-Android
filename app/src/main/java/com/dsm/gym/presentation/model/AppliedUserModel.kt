@@ -9,12 +9,6 @@ data class AppliedUserModel(
 
 fun AppliedUserModel.toEntity() =
     AppliedUserEntity(
-        studentNumber = studentNumber,
-        studentName = studentName
-    )
-
-fun AppliedUserEntity.toModel() =
-    AppliedUserModel(
-        studentNumber = studentNumber,
+        studentNumber = studentNumber.toString(),
         studentName = studentName
     )

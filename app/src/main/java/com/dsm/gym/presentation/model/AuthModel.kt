@@ -12,9 +12,3 @@ fun AuthModel.toEntity() =
         id = id,
         password = password
     )
-
-fun AuthEntity.toModel() =
-    AuthModel(
-        id = id,
-        password = password
-    )

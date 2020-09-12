@@ -10,12 +10,6 @@ data class TokenData(
     val refreshToken: String
 )
 
-fun TokenEntity.toDataToken() =
-    TokenData(
-        accessToken = accessToken,
-        refreshToken = refreshToken
-    )
-
 fun TokenData.toEntity() =
     TokenEntity(
         accessToken = accessToken,
