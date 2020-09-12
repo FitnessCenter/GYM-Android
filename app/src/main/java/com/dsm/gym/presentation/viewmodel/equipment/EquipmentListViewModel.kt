@@ -1,6 +1,5 @@
 package com.dsm.gym.presentation.viewmodel.equipment
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.dsm.gym.domain.base.Message
 import com.dsm.gym.domain.base.Result
@@ -40,7 +39,6 @@ class EquipmentListViewModel(
 
     fun getListSuccess(equipmentList: List<EquipmentListModel>) {
         this.equipmentList.value = ArrayList(equipmentList)
-        Log.d("vcddfaa",this.equipmentList.value.toString())
     }
 
     fun getListFail(result: Message, equipmentList: List<EquipmentListModel>) {
