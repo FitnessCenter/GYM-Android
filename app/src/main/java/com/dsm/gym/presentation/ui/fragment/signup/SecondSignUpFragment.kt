@@ -38,5 +38,6 @@ class SecondSignUpFragment : EndPointDataBindingFragment<FragmentSecondSignupBin
     private fun getArgSignUpData() {
         viewModel.studentNumberText.value = arguments?.getString("studentNumber")
         viewModel.studentNameText.value = arguments?.getString("studentName")
+        viewModel.sex.value = arguments?.getBoolean("sex")
     }
 }
