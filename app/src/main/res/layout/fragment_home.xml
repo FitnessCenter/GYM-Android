@@ -61,7 +61,7 @@
                     android:layout_marginStart="30dp"
                     android:fontFamily="@font/notosanscjkkrmedium"
                     android:includeFontPadding="false"
-                    android:text="9 : 30 ~ 10 : 30 에 \n운동을 신청하셨습니다. "
+                    android:text="@{homeVm.exerciseTimeText}"
                     android:textColor="@color/colorBlack"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"

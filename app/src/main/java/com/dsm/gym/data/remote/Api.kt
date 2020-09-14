@@ -25,4 +25,7 @@ interface Api {
 
     @GET("/account")
     fun getUserInfo(): Single<UserInfoData>
+
+    @GET("/exercise-applies/my")
+    fun getApplyTime(): Single<ExerciseTimeData>
 }
