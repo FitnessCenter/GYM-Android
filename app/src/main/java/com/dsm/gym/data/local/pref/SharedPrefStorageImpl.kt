@@ -14,7 +14,7 @@ class SharedPrefStorageImpl(val context: Context) : SharedPrefStorage{
     }}
 
     override fun getToken(): String =
-        "${getPref(context).getString(getKey(),"")}"
+        "Bearer ${getPref(context).getString(getKey(),"")}"
 
     override fun removeToken() =
         getPref(context).edit().let {
