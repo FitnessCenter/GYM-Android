@@ -1,14 +1,13 @@
 package com.dsm.gym.presentation.ui.dialog
 
 
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.Observer
 import com.dsm.gym.R
 import com.dsm.gym.databinding.FragmentApplyExerciseDialogBinding
 import com.dsm.gym.presentation.base.BaseViewModel
@@ -34,6 +33,9 @@ class ApplyExerciseDialogFragment : DataBindingDialogFragment<FragmentApplyExerc
     }
 
     override fun observeEvent() {
+        viewModel.dismissDialogEvent.observe(viewLifecycleOwner, Observer {
+            dialog!!.dismiss()
+        })
 
     }
 
