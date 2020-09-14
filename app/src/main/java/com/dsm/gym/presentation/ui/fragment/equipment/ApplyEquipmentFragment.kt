@@ -1,7 +1,5 @@
 package com.dsm.gym.presentation.ui.fragment.equipment
 
-import android.content.ClipboardManager
-import android.content.Context.CLIPBOARD_SERVICE
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
