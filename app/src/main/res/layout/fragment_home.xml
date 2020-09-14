@@ -48,7 +48,7 @@
                     android:layout_marginTop="30dp"
                     android:fontFamily="@font/notosanscjkkrbold"
                     android:includeFontPadding="false"
-                    android:text="@string/home_user_name_text"
+                    android:text="@{@string/home_user_name_text(homeVm.userNameText)}"
                     android:textColor="@color/colorDefault"
                     android:textSize="22sp"
                     app:layout_constraintStart_toStartOf="parent"
