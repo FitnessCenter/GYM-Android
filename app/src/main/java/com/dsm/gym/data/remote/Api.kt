@@ -19,4 +19,7 @@ interface Api {
 
     @GET("/equipment-applies")
     fun getAllEquipment(): Single<List<EquipmentListData>>
+
+    @GET("/exercise-apply/my/number-of-days-exercised")
+    fun getNumOfDaysExercised(): Single<ExerciseTimeData>
 }
