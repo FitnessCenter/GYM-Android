@@ -3,6 +3,7 @@ package com.dsm.gym.domain.service
 import com.dsm.gym.domain.base.ErrorHandler
 import com.dsm.gym.domain.base.Result
 import com.dsm.gym.domain.entity.ExerciseTimeEntity
+import com.dsm.gym.domain.entity.UserInfoEntity
 import com.dsm.gym.domain.repository.HomePageRepository
 import com.dsm.gym.domain.toResult
 import io.reactivex.Single
@@ -13,4 +14,7 @@ class HomePageServiceImpl(
 ): HomePageService{
     override fun getNumOfDaysExercised(): Single<Result<ExerciseTimeEntity>> =
         repository.getNumOfDaysExercised().toResult(handler)
+
+    override fun getUserInfo(): Single<Result<UserInfoEntity>> =
+        repository.getUserInfo().toResult(handler)
 }
