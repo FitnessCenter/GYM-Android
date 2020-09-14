@@ -2,7 +2,6 @@ package com.dsm.gym.presentation.viewmodel.signup
 
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
-import com.dsm.gym.R
 import com.dsm.gym.domain.base.Message
 import com.dsm.gym.domain.base.Result
 import com.dsm.gym.domain.usecase.SignUpUseCase
@@ -113,8 +112,8 @@ class SignUpViewModel(
 
     fun onSplitTypeChanged(id: Int) {
         when(id){
-            R.id.register_man_radio_btn -> sex.value = true
-            R.id.register_woman_radio_btn -> sex.value = false
+            1 -> sex.value = true
+            2 -> sex.value = false
         }
     }
 
