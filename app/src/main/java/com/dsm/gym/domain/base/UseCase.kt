@@ -6,11 +6,11 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 
-abstract class UseCase<T, E>(val composite: CompositeDisposable) {
+abstract class UseCase<T, E>(private val composite: CompositeDisposable) {
 
-    abstract fun create(data: E): Single<T>
+    abstract fun create(data: T): Single<E>
 
-    fun execute(data: E, singleObserver : DisposableSingleObserver<T>) {
+    fun execute(data: T, singleObserver: DisposableSingleObserver<E>) {
         val observer = create(data)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -18,6 +18,4 @@ abstract class UseCase<T, E>(val composite: CompositeDisposable) {
 
         composite.add(observer)
     }
-
-    fun clear() = composite.clear()
 }

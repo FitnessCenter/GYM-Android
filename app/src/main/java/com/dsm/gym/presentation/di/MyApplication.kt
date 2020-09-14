@@ -2,6 +2,9 @@ package com.dsm.gym.presentation.di
 
 import android.app.Application
 import com.dsm.gym.presentation.di.module.networkModule
+import com.dsm.gym.presentation.di.module.account.accountModule
+import com.dsm.gym.presentation.di.module.equipment.equipmentModule
+import com.dsm.gym.presentation.di.module.util.utilModule
 import com.dsm.gym.presentation.di.module.presentation.account.accountModule
 import com.dsm.gym.presentation.di.module.data.dataModule
 import com.dsm.gym.presentation.di.module.data.repositoryModule
@@ -20,6 +23,9 @@ class MyApplication : Application() {
                 listOf(
                     accountModule,
                     networkModule,
+                    equipmentModule,
+
+                    utilModule
                     repositoryModule,
                     dataModule,
                     useCaseModule,

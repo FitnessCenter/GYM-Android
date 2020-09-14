@@ -4,9 +4,9 @@ import com.dsm.gym.domain.entity.UserEntity
 import com.google.gson.annotations.SerializedName
 
 data class UserData(
-    @SerializedName("student_number")
+    @SerializedName("studentNumber")
     val studentNumber: String,
-    @SerializedName("student_name")
+    @SerializedName("studentName")
     val studentName: String,
     @SerializedName("id")
     val id: String,
