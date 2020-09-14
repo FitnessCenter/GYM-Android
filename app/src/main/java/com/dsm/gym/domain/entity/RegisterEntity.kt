@@ -1,6 +1,6 @@
 package com.dsm.gym.domain.entity
 
-data class UserEntity(
+data class RegisterEntity(
     val studentNumber: String = "",
     val studentName: String = "",
     val id: String = "",

@@ -5,7 +5,7 @@ import com.dsm.gym.data.entity.toDataEntity
 import com.dsm.gym.data.entity.toEntity
 import com.dsm.gym.domain.entity.AuthEntity
 import com.dsm.gym.domain.entity.TokenEntity
-import com.dsm.gym.domain.entity.UserEntity
+import com.dsm.gym.domain.entity.RegisterEntity
 import com.dsm.gym.domain.repository.AuthRepository
 import io.reactivex.Completable
 import io.reactivex.Single
@@ -16,7 +16,7 @@ class AuthRepositoryImpl(
     override fun signIn(auth: AuthEntity): Single<TokenEntity>
         = authDataSource.postSignIn(auth.toDataEntity()).map { it.toEntity() }
 
-    override fun signUp(user: UserEntity): Completable =
+    override fun signUp(user: RegisterEntity): Completable =
         authDataSource.postSignUp(user.toDataEntity())
 
     override fun saveToken(token: String, isAccess: Boolean) =
