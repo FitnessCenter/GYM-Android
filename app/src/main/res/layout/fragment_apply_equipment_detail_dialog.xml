@@ -5,8 +5,6 @@
 
     <data>
 
-        <import type="com.dsm.gym.presentation.util.DataBindingUtilKt" />
-
         <variable
             name="vm"
             type="com.dsm.gym.presentation.viewmodel.equipment.EquipmentDetailViewModel" />
