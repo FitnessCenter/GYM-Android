@@ -16,11 +16,3 @@ fun EquipmentModel.toEntity() =
         equipmentPrice = equipmentPrice,
         equipmentQuantity = equipmentQuantity
     )
-
-fun EquipmentEntity.toModel() =
-    EquipmentModel(
-        equipmentName = equipmentName,
-        equipmentLink = equipmentLink,
-        equipmentPrice = equipmentPrice,
-        equipmentQuantity = equipmentQuantity
-    )

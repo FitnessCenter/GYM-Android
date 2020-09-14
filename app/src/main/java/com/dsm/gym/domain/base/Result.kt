@@ -10,3 +10,4 @@ sealed class Result<T> {
     ): Result<T>()
 
 }
+

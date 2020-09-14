@@ -1,7 +1,6 @@
 package com.dsm.gym.domain.base
 
 enum class Message {
-    OK,
     NO_CONTENT,
     INVALID,
     UNAUTHORIZED,

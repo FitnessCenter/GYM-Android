@@ -11,21 +11,24 @@ import com.dsm.gym.presentation.model.EquipmentModel
 import com.dsm.gym.presentation.model.toEntity
 import io.reactivex.observers.DisposableSingleObserver
 
-class EquipmentViewModel(
+class EquipmentDetailViewModel(
     private val equipmentUseCase: PostDetailEquipmentUseCase
 ): BaseViewModel(){
 
     val equipmentName = MutableLiveData<String>()
     val equipmentLink = MutableLiveData<String>()
-    val equipmentPrice = MutableLiveData<Int>().apply { postValue(9) }
-    val equipmentQuantity = MutableLiveData<Int>().apply { postValue(9) }
+    val equipmentPrice = MutableLiveData<String>()
+    val equipmentQuantity = MutableLiveData<String>()
 
     val goMainEquipmentPage = SingleLiveEvent<Unit>()
     val closeDialog = SingleLiveEvent<Unit>()
 
     fun clickApplyEquipment() {
 
-        val equipmentModel = EquipmentModel(equipmentName.value!!,equipmentLink.value!!,equipmentPrice.value!! ,equipmentQuantity.value!!)
+        val equipmentPrice = equipmentPrice.value!!.toInt()
+        val equipmentQuantity = equipmentQuantity.value!!.toInt()
+
+        val equipmentModel = EquipmentModel(equipmentName.value!!,equipmentLink.value!!,equipmentPrice ,equipmentQuantity )
 
         equipmentUseCase.execute(equipmentModel.toEntity(),object: DisposableSingleObserver<Result<Unit>>(){
             override fun onSuccess(result: Result<Unit>) {

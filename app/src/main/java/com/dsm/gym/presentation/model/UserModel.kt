@@ -19,12 +19,3 @@ fun UserModel.toEntity() =
         studentNumber = studentNumber,
         sex = sex
     )
-
-fun UserEntity.toModel() =
-    UserModel(
-        id = id,
-        password = password,
-        studentNumber = studentNumber,
-        studentName = studentName,
-        sex = sex
-    )

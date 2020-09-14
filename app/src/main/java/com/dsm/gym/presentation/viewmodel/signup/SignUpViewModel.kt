@@ -2,6 +2,7 @@ package com.dsm.gym.presentation.viewmodel.signup
 
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
+import com.dsm.gym.R
 import com.dsm.gym.domain.base.Message
 import com.dsm.gym.domain.base.Result
 import com.dsm.gym.domain.usecase.SignUpUseCase
@@ -20,7 +21,7 @@ class SignUpViewModel(
     val idText = MutableLiveData<String>()
     val passwordText = MutableLiveData<String>()
     val passwordCheckText = MutableLiveData<String>()
-    val sex = MutableLiveData<Int>()
+    var sex = MutableLiveData<Boolean>()
 
     val btnNextClickable = MediatorLiveData<Boolean>().apply {
         addSource(studentNumberText) { value = checkFirstFullText() }
@@ -44,14 +45,6 @@ class SignUpViewModel(
 
     private fun checkCompleteFullText(): Boolean =
         idText.isNotValueBlank() && passwordText.isNotValueBlank() && passwordCheckText.isNotValueBlank()
-
-//    fun onRadioButtonClicked(v: View){
-//        Log.d("gd","dfd")
-//        when(v.id){
-//            R.id.register_man_radio_btn -> sex.postValue(1)
-//            R.id.register_woman_radio_btn -> sex.postValue(0)
-//        }
-//    }
 
     fun clickSignUpNext() {
         startSecondSignUpEvent.call()
@@ -79,7 +72,7 @@ class SignUpViewModel(
 
     private fun onErrorSignUp(result: Result.Error<Unit>) {
         when(result.message) {
-            Message.SERVER_ERROR ->{
+            Message.SERVER_ERROR -> {
                 createToastEvent.value = "서버 오류가 발생했습니다"
             }
             Message.NETWORK_ERROR -> {
@@ -102,17 +95,27 @@ class SignUpViewModel(
             passwordErrorEvent.value = "비밀번호와 비밀번호 확인이 일치하지 않습니다"
             passwordCheckErrorEvent.value = "비밀번호와 비밀번호 확인이 일치하지 않습니다"
         } else {
-            signUp(UserModel(
-                studentNumber = studentNumberText.value!!,
-                studentName = studentNameText.value!!,
-                id = idText.value!!,
-                password = passwordText.value!!,
-                sex = true
-            ))
+            signUp(
+                UserModel(
+                    studentNumber = studentNumberText.value!!,
+                    studentName = studentNameText.value!!,
+                    id = idText.value!!,
+                    password = passwordText.value!!,
+                    sex = sex.value!!
+                )
+            )
         }
     }
 
     fun clickSignUpComplete(){
         startSignInEvent.call()
     }
+
+    fun onSplitTypeChanged(id: Int) {
+        when(id){
+            R.id.register_man_radio_btn -> sex.value = true
+            R.id.register_woman_radio_btn -> sex.value = false
+        }
+    }
+
 }

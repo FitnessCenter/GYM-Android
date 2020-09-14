@@ -1,6 +1,5 @@
 package com.dsm.gym.data.remote
 
-import io.reactivex.Flowable
 import com.dsm.gym.data.entity.*
 import io.reactivex.Completable
 import io.reactivex.Single
@@ -19,5 +18,5 @@ interface Api {
     fun postDetailEquipment(@Body body: Any?): Completable
 
     @GET("/equipment-applies")
-    fun getAllEquipment(): Flowable<List<EquipmentData>>
+    fun getAllEquipment(): Single<List<EquipmentListData>>
 }
