@@ -1,18 +1,17 @@
 package com.dsm.gym.presentation.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.dsm.gym.R
 import com.dsm.gym.presentation.ui.dialog.LogoutDialogFragment
-import com.dsm.gym.presentation.ui.fragment.base.EndPointDataBindingFragment
 import kotlinx.android.synthetic.main.fragment_my_page.view.*
 
 
-class MyPageFragment : EndPointDataBindingFragment() {
+class MyPageFragment : Fragment() {
 
 
     override fun onCreateView(
