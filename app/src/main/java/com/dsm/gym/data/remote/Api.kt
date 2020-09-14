@@ -22,4 +22,7 @@ interface Api {
 
     @GET("/exercise-applies/my/number-of-days-exercised")
     fun getNumOfDaysExercised(): Single<ExerciseTimeData>
+
+    @GET("/account")
+    fun getUserInfo(): Single<UserInfoData>
 }
