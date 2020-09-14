@@ -10,5 +10,5 @@ data class ExerciseDayData(
 
 fun ExerciseDayData.toEntity() =
     ExerciseDayEntity(
-        exerciseTime = numOfExerciseDay
+        numOfExerciseDay = numOfExerciseDay
     )
