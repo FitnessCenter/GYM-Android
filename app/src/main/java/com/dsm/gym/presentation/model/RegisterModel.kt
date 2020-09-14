@@ -1,8 +1,8 @@
 package com.dsm.gym.presentation.model
 
-import com.dsm.gym.domain.entity.UserEntity
+import com.dsm.gym.domain.entity.RegisterEntity
 
-data class UserModel(
+data class RegisterModel(
     val studentNumber: String = "",
     val studentName: String = "",
     val id: String = "",
@@ -11,8 +11,8 @@ data class UserModel(
 )
 
 
-fun UserModel.toEntity() =
-    UserEntity(
+fun RegisterModel.toEntity() =
+    RegisterEntity(
         id = id,
         password = password,
         studentName = studentName,

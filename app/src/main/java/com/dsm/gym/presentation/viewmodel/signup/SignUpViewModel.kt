@@ -7,7 +7,7 @@ import com.dsm.gym.domain.base.Result
 import com.dsm.gym.domain.usecase.SignUpUseCase
 import com.dsm.gym.presentation.base.BaseViewModel
 import com.dsm.gym.presentation.base.SingleLiveEvent
-import com.dsm.gym.presentation.model.UserModel
+import com.dsm.gym.presentation.model.RegisterModel
 import com.dsm.gym.presentation.model.toEntity
 import io.reactivex.observers.DisposableSingleObserver
 
@@ -49,7 +49,7 @@ class SignUpViewModel(
         startSecondSignUpEvent.call()
     }
 
-    private fun signUp(user: UserModel) {
+    private fun signUp(user: RegisterModel) {
         signUpUseCase.execute(user.toEntity(), object : DisposableSingleObserver<Result<Unit>>() {
             override fun onSuccess(result: Result<Unit>) {
                 when (result) {
@@ -95,7 +95,7 @@ class SignUpViewModel(
             passwordCheckErrorEvent.value = "비밀번호와 비밀번호 확인이 일치하지 않습니다"
         } else {
             signUp(
-                UserModel(
+                RegisterModel(
                     studentNumber = studentNumberText.value!!,
                     studentName = studentNameText.value!!,
                     id = idText.value!!,
