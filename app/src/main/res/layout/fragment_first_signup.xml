@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="firstVm"
+            type="com.dsm.gym.presentation.viewmodel.signup.SignUpViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorDefault"
+        tools:context=".presentation.ui.fragment.signup.FirstSignUpFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:background="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/back_layout_half_round"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/signup_first_gl_top"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/register_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                android:fontFamily="@font/notosanscjkkrbold"
+                android:includeFontPadding="false"
+                android:text="@string/register_text"
+                android:textColor="@color/colorDefault"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/signup_first_gl_left"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/signup_student_number_edit_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:hint=" "
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/signup_first_gl_right"
+                app:layout_constraintStart_toStartOf="@+id/signup_first_gl_left"
+                app:layout_constraintTop_toBottomOf="@+id/register_title_tv">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/signup_student_number_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/register_focused"
+                    android:drawablePadding="16dp"
+                    android:fontFamily="@font/notosanscjkkrregular"
+                    android:hint="@string/register_school_number_hint"
+                    android:includeFontPadding="false"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:text="@={firstVm.studentNumberText}"
+                    android:textColor="@color/colorBlack"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/apply_equipment_detail_link_layout" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/signup_student_name_edit_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint=" "
+                app:counterMaxLength="16"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/signup_first_gl_right"
+                app:layout_constraintStart_toStartOf="@+id/signup_first_gl_left"
+                app:layout_constraintTop_toBottomOf="@+id/signup_student_number_edit_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/signup_student_name_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/register_focused"
+                    android:drawablePadding="16dp"
+                    android:fontFamily="@font/notosanscjkkrregular"
+                    android:hint="@string/register_name_hint"
+                    android:includeFontPadding="false"
+                    android:inputType="text"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:text="@={firstVm.studentNameText}"
+                    android:textColor="@color/colorBlack"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/register_school_number_edit_layout" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/signup_sex_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/notosanscjkkrmedium"
+                android:includeFontPadding="false"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:text="@string/register_gender_text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/signup_first_gl_left"
+                app:layout_constraintTop_toBottomOf="@+id/signup_student_name_edit_layout" />
+
+            <RadioGroup
+                android:id="@+id/register_gender_radio_group"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:onCheckedChanged="@{firstVm.onSplitTypeChanged}"
+                app:layout_constraintEnd_toStartOf="@+id/signup_first_gl_right"
+                app:layout_constraintStart_toStartOf="@+id/signup_first_gl_left"
+                app:layout_constraintTop_toBottomOf="@+id/signup_sex_title">
+
+                <RadioButton
+                    android:id="@+id/register_man_radio_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/notosanscjkkrregular"
+                    android:includeFontPadding="false"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    android:text="@string/register_gender_man_text"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/register_first_gl_left"
+                    app:layout_constraintTop_toBottomOf="@+id/register_sex_title" />
+
+                <RadioButton
+                    android:id="@+id/register_woman_radio_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/notosanscjkkrregular"
+                    android:includeFontPadding="false"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    android:text="@string/register_gender_woman_text"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/register_man_radio_btn"
+                    app:layout_constraintTop_toBottomOf="@+id/register_sex_title" />
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/register_first_next_btn"
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@{firstVm.btnNextClickable == false ? @drawable/radius_gray_view : @drawable/radius_default_view}"
+                android:fontFamily="@font/notosanscjkkrregular"
+                android:includeFontPadding="false"
+                android:onClick="@{()->firstVm.clickSignUpNext()}"
+                android:text="@string/next"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/signup_first_gl_bottom"
+                app:layout_constraintEnd_toStartOf="@+id/signup_first_gl_right"
+                app:layout_constraintStart_toStartOf="@+id/signup_first_gl_left" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/signup_first_gl_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/signup_first_gl_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/signup_first_gl_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.8" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/signup_first_gl_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

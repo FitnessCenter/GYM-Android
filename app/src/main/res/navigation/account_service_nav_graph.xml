@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/account_service_nav_graph"
+    app:startDestination="@id/signInFragment">
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.dsm.gym.presentation.ui.fragment.signin.SignInFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_signin" >
+        <action
+            android:id="@+id/action_signInFragment_to_firstRegisterFragment"
+            app:destination="@id/firstRegisterFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstRegisterFragment"
+        android:name="com.dsm.gym.presentation.ui.fragment.signup.FirstSignUpFragment"
+        android:label="fragment_first_register"
+        tools:layout="@layout/fragment_first_signup" >
+        <action
+            android:id="@+id/action_firstRegisterFragment_to_secondRegisterFragment"
+            app:destination="@id/secondRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondRegisterFragment"
+        android:name="com.dsm.gym.presentation.ui.fragment.signup.SecondSignUpFragment"
+        android:label="fragment_second_register"
+        tools:layout="@layout/fragment_second_signup" >
+        <action
+            android:id="@+id/action_secondRegisterFragment_to_completeRegisterFragment"
+            app:destination="@id/completeRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/completeRegisterFragment"
+        android:name="com.dsm.gym.presentation.ui.fragment.signup.complete.CompleteSignUpFragment"
+        android:label="fragment_complete_register"
+        tools:layout="@layout/fragment_complete_signup" >
+        <action
+            android:id="@+id/action_completeRegisterFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.dsm.gym.presentation.ui.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_equipmentHistoryFragment"
+            app:destination="@id/equipmentHistoryFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.dsm.gym.presentation.ui.fragment.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" >
+        <action
+            android:id="@+id/action_changePasswordFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/equipmentHistoryFragment"
+        android:name="com.dsm.gym.presentation.ui.fragment.EquipmentHistoryFragment"
+        android:label="fragment_equipment_history"
+        tools:layout="@layout/fragment_equipment_history" />
+</navigation>
