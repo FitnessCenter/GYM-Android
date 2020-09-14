@@ -3,7 +3,7 @@ package com.dsm.gym.presentation.viewmodel.home
 import androidx.lifecycle.MutableLiveData
 import com.dsm.gym.domain.base.Message
 import com.dsm.gym.domain.base.Result
-import com.dsm.gym.domain.entity.ExerciseTimeEntity
+import com.dsm.gym.domain.entity.ExerciseDayEntity
 import com.dsm.gym.domain.entity.UserInfoEntity
 import com.dsm.gym.domain.usecase.GetNumOfDaysExerciseUseCase
 import com.dsm.gym.domain.usecase.GetUserInfoUseCase
@@ -25,10 +25,10 @@ class HomePageViewModel(
     }
 
     private fun getNumOfDaysExercise() {
-        getNumOfDaysExerciseUseCase.execute(Unit, object : DisposableSingleObserver<Result<ExerciseTimeEntity>>() {
-            override fun onSuccess(result: Result<ExerciseTimeEntity>) {
+        getNumOfDaysExerciseUseCase.execute(Unit, object : DisposableSingleObserver<Result<ExerciseDayEntity>>() {
+            override fun onSuccess(result: Result<ExerciseDayEntity>) {
                 when (result) {
-                    is Result.Success -> numOfDaysExerciseText.value = result.data.exerciseTime.toString()
+                    is Result.Success -> numOfDaysExerciseText.value = result.data.numOfExerciseDay.toString()
                     is Result.Error -> when (result.message) {
                         Message.SERVER_ERROR -> createToastEvent.value = "서버 오류가 발생했습니다"
 

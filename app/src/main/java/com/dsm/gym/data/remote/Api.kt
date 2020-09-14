@@ -21,7 +21,7 @@ interface Api {
     fun getAllEquipment(): Single<List<EquipmentListData>>
 
     @GET("/exercise-applies/my/number-of-days-exercised")
-    fun getNumOfDaysExercised(): Single<ExerciseTimeData>
+    fun getNumOfDaysExercised(): Single<ExerciseDayData>
 
     @GET("/account")
     fun getUserInfo(): Single<UserInfoData>
