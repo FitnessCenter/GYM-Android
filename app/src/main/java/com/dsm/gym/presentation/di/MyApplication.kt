@@ -4,6 +4,7 @@ import android.app.Application
 import com.dsm.gym.presentation.di.module.networkModule
 import com.dsm.gym.presentation.di.module.account.accountModule
 import com.dsm.gym.presentation.di.module.equipment.equipmentModule
+import com.dsm.gym.presentation.di.module.home.homeModule
 import com.dsm.gym.presentation.di.module.util.utilModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -19,6 +20,7 @@ class MyApplication : Application() {
                     accountModule,
                     networkModule,
                     equipmentModule,
+                    homeModule,
 
                     utilModule
                 )
