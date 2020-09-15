@@ -10,6 +10,7 @@ import com.dsm.gym.domain.usecase.GetApplyTimeUseCase
 import com.dsm.gym.domain.usecase.GetNumOfDaysExerciseUseCase
 import com.dsm.gym.domain.usecase.GetUserInfoUseCase
 import com.dsm.gym.presentation.base.BaseViewModel
+import com.dsm.gym.presentation.model.CurrentTimeModel
 import io.reactivex.observers.DisposableSingleObserver
 import java.text.SimpleDateFormat
 import java.util.*
@@ -134,16 +135,12 @@ class HomePageViewModel(
         }
     }
 
-    private fun splitTime(): CurrentTime {
+    private fun splitTime(): CurrentTimeModel {
         val mTime = time.substringBeforeLast(":")
         val hour = mTime.substringBeforeLast(":")
         val minute = mTime.substringAfterLast(":")
 
-        return CurrentTime(hour.toInt(), minute.toInt())
+        return CurrentTimeModel(hour.toInt(), minute.toInt())
     }
 
-    data class CurrentTime(
-        val hour:Int,
-        val minute:Int
-    )
 }
