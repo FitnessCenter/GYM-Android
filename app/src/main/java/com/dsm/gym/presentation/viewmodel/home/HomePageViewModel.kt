@@ -112,7 +112,7 @@ class HomePageViewModel(
                 else exerciseTimeText.value = "21 : 30 ~ 22 : 00 에 \n운동을 신청하셨습니다."
             }
             1 -> {
-                if(splitTime().hour > 21 && splitTime().minute >= 30) exerciseTimeText.value = "신청하신 시간이 지났습니다."
+                if(splitTime().hour == 22 && splitTime().minute >= 30 || splitTime().hour > 22) exerciseTimeText.value = "신청하신 시간이 지났습니다."
                 else exerciseTimeText.value = "22 : 00 ~ 22 : 30 에 \n운동을 신청하셨습니다."
             }
             2 -> {
