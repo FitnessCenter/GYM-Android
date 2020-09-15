@@ -1,5 +1,6 @@
 package com.dsm.gym.presentation.viewmodel.home
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.dsm.gym.domain.base.Message
 import com.dsm.gym.domain.base.Result
@@ -12,6 +13,7 @@ import com.dsm.gym.domain.usecase.GetUserInfoUseCase
 import com.dsm.gym.presentation.base.BaseViewModel
 import com.dsm.gym.presentation.model.ExerciseTimeModel
 import io.reactivex.observers.DisposableSingleObserver
+import java.util.*
 
 class HomePageViewModel(
     private val getNumOfDaysExerciseUseCase: GetNumOfDaysExerciseUseCase,
@@ -27,6 +29,7 @@ class HomePageViewModel(
         getUserInfo()
         getNumOfDaysExercise()
         getApplyTime()
+        randomText()
     }
 
     private fun getNumOfDaysExercise() {
@@ -104,4 +107,16 @@ class HomePageViewModel(
         }
     }
 
+    private fun randomText(){
+        val random =  Random()
+        when(random.nextInt(7)){
+            0 -> randomText.value = "뭘 봐 ,운동이나 해"
+            1 -> randomText.value = "울지마라 근손실 나니까"
+            2 -> randomText.value = "무지방 상팔자"
+            3 -> randomText.value = "넌 운동할 때가 제일 이뻐"
+            4 -> randomText.value = "익숙함에 속아 내 뱃살을 잊지 말자"
+            5 -> randomText.value = "한눈팔면 허리 나감"
+            6 -> randomText.value = "NO PAIN NO GAIN"
+        }
+    }
 }

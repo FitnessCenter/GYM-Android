@@ -120,7 +120,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/notosanscjkkrregular"
                 android:includeFontPadding="false"
-                android:text="@string/home_random_sentence_text"
+                android:text="@{homeVm.randomText}"
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
         </androidx.cardview.widget.CardView>
