@@ -6,17 +6,21 @@ import com.dsm.gym.data.repository.HomePageRepositoryImpl
 import com.dsm.gym.domain.repository.HomePageRepository
 import com.dsm.gym.domain.service.HomePageService
 import com.dsm.gym.domain.service.HomePageServiceImpl
+import com.dsm.gym.domain.usecase.GetApplyTimeUseCase
 import com.dsm.gym.domain.usecase.GetNumOfDaysExerciseUseCase
+import com.dsm.gym.domain.usecase.GetUserInfoUseCase
 import com.dsm.gym.presentation.viewmodel.home.HomePageViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
 val homeModule: Module = module {
-    viewModel { HomePageViewModel(get()) }
+    viewModel { HomePageViewModel(get(), get(), get()) }
 
-    factory<HomePageDataSource> { HomePageDataSourceImpl(get())  }
-    factory<HomePageRepository> { HomePageRepositoryImpl(get())  }
+    factory<HomePageDataSource> { HomePageDataSourceImpl(get()) }
+    factory<HomePageRepository> { HomePageRepositoryImpl(get()) }
     factory { GetNumOfDaysExerciseUseCase(get(), get()) }
-    factory<HomePageService> { HomePageServiceImpl(get(),get()) }
+    factory { GetUserInfoUseCase(get(), get()) }
+    factory { GetApplyTimeUseCase(get(), get()) }
+    factory<HomePageService> { HomePageServiceImpl(get(), get()) }
 }

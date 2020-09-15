@@ -5,10 +5,10 @@ import com.google.gson.annotations.SerializedName
 
 data class ExerciseTimeData(
     @SerializedName("time")
-    val exerciseTime: Int
+    val applyTime: Int
 )
 
 fun ExerciseTimeData.toEntity() =
     ExerciseTimeEntity(
-        exerciseTime = exerciseTime
+        applyTime = applyTime
     )
