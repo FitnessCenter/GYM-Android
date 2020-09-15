@@ -53,7 +53,7 @@ class HomePageViewModel(
                 }
 
                 override fun onError(e: Throwable) {
-                    createToastEvent.value = "알 수 없는 오가 발생했습니다"
+                    createToastEvent.value = "알 수 없는 오류가 발생했습니다"
                 }
             })
     }
