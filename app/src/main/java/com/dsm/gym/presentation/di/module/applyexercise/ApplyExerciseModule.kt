@@ -7,5 +7,5 @@ import org.koin.core.module.Module
 import org.koin.dsl.module
 
 val applyExerciseModule: Module = module {
-    single { ApplyExerciseViewModel() }
+    single { ApplyExerciseViewModel(get(),get()) }
 }
