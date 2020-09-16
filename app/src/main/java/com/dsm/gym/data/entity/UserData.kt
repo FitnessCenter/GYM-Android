@@ -24,3 +24,11 @@ fun UserData.toEntity() =
         password = password,
         sex = sex
     )
+fun UserEntity.toDataEntity() =
+    UserData(
+        studentNumber = studentNumber,
+        studentName = studentName,
+        id = id,
+        password = password,
+        sex = sex
+    )
