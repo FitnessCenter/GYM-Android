@@ -2,6 +2,7 @@
 <layout>
 
     <data>
+
         <variable
             name="vm"
             type="com.dsm.gym.presentation.viewmodel.applyexercise.ApplyExerciseViewModel"/>
@@ -74,7 +75,7 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/btn_round_apply_exercise"
-                android:text="@string/apply_exercise_tv"
+                android:text="신청"
                 android:onClick="@{()->vm.nineThirtyApplyExercise()}"
                 android:textColor="@color/colorDefault"
                 android:textSize="12sp"
@@ -95,6 +96,7 @@
                 android:text="@string/apply_exercise_show_personnel_tv"
                 android:textColor="@color/colorDefault"
                 android:textSize="12sp"
+                android:onClick="@{()->vm.clickGetAppliedExercisePersonnel(1)}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -170,6 +172,7 @@
                 android:text="@string/apply_exercise_show_personnel_tv"
                 android:textColor="@color/colorDefault"
                 android:textSize="12sp"
+                android:onClick="@{()->vm.clickGetAppliedExercisePersonnel(2)}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -245,6 +248,7 @@
                 android:text="@string/apply_exercise_show_personnel_tv"
                 android:textColor="@color/colorDefault"
                 android:textSize="12sp"
+                android:onClick="@{()->vm.clickGetAppliedExercisePersonnel(3)}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
