@@ -1,7 +1,7 @@
 package com.dsm.gym.data.handler
 
+import com.dsm.gym.domain.base.ErrorHandler
 import com.dsm.gym.domain.base.Message
-import com.dsm.gym.domain.handler.ErrorHandler
 import retrofit2.HttpException
 import com.dsm.gym.domain.base.Message.*
 import java.net.ConnectException
