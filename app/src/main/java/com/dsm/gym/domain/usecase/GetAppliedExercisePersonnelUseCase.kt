@@ -7,7 +7,7 @@ import com.dsm.gym.domain.service.ApplyExerciseService
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 
-class GetAppliedExercisePersonnelUsecase(private val service : ApplyExerciseService, compositeDisposable: CompositeDisposable)
-    : UseCase<Result<List<UserEntity>>, Int>(compositeDisposable){
+class GetAppliedExercisePersonnelUseCase(private val service : ApplyExerciseService, compositeDisposable: CompositeDisposable)
+    : UseCase<Int, Result<List<UserEntity>>>(compositeDisposable){
     override fun create(data: Int): Single<Result<List<UserEntity>>> =service.getAppliedExercisePersonnel(data)
 }
