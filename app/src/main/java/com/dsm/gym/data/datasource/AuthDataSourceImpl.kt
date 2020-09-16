@@ -1,8 +1,8 @@
 package com.dsm.gym.data.datasource
 
 import com.dsm.gym.data.entity.AuthData
+import com.dsm.gym.data.entity.RegisterData
 import com.dsm.gym.data.entity.TokenData
-import com.dsm.gym.data.entity.UserData
 import com.dsm.gym.data.local.pref.SharedPrefStorage
 import com.dsm.gym.data.remote.Api
 import io.reactivex.Completable
@@ -14,7 +14,7 @@ class AuthDataSourceImpl(
     override fun postSignIn(auth: AuthData): Single<TokenData>
             = api.signIn(auth)
 
-    override fun postSignUp(user: UserData): Completable
+    override fun postSignUp(user: RegisterData): Completable
             = api.signUp(user)
 
     override fun saveToken(token: String, isAccess: Boolean)

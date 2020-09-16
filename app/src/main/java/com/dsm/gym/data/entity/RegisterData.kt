@@ -1,9 +1,9 @@
 package com.dsm.gym.data.entity
 
-import com.dsm.gym.domain.entity.UserEntity
+import com.dsm.gym.domain.entity.RegisterEntity
 import com.google.gson.annotations.SerializedName
 
-data class UserData(
+data class RegisterData(
     @SerializedName("studentNumber")
     val studentNumber: String,
     @SerializedName("studentName")
@@ -16,8 +16,8 @@ data class UserData(
     val sex: Boolean
 )
 
-fun UserData.toEntity() =
-    UserEntity(
+fun RegisterData.toEntity() =
+    RegisterEntity(
         studentNumber = studentNumber,
         studentName = studentName,
         id = id,
@@ -25,8 +25,8 @@ fun UserData.toEntity() =
         sex = sex
     )
 
-fun UserEntity.toDataEntity() =
-    UserData(
+fun RegisterEntity.toDataEntity() =
+    RegisterData(
         studentNumber = studentNumber,
         studentName = studentName,
         id = id,

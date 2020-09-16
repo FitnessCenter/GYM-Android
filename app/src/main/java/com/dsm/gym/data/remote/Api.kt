@@ -18,6 +18,15 @@ interface Api {
     @GET("/equipment-applies")
     fun getAllEquipment(): Single<List<EquipmentListData>>
 
+    @GET("/exercise-applies/my/number-of-days-exercised")
+    fun getNumOfDaysExercised(): Single<ExerciseDayData>
+
+    @GET("/account")
+    fun getUserInfo(): Single<UserInfoData>
+
+    @GET("/exercise-applies/my")
+    fun getApplyTime(): Single<ExerciseTimeData>
+
     @POST("/exercise-applies/{time}/apply")
     fun applyExercise(@Path("time") time : Int) : Completable
 
