@@ -113,8 +113,8 @@ class SignUpViewModel(
 
     fun onSplitTypeChanged(id: Int) {
         when(id){
-            R.id.register_man_radio_btn -> sex.value = true
-            R.id.register_woman_radio_btn -> sex.value = false
+            1 -> sex.value = true
+            2 -> sex.value = false
         }
     }
 
