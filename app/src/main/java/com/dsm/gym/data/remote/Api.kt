@@ -3,13 +3,7 @@ package com.dsm.gym.data.remote
 import com.dsm.gym.data.entity.*
 import io.reactivex.Completable
 import io.reactivex.Single
-import io.reactivex.Completable
-import io.reactivex.Single
-import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface Api {
     @POST("auth")
@@ -23,12 +17,18 @@ interface Api {
 
     @GET("/equipment-applies")
     fun getAllEquipment(): Single<List<EquipmentListData>>
-    @POST("users/accounts")
-    fun signUp(@Body body: Any?): Flowable<TokenData>
 
     @POST("/exercise-applies/{time}/apply")
     fun applyExercise(@Path("time") time : Int) : Completable
 
-    @POST("/exercise-applies/{time}/apply")
+    @GET("/exercise-applies/{time}/appliers")
     fun getAppliedExercisePersonnel(@Path("time") time : Int) : Single<List<UserData>>
+
+    @GET("/exercise-applies")
+    fun getApplyExerciseState() : Single<List<ApplyExerciseData>>
+
+    @DELETE("/exercise-apply/my")
+    fun cancelApplyExercise() : Completable
+
+
 }
