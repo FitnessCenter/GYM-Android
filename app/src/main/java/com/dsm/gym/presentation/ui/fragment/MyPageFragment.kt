@@ -6,25 +6,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.dsm.gym.R
+import com.dsm.gym.databinding.FragmentMyPageBinding
+import com.dsm.gym.presentation.base.BaseViewModel
+import com.dsm.gym.presentation.base.EndPointDataBindingFragment
 import com.dsm.gym.presentation.ui.dialog.LogoutDialogFragment
-import com.dsm.gym.presentation.ui.fragment.base.EndPointDataBindingFragment
+import com.dsm.gym.presentation.viewmodel.mypage.MyPageViewModel
 import kotlinx.android.synthetic.main.fragment_my_page.view.*
+import org.koin.android.ext.android.inject
 
 
-class MyPageFragment : EndPointDataBindingFragment() {
-
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_page, container, false)
-
-    }
+class MyPageFragment : EndPointDataBindingFragment<FragmentMyPageBinding>() {
+    override val layoutId: Int
+        get() = R.layout.fragment_my_page
+    override val viewModel : MyPageViewModel by inject()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.vm = viewModel
         view.my_page_logout_layout.setOnClickListener {
             val dialog = LogoutDialogFragment()
             dialog.show(requireActivity().supportFragmentManager, "LogOutDialogFragment")
@@ -39,6 +37,8 @@ class MyPageFragment : EndPointDataBindingFragment() {
     }
 
 
+    override fun observeEvent() {
+    }
 
 
 }

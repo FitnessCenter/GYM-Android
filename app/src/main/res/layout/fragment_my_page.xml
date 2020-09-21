@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="vm"
+            type="com.dsm.gym.presentation.viewmodel.mypage.MyPageViewModel" />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -206,7 +212,7 @@
         android:layout_marginBottom="40dp"
         android:fontFamily="@font/notosanscjkkrmedium"
         android:includeFontPadding="false"
-        android:text="@string/my_page_student_name_tv"
+        android:text="@{vm.userInfo.studentName}"
         android:textColor="@color/colorWhite"
         android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/my_page_gl_top"
@@ -222,7 +228,7 @@
         android:layout_marginBottom="42dp"
         android:fontFamily="@font/notosanscjkkrregular"
         android:includeFontPadding="false"
-        android:text="@string/my_page_student_id_tv"
+        android:text="@{@string/my_page_student_id_tv(vm.userInfo.studentNumber.substring(0,1),vm.userInfo.studentNumber.substring(1,2),vm.userInfo.studentNumber.substring(2,4))}"
         android:textColor="@color/colorWhite"
         android:textSize="23sp"
         app:layout_constraintBottom_toTopOf="@+id/my_page_gl_top"
@@ -259,3 +265,4 @@
         app:layout_constraintGuide_percent="0.2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
