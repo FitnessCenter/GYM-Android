@@ -31,12 +31,12 @@ interface Api {
     fun applyExercise(@Path("time") time : Int) : Completable
 
     @GET("/exercise-applies/{time}/appliers")
-    fun getAppliedExercisePersonnel(@Path("time") time : Int) : Single<List<UserData>>
+    fun getAppliedExercisePersonnel(@Path("time") time : Int) : Single<List<UserInfoData>>
 
     @GET("/exercise-applies")
     fun getApplyExerciseState() : Single<List<ApplyExerciseData>>
 
-    @DELETE("/exercise-apply/my")
+    @DELETE("/exercise-applies/my")
     fun cancelApplyExercise() : Completable
 
 
