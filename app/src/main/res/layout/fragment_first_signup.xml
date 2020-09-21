@@ -17,9 +17,9 @@
         tools:context=".presentation.ui.fragment.signup.FirstSignUpFragment">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@mipmap/ic_launcher"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:background="@drawable/ic_main"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -149,6 +149,7 @@
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/notosanscjkkrregular"
                     android:includeFontPadding="false"
+                    android:onClick="@{()->firstVm.onSplitTypeChanged(1)}"
                     android:paddingStart="4dp"
                     android:paddingEnd="4dp"
                     android:scaleX="0.7"
@@ -167,6 +168,7 @@
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/notosanscjkkrregular"
                     android:includeFontPadding="false"
+                    android:onClick="@{()->firstVm.onSplitTypeChanged(2)}"
                     android:paddingStart="4dp"
                     android:paddingEnd="4dp"
                     android:scaleX="0.7"

@@ -1,154 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.ui.fragment.main.HomeFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <View
-        android:id="@+id/home_background_view"
+    <data>
+        <variable
+            name="homeVm"
+            type="com.dsm.gym.presentation.viewmodel.home.HomePageViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/colorDefault"
-        app:layout_constraintBottom_toTopOf="@+id/home_gl_top"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.fragment.main.HomeFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/home_cardView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="72dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/home_gl_middle"
-        app:layout_constraintEnd_toStartOf="@+id/home_gl_right"
-        app:layout_constraintStart_toStartOf="@+id/home_gl_left"
-        app:layout_constraintTop_toTopOf="@+id/home_background_view">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <View
+            android:id="@+id/home_background_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:background="@color/colorDefault"
+            app:layout_constraintBottom_toTopOf="@+id/home_gl_top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/home_user_name_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/notosanscjkkrbold"
-                android:includeFontPadding="false"
-                android:text="@string/home_user_name_text"
-                android:textColor="@color/colorDefault"
-                android:textSize="22sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/home_cardView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="72dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/home_gl_middle"
+            app:layout_constraintEnd_toStartOf="@+id/home_gl_right"
+            app:layout_constraintStart_toStartOf="@+id/home_gl_left"
+            app:layout_constraintTop_toTopOf="@+id/home_background_view">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/home_apply_exercise_time_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:fontFamily="@font/notosanscjkkrmedium"
-                android:includeFontPadding="false"
-                android:text="9 : 30 ~ 10 : 30 에 \n운동을 신청하셨습니다. "
-                android:textColor="@color/colorBlack"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/home_user_name_tv" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/home_user_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/notosanscjkkrbold"
+                    android:includeFontPadding="false"
+                    android:text="@{@string/home_user_name_text(homeVm.userNameText)}"
+                    android:textColor="@color/colorDefault"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.cardview.widget.CardView>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/home_apply_exercise_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:fontFamily="@font/notosanscjkkrmedium"
+                    android:includeFontPadding="false"
+                    android:text="@{homeVm.exerciseTimeText}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/home_user_name_tv" />
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/home_consecutive_exercise_days_tv"
-        android:layout_width="0dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/notosanscjkkrbold"
-        android:gravity="center"
-        android:includeFontPadding="false"
-        android:text="@string/home_consecutive_exercise_days_text"
-        android:textColor="@color/colorDefault"
-        android:textSize="88sp"
-        app:layout_constraintEnd_toStartOf="@+id/home_gl_right"
-        app:layout_constraintStart_toStartOf="@+id/home_gl_left"
-        app:layout_constraintTop_toBottomOf="@+id/home_cardView" />
+        </androidx.cardview.widget.CardView>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/appCompatTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/notosanscjkkrregular"
-        android:includeFontPadding="false"
-        android:text="일째 운동 중 입니다."
-        android:textColor="@color/colorBlack"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/home_gl_right"
-        app:layout_constraintStart_toStartOf="@+id/home_gl_left"
-        app:layout_constraintTop_toBottomOf="@+id/home_consecutive_exercise_days_tv" />
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/home_gl_bottom"
-        app:layout_constraintEnd_toStartOf="@+id/home_gl_right"
-        app:layout_constraintStart_toStartOf="@+id/home_gl_left"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
-        app:layout_constraintVertical_bias="1.0">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/home_random_sentence_tv"
+            android:id="@+id/home_consecutive_exercise_days_tv"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/notosanscjkkrbold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@={homeVm.numOfDaysExerciseText}"
+            android:textColor="@color/colorDefault"
+            android:textSize="88sp"
+            app:layout_constraintEnd_toStartOf="@+id/home_gl_right"
+            app:layout_constraintStart_toStartOf="@+id/home_gl_left"
+            app:layout_constraintTop_toBottomOf="@+id/home_cardView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/notosanscjkkrregular"
             android:includeFontPadding="false"
-            android:text="@string/home_random_sentence_text"
+            android:text="일째 운동 중 입니다."
             android:textColor="@color/colorBlack"
-            android:textSize="16sp" />
-    </androidx.cardview.widget.CardView>
+            android:textSize="22sp"
+            app:layout_constraintEnd_toStartOf="@+id/home_gl_right"
+            app:layout_constraintStart_toStartOf="@+id/home_gl_left"
+            app:layout_constraintTop_toBottomOf="@+id/home_consecutive_exercise_days_tv" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/home_gl_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.27" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/home_gl_bottom"
+            app:layout_constraintEnd_toStartOf="@+id/home_gl_right"
+            app:layout_constraintStart_toStartOf="@+id/home_gl_left"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
+            app:layout_constraintVertical_bias="1.0">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/home_gl_middle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.32" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/home_random_sentence_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/notosanscjkkrregular"
+                android:includeFontPadding="false"
+                android:text="@{homeVm.randomText}"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp" />
+        </androidx.cardview.widget.CardView>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/home_gl_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/home_gl_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.27" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/home_gl_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/home_gl_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.32" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/home_gl_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/home_gl_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/home_gl_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/home_gl_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

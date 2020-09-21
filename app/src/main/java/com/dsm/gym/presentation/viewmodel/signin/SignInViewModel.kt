@@ -3,18 +3,17 @@ package com.dsm.gym.presentation.viewmodel.signin
 import android.util.Log
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
-import com.dsm.gym.domain.base.ErrorHandlerEntity
-import com.dsm.gym.domain.entity.TokenEntity
+import com.dsm.gym.domain.base.Message
+import com.dsm.gym.domain.base.Result
 import com.dsm.gym.domain.usecase.SignInUseCase
 import com.dsm.gym.presentation.base.BaseViewModel
 import com.dsm.gym.presentation.base.SingleLiveEvent
-import com.dsm.gym.presentation.mapper.AuthMapper
 import com.dsm.gym.presentation.model.AuthModel
-import io.reactivex.subscribers.DisposableSubscriber
+import com.dsm.gym.presentation.model.toEntity
+import io.reactivex.observers.DisposableSingleObserver
 
 class SignInViewModel(
-    private val signInUseCase: SignInUseCase,
-    private val authMapper: AuthMapper
+    private val signInUseCase: SignInUseCase
 ) : BaseViewModel() {
     val idText = MutableLiveData<String>()
     val passwordText = MutableLiveData<String>()
@@ -30,42 +29,57 @@ class SignInViewModel(
 
     fun clickLogin() {
         val auth = AuthModel(idText.value!!, passwordText.value!!)
-        Log.d("click",auth.toString())
+        Log.d("click", auth.toString())
 
-        signInUseCase.execute(authMapper.mapFrom(auth),object : DisposableSubscriber<Pair<TokenEntity, ErrorHandlerEntity>>(){
-            override fun onNext(t: Pair<TokenEntity, ErrorHandlerEntity>) {
-                if(t.second.isSuccess) {
-                    loginSuccess()
-                    Log.d("loginSuccess","loginSuccess")
+        signInUseCase.execute(
+            auth.toEntity(), object : DisposableSingleObserver<Result<Unit>>() {
+                override fun onSuccess(result: Result<Unit>) {
+                    Log.d("signIn Result",result.toString())
+                    when (result) {
+                        is Result.Success -> onSuccessSignIn()
+                        is Result.Error -> onErrorSignIn(result)
+                    }
                 }
-                else {
-                    loginFail(t.second.message)
-                    Log.d("loginFail",t.toString())
+
+                override fun onError(e: Throwable) {
+                    idErrorEvent.value = "알 수 없는 오류가 발생했습니다"
+                    passwordErrorEvent.value = "알 수 없는 오류가 발생했습니다"
                 }
             }
-
-            override fun onComplete() {
-
-            }
-
-            override fun onError(t: Throwable?) {
-                createToastEvent.value = "오류 발생"
-            }
-        })
+        )
     }
 
     fun clickSignUp() {
         startSignUpEvent.call()
     }
 
-    fun loginSuccess() {
+    private fun onSuccessSignIn() {
         createToastEvent.value = "로그인 되었습니다"
         startMainEvent.call()
     }
 
-    fun loginFail(message: String) {
-        idErrorEvent.value = message
-        passwordErrorEvent.value = message
+    private fun onErrorSignIn(result: Result.Error<Unit>) {
+        when(result.message) {
+            Message.SERVER_ERROR ->{
+                idErrorEvent.value = "서버 오류가 발생했습니다"
+                passwordErrorEvent.value = "서버 오류가 발생했습니다"
+            }
+            Message.NETWORK_ERROR -> {
+                idErrorEvent.value = "네트워크 오류가 발생했습니다"
+                passwordErrorEvent.value = "네트워크 오류가 발생했습니다"
+            }
+            Message.UNKNOWN_ERROR -> {
+                idErrorEvent.value = "알 수 없는 오류가 발생했습니다"
+                passwordErrorEvent.value = "알 수 없는 오류가 발생했습니다"
+            }
+            Message.UNAUTHORIZED -> {
+                createToastEvent.value = "존재하지 않는 유저입니다"
+            }
+            else ->{
+                idErrorEvent.value = "알 수 없는 오류가 발생했습니다"
+                passwordErrorEvent.value = "알 수 없는 오류가 발생했습니다"
+            }
+        }
     }
 
     private fun checkFullText(): Boolean =

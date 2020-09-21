@@ -27,6 +27,7 @@ class FirstSignUpFragment : EndPointDataBindingFragment<FragmentFirstSignupBindi
             val bundle = Bundle()
             bundle.putString("studentNumber", viewModel.studentNumberText.value)
             bundle.putString("studentName", viewModel.studentNameText.value)
+            bundle.putBoolean("sex", viewModel.sex.value!!)
 
             Navigation.findNavController(requireView()).navigate(R.id.action_firstRegisterFragment_to_secondRegisterFragment,bundle)
         })
