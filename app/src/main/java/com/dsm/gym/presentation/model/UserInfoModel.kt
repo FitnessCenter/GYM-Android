@@ -7,8 +7,8 @@ data class UserInfoModel(
     val studentNumber: String
 )
 
-fun UserInfoModel.toEntity() =
-    UserInfoEntity(
+fun UserInfoEntity.toModel() =
+    UserInfoModel(
         studentName = studentName,
         studentNumber = studentNumber
     )
