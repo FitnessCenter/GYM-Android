@@ -12,3 +12,8 @@ fun UserInfoModel.toEntity() =
         studentName = studentName,
         studentNumber = studentNumber
     )
+fun UserInfoEntity.toModel() =
+    UserInfoModel(
+        studentName = studentName,
+        studentNumber = studentNumber
+    )

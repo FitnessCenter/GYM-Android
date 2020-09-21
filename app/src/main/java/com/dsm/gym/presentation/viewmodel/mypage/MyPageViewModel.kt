@@ -6,21 +6,25 @@ import androidx.lifecycle.ViewModel
 import com.dsm.gym.domain.base.Message
 import com.dsm.gym.domain.base.Result
 import com.dsm.gym.domain.entity.UserInfoEntity
+import com.dsm.gym.domain.usecase.ChangePasswordUseCase
 import com.dsm.gym.domain.usecase.GetUserInfoUseCase
 import com.dsm.gym.presentation.base.BaseViewModel
+import com.dsm.gym.presentation.model.UserInfoModel
+import com.dsm.gym.presentation.model.toModel
 import io.reactivex.observers.DisposableSingleObserver
 
-class MyPageViewModel(private val getUserInfoUseCase: GetUserInfoUseCase) : BaseViewModel() {
+class MyPageViewModel(private val getUserInfoUseCase: GetUserInfoUseCase,
+) : BaseViewModel() {
     init {
         getUserInfo()
     }
-    val userInfo = MutableLiveData<UserInfoEntity>()
+    val userInfo = MutableLiveData<UserInfoModel>()
 
     fun getUserInfo(){
         getUserInfoUseCase.execute(Unit, object : DisposableSingleObserver<Result<UserInfoEntity>>(){
             override fun onSuccess(result: Result<UserInfoEntity>) {
                 when (result) {
-                    is Result.Success -> userInfo.value = result.data
+                    is Result.Success -> userInfo.value = result.data.toModel()
                     is Result.Error -> when (result.message) {
                         Message.SERVER_ERROR -> createToastEvent.value = "서버 오류가 발생했습니다"
 
