@@ -7,28 +7,42 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.recyclerview.widget.GridLayoutManager
 import com.dsm.gym.R
+import com.dsm.gym.databinding.FragmentApplyExerciseDialogBinding
+import com.dsm.gym.databinding.FragmentShowPersonnelDialogBinding
+import com.dsm.gym.presentation.adapter.ApplyExercisePersonnelAdapter
+import com.dsm.gym.presentation.base.BaseViewModel
+import com.dsm.gym.presentation.base.DataBindingDialogFragment
+import com.dsm.gym.presentation.viewmodel.applyexercise.ApplyExerciseViewModel
 import kotlinx.android.synthetic.main.fragment_show_personnel_dialog.view.*
+import org.koin.android.ext.android.inject
 
 
-class ShowPersonnelDialogFragment : DialogFragment() {
+class ShowPersonnelDialogFragment : DataBindingDialogFragment<FragmentShowPersonnelDialogBinding>() {
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_show_personnel_dialog, container,false)
-    }
+    override val layoutId: Int
+        get() = R.layout.fragment_show_personnel_dialog
+    override val viewModel : ApplyExerciseViewModel by inject()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.vm = viewModel
+        binding.applyExercisePersonnelRv.layoutManager = GridLayoutManager(context,2)
+        binding.applyExercisePersonnelRv.adapter = ApplyExercisePersonnelAdapter()
+
+
         dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
 
         view.apply_exercise_personnel_close_img.setOnClickListener {
             dismiss()
         }
+    }
+
+
+
+    override fun observeEvent() {
     }
 
 }
