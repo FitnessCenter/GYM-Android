@@ -1,5 +1,6 @@
 package com.dsm.gym.presentation.viewmodel.applyexercise
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.dsm.gym.domain.base.Message
 import com.dsm.gym.domain.usecase.ApplyExerciseUseCase
@@ -8,10 +9,12 @@ import com.dsm.gym.presentation.base.SingleLiveEvent
 import io.reactivex.observers.DisposableSingleObserver
 import com.dsm.gym.domain.base.Result
 import com.dsm.gym.domain.entity.ApplyExerciseEntity
-import com.dsm.gym.domain.entity.UserEntity
+import com.dsm.gym.domain.entity.UserInfoEntity
 import com.dsm.gym.domain.usecase.CancelApplyExerciseUseCase
 import com.dsm.gym.domain.usecase.GetAppliedExercisePersonnelUseCase
 import com.dsm.gym.domain.usecase.GetApplyExerciseStateUseCase
+import com.dsm.gym.presentation.model.UserInfoModel
+import com.dsm.gym.presentation.model.toModel
 
 class ApplyExerciseViewModel(private val applyExerciseUseCase: ApplyExerciseUseCase,
                              private val getAppliedExercisePersonnelUseCase: GetAppliedExercisePersonnelUseCase,
@@ -21,21 +24,24 @@ class ApplyExerciseViewModel(private val applyExerciseUseCase: ApplyExerciseUseC
     val applyExerciseEvent = SingleLiveEvent<String>()
     val applyExerciseState = MutableLiveData<List<ApplyExerciseEntity>>()
     val applyExerciseTime = MutableLiveData<Int>()
+    val appliedExercisePersonnel = MutableLiveData<List<UserInfoModel>>()
     val appliedExercisePersonnelEvent = SingleLiveEvent<Unit>()
     val dismissDialogEvent = SingleLiveEvent<Unit>()
 
-
+    init {
+        getApplyExerciseState()
+    }
     fun nineThirtyApplyExercise() {
         applyExerciseEvent.value = "9 : 30 ~ 10 : 00"
-        applyExerciseTime.value = 1
+        applyExerciseTime.value = 0
     }
     fun tenApplyExercise(){
         applyExerciseEvent.value= "10 : 00 ~ 10 : 30"
-        applyExerciseTime.value = 2
+        applyExerciseTime.value = 1
     }
     fun tenThirtyApplyExercise(){
         applyExerciseEvent.value= "10 : 30 ~ 11 : 00"
-        applyExerciseTime.value = 3
+        applyExerciseTime.value = 2
     }
 
 
@@ -49,7 +55,7 @@ class ApplyExerciseViewModel(private val applyExerciseUseCase: ApplyExerciseUseC
             override fun onSuccess(result: Result<List<ApplyExerciseEntity>>) {
                when(result) {
                    is Result.Success -> {
-                      applyExerciseState.value = result.data
+                       applyExerciseState.value = result.data
                    }
 
                }
@@ -62,10 +68,11 @@ class ApplyExerciseViewModel(private val applyExerciseUseCase: ApplyExerciseUseC
         })
     }
     private fun getAppliedExercisePersonnel(time: Int){
-        getAppliedExercisePersonnelUseCase.execute(time, object : DisposableSingleObserver<Result<List<UserEntity>>>(){
-            override fun onSuccess(result: Result<List<UserEntity>>) {
+        getAppliedExercisePersonnelUseCase.execute(time, object : DisposableSingleObserver<Result<List<UserInfoEntity>>>(){
+            override fun onSuccess(result: Result<List<UserInfoEntity>>) {
                 when(result){
                     is Result.Success ->{
+                        appliedExercisePersonnel.value = result.data.map { it.toModel() }
 
                     }
                     is Result.Error ->{
