@@ -1,6 +1,7 @@
 package com.dsm.gym.data.datasource
 
 import com.dsm.gym.data.entity.AuthData
+import com.dsm.gym.data.entity.ChangePasswordData
 import com.dsm.gym.data.entity.RegisterData
 import com.dsm.gym.data.entity.TokenData
 import io.reactivex.Completable
@@ -14,4 +15,6 @@ interface AuthDataSource{
     fun saveToken(token: String, isAccess: Boolean)
 
     fun getToken(isAccess: Boolean): String
+
+    fun changePassword(passwordData: ChangePasswordData) : Completable
 }

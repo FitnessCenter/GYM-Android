@@ -4,6 +4,7 @@ import com.dsm.gym.domain.repository.AuthRepository
 import com.dsm.gym.domain.base.ErrorHandler
 import com.dsm.gym.domain.base.Result
 import com.dsm.gym.domain.entity.AuthEntity
+import com.dsm.gym.domain.entity.ChangePasswordEntity
 import com.dsm.gym.domain.entity.RegisterEntity
 import com.dsm.gym.domain.toResult
 import com.dsm.gym.domain.toSingleResult
@@ -22,4 +23,6 @@ class AuthServiceImpl(
             authRepository.saveToken(it.refreshToken, false)
         }
             .toResult(handler)
+
+    override fun changePassword(password: ChangePasswordEntity) = authRepository.changePassword(password).toSingleResult(handler)
 }

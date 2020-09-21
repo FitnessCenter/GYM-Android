@@ -6,6 +6,7 @@ import io.reactivex.Single
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 
 interface Api {
     @POST("auth")
@@ -28,4 +29,8 @@ interface Api {
 
     @GET("/exercise-applies/my")
     fun getApplyTime(): Single<ExerciseTimeData>
+
+    @PUT("/account")
+    fun changePassword(@Body passwordData : ChangePasswordData): Completable
+
 }

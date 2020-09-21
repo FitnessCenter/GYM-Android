@@ -1,6 +1,7 @@
 package com.dsm.gym.domain.repository
 
 import com.dsm.gym.domain.entity.AuthEntity
+import com.dsm.gym.domain.entity.ChangePasswordEntity
 import com.dsm.gym.domain.entity.TokenEntity
 import com.dsm.gym.domain.entity.RegisterEntity
 import io.reactivex.Completable
@@ -11,4 +12,6 @@ interface AuthRepository {
     fun signUp(user: RegisterEntity): Completable
     fun saveToken(token: String, isAccess: Boolean)
     fun getToken(isAccess: Boolean): String
+    fun changePassword(passwordEntity: ChangePasswordEntity): Completable
+
 }
