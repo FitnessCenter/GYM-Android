@@ -24,7 +24,7 @@ class ApplyEquipmentFragment : EndPointDataBindingFragment<FragmentApplyEquipmen
         binding.vm = viewModel
 
         binding.equipmentList.layoutManager = LinearLayoutManager(context)
-        binding.equipmentList.adapter = EquipmentListAdapter(viewModel)
+        binding.equipmentList.adapter = EquipmentListAdapter()
 
         view.add_equipment_btn.setOnClickListener {
             showDialog()
