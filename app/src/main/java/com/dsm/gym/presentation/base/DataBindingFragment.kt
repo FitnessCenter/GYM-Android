@@ -12,7 +12,7 @@ import splitties.toast.toast
 
 abstract class DataBindingFragment<T : ViewDataBinding> : Fragment() {
 
-    lateinit var rootView: View
+    private lateinit var rootView: View
     lateinit var binding: T
 
     abstract val layoutId: Int
@@ -30,7 +30,7 @@ abstract class DataBindingFragment<T : ViewDataBinding> : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         observeEvent()
 
-        viewModel.createToastEvent.observe(viewLifecycleOwner, Observer { toast(it) })
+        viewModel.createToastEvent.observe(this, Observer { toast(it) })
     }
 
     abstract fun observeEvent()

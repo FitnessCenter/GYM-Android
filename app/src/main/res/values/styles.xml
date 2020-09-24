@@ -10,6 +10,8 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.Dialog" parent="Theme.MaterialComponents.Light.NoActionBar"/>
+
     <style name="SignCheckBoxTheme" parent="Theme.AppCompat">
         <item name="colorAccent">@color/colorDefault</item>
         <item name="android:textColorSecondary">@color/colorLowBlack</item>
@@ -31,8 +33,7 @@
     </style>
 
     <style name="MyThemeOverlayOutlinedDense">
-        <item name="editTextStyle">@style/MyTextInputEditText_outlinedBox_dense_h
-        </item>
+        <item name="editTextStyle">@style/MyTextInputEditText_outlinedBox_dense_h</item>
     </style>
 
     <style name="MyTextInputEditText_outlinedBox_dense_h" parent="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox.Dense">
