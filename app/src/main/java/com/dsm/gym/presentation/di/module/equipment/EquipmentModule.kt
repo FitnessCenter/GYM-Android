@@ -6,7 +6,9 @@ import com.dsm.gym.data.repository.EquipmentRepositoryImpl
 import com.dsm.gym.domain.repository.EquipmentRepository
 import com.dsm.gym.domain.service.EquipmentService
 import com.dsm.gym.domain.service.EquipmentServiceImpl
+import com.dsm.gym.domain.usecase.CancelMyEquipmentUseCase
 import com.dsm.gym.domain.usecase.GetEquipmentUseCase
+import com.dsm.gym.domain.usecase.GetMyEquipmentUseCase
 import com.dsm.gym.domain.usecase.PostDetailEquipmentUseCase
 import com.dsm.gym.presentation.viewmodel.equipment.EquipmentDetailViewModel
 import com.dsm.gym.presentation.viewmodel.equipment.EquipmentListViewModel
@@ -22,5 +24,7 @@ val equipmentModule: Module = module {
     factory<EquipmentRepository> { EquipmentRepositoryImpl(get())  }
     factory { PostDetailEquipmentUseCase(get(), get()) }
     factory { GetEquipmentUseCase(get(),get()) }
+    factory { CancelMyEquipmentUseCase(get(),get()) }
+    factory { GetMyEquipmentUseCase(get(),get()) }
     factory<EquipmentService> { EquipmentServiceImpl(get(),get()) }
 }
