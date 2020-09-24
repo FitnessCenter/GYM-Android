@@ -28,7 +28,6 @@ class EquipmentListAdapter(private val viewModel: EquipmentListViewModel): Recyc
             parent,
             false
         )
-        binding.vm = viewModel
         return EquipmentListViewHolder(binding)
     }
 
