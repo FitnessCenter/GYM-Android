@@ -9,4 +9,9 @@ interface EquipmentDataSource {
     fun postDetailEquipment(equipment: EquipmentData): Completable
 
     fun getAllEquipment(): Single<List<EquipmentListData>>
+
+    fun getMyEquipment(whose : String): Single<List<EquipmentListData>>
+
+    fun cancelMyEquipment(applyEquipmentId : Int): Completable
+
 }

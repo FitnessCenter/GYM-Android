@@ -19,4 +19,13 @@ class EquipmentRepositoryImpl(
         equipmentDataSource.getAllEquipment().map{ it ->
             it.map{ it.toEntity() }
         }
+
+    override fun getMyEquipment(whose: String): Single<List<EquipmentListEntity>> =
+        equipmentDataSource.getMyEquipment(whose).map { it ->
+            it.map {
+                it.toEntity()
+            }
+        }
+
+    override fun cancelMyEquipment(equipmentApplyId: Int): Completable = equipmentDataSource.cancelMyEquipment(equipmentApplyId)
 }

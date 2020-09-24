@@ -3,10 +3,7 @@ package com.dsm.gym.data.remote
 import com.dsm.gym.data.entity.*
 import io.reactivex.Completable
 import io.reactivex.Single
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
+import retrofit2.http.*
 
 interface Api {
     @POST("auth")
@@ -20,6 +17,13 @@ interface Api {
 
     @GET("/equipment-applies")
     fun getAllEquipment(): Single<List<EquipmentListData>>
+
+    @GET("/equipment-applies")
+    fun getMyEquipment(@Query("whose") whose: String): Single<List<EquipmentListData>>
+
+
+    @DELETE("/equipment-applies/{equipment_apply_id}")
+    fun cancelMyEquipment(@Path("equipment_apply_id") equipmentApplyId: Int): Completable
 
     @GET("/exercise-applies/my/number-of-days-exercised")
     fun getNumOfDaysExercised(): Single<ExerciseDayData>
