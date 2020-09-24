@@ -1,12 +1,9 @@
 package com.dsm.gym.presentation.viewmodel.mypage
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.dsm.gym.domain.base.Message
 import com.dsm.gym.domain.base.Result
 import com.dsm.gym.domain.entity.UserInfoEntity
-import com.dsm.gym.domain.usecase.ChangePasswordUseCase
 import com.dsm.gym.domain.usecase.GetUserInfoUseCase
 import com.dsm.gym.presentation.base.BaseViewModel
 import com.dsm.gym.presentation.model.UserInfoModel
@@ -20,7 +17,7 @@ class MyPageViewModel(private val getUserInfoUseCase: GetUserInfoUseCase,
     }
     val userInfo = MutableLiveData<UserInfoModel>()
 
-    fun getUserInfo(){
+    private fun getUserInfo(){
         getUserInfoUseCase.execute(Unit, object : DisposableSingleObserver<Result<UserInfoEntity>>(){
             override fun onSuccess(result: Result<UserInfoEntity>) {
                 when (result) {
