@@ -10,13 +10,14 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.dsm.gym.R
 import com.dsm.gym.databinding.FragmentChangePasswordBinding
+import com.dsm.gym.presentation.base.DataBindingFragment
 import com.dsm.gym.presentation.base.EndPointDataBindingFragment
 import com.dsm.gym.presentation.viewmodel.mypage.ChangePasswordViewModel
 import kotlinx.android.synthetic.main.fragment_change_password.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-class ChangePasswordFragment : EndPointDataBindingFragment<FragmentChangePasswordBinding>() {
+class ChangePasswordFragment : DataBindingFragment<FragmentChangePasswordBinding>() {
 
     override val layoutId : Int = R.layout.fragment_change_password
     override val viewModel : ChangePasswordViewModel by viewModel()
