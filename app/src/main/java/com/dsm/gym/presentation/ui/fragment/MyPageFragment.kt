@@ -2,6 +2,7 @@ package com.dsm.gym.presentation.ui.fragment
 
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.dsm.gym.R
 import com.dsm.gym.databinding.FragmentMyPageBinding
@@ -21,21 +22,22 @@ class MyPageFragment : EndPointDataBindingFragment<FragmentMyPageBinding>() {
         super.onViewCreated(view, savedInstanceState)
         binding.vm = viewModel
 
-        my_page_logout_layout.setOnClickListener {
-            val dialog = LogoutDialogFragment()
-            dialog.show(requireActivity().supportFragmentManager, "LogOutDialogFragment")
-        }
-        my_page_change_password_layout.setOnClickListener {
-            requireActivity().findNavController(R.id.account_service_container).navigate(R.id.action_mainFragment_to_changePasswordFragment)
 
-        }
-        my_page_equipment_history_layout.setOnClickListener {
-            requireActivity().findNavController(R.id.account_service_container).navigate(R.id.action_mainFragment_to_equipmentHistoryFragment)
-        }
     }
 
 
     override fun observeEvent() {
+        viewModel.equipmentHistoryEvent.observe(viewLifecycleOwner, Observer {
+            requireActivity().findNavController(R.id.account_service_container).navigate(R.id.action_mainFragment_to_equipmentHistoryFragment)
+
+        })
+        viewModel.changePasswordEvent.observe(viewLifecycleOwner, Observer {
+            requireActivity().findNavController(R.id.account_service_container).navigate(R.id.action_mainFragment_to_changePasswordFragment)
+        })
+        viewModel.logoutEvent.observe(viewLifecycleOwner, Observer {
+            val dialog = LogoutDialogFragment()
+            dialog.show(requireActivity().supportFragmentManager, "LogOutDialogFragment")
+        })
     }
 
 
