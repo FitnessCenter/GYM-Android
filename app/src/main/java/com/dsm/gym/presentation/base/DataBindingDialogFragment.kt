@@ -13,19 +13,16 @@ import androidx.lifecycle.Observer
 import splitties.toast.toast
 
 abstract class DataBindingDialogFragment<T : ViewDataBinding> : DialogFragment() {
-
-    private lateinit var rootView: View
+    lateinit var rootView: View
     lateinit var binding: T
 
     abstract val layoutId: Int
     abstract val viewModel: BaseViewModel
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
         binding.lifecycleOwner = this
         rootView = binding.root
-
         return rootView
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -35,6 +32,5 @@ abstract class DataBindingDialogFragment<T : ViewDataBinding> : DialogFragment()
         viewModel.createToastEvent.observe(viewLifecycleOwner, Observer { toast(it) })
     }
     abstract fun observeEvent()
-
 
 }
