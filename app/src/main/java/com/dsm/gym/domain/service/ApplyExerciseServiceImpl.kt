@@ -4,9 +4,9 @@ import com.dsm.gym.domain.base.ErrorHandler
 import com.dsm.gym.domain.base.Result
 import com.dsm.gym.domain.entity.ApplyExerciseEntity
 import com.dsm.gym.domain.entity.UserInfoEntity
-import com.dsm.gym.domain.extensions.toResult
-import com.dsm.gym.domain.extensions.toSingleResult
 import com.dsm.gym.domain.repository.ApplyExerciseRepository
+import com.dsm.gym.domain.toResult
+import com.dsm.gym.domain.toSingleResult
 import io.reactivex.Single
 
 class ApplyExerciseServiceImpl(private val repository: ApplyExerciseRepository, private val handler: ErrorHandler) : ApplyExerciseService {
@@ -17,6 +17,5 @@ class ApplyExerciseServiceImpl(private val repository: ApplyExerciseRepository, 
     override fun getApplyExerciseState(): Single<Result<List<ApplyExerciseEntity>>> = repository.getApplyExerciseState().toResult(handler)
 
     override fun cancelApplyExerciseState(): Single<Result<Unit>> =  repository.cancelApplyExerciseState().toSingleResult(handler)
-
-
+    
 }
