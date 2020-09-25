@@ -25,7 +25,8 @@ class ApplyEquipmentDetailDialogFragment : DataBindingDialogFragment<FragmentApp
     }
 
     override fun observeEvent() {
-
         viewModel.goMainEquipmentPage.observe(this, Observer { dismiss() })
-        viewModel.closeDialog.observe(this, Observer { dismiss() })    }
+        viewModel.closeDialog.observe(this, Observer { dismiss() })  
+    }
+
 }

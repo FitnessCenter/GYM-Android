@@ -1,50 +1,37 @@
 package com.dsm.gym.presentation.ui.fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.Observer
 import androidx.fragment.app.Fragment
 import com.dsm.gym.R
+import com.dsm.gym.databinding.FragmentApplyExerciseBinding
+import com.dsm.gym.presentation.base.EndPointDataBindingFragment
 import com.dsm.gym.presentation.ui.dialog.ApplyExerciseDialogFragment
 import com.dsm.gym.presentation.ui.dialog.ShowPersonnelDialogFragment
-import kotlinx.android.synthetic.main.fragment_apply_exercise.view.*
+import com.dsm.gym.presentation.viewmodel.applyexercise.ApplyExerciseViewModel
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
-class ApplyExerciseFragment : Fragment() {
+class ApplyExerciseFragment : EndPointDataBindingFragment<FragmentApplyExerciseBinding>() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_apply_exercise, container, false)
-
-    }
-
+    override val layoutId: Int = R.layout.fragment_apply_exercise
+    override val viewModel by sharedViewModel<ApplyExerciseViewModel>()
+   
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        view.apply_exercise_nine_thirty_to_ten_apply_btn.setOnClickListener {
+        binding.vm = viewModel
+    }
+  
+    override fun observeEvent() {
+        viewModel.applyExerciseEvent.observe(viewLifecycleOwner, Observer {
             showDialog(ApplyExerciseDialogFragment())
-        }
-        view.apply_exercise_ten_to_ten_thirty_apply_btn.setOnClickListener {
-            showDialog(ApplyExerciseDialogFragment())
-        }
-        view.apply_exercise_ten_thirty_to_eleven_apply_btn.setOnClickListener {
-            showDialog(ApplyExerciseDialogFragment())
-        }
-        view.apply_exercise_show_personnel_nine_thirty_to_ten_btn.setOnClickListener {
+        })
+        viewModel.appliedExercisePersonnelEvent.observe(viewLifecycleOwner, Observer {
             showDialog(ShowPersonnelDialogFragment())
-        }
-        view.apply_exercise_show_personnel_ten_to_ten_thirty_personnel_btn.setOnClickListener {
-            showDialog(ShowPersonnelDialogFragment())
-        }
-        view.apply_exercise_show_personnel_ten_thirty_to_eleven_personnel_btn.setOnClickListener {
-            showDialog(ShowPersonnelDialogFragment())
-        }
-
+        })
     }
     private fun showDialog(dialogFragment: DialogFragment){
         dialogFragment.show(requireActivity().supportFragmentManager, dialogFragment.toString())

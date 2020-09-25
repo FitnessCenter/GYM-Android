@@ -21,7 +21,6 @@ interface Api {
     @GET("/equipment-applies")
     fun getMyEquipment(@Query("whose") whose: String): Single<List<EquipmentListData>>
 
-
     @DELETE("/equipment-applies/{equipment_apply_id}")
     fun cancelMyEquipment(@Path("equipment_apply_id") equipmentApplyId: Int): Completable
 
@@ -33,6 +32,18 @@ interface Api {
 
     @GET("/exercise-applies/my")
     fun getApplyTime(): Single<ExerciseTimeData>
+
+    @POST("/exercise-applies/{time}/apply")
+    fun applyExercise(@Path("time") time : Int) : Completable
+
+    @GET("/exercise-applies/{time}/appliers")
+    fun getAppliedExercisePersonnel(@Path("time") time : Int) : Single<List<UserInfoData>>
+
+    @GET("/exercise-applies")
+    fun getApplyExerciseState() : Single<List<ApplyExerciseData>>
+
+    @DELETE("/exercise-applies/my")
+    fun cancelApplyExercise() : Completable
 
     @PUT("/account")
     fun changePassword(@Body passwordData : ChangePasswordData): Completable

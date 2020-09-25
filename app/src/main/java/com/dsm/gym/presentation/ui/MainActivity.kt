@@ -3,12 +3,14 @@ package com.dsm.gym.presentation.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dsm.gym.R
+import com.dsm.gym.presentation.viewmodel.applyexercise.ApplyExerciseViewModel
 import com.dsm.gym.presentation.viewmodel.mypage.EquipmentHistoryViewModel
 import com.dsm.gym.presentation.viewmodel.mypage.MyPageViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class MainActivity : AppCompatActivity() {
+    private val applyExerciseViewModel by viewModel<ApplyExerciseViewModel>()
     private val equipmentHistoryViewModel by viewModel<EquipmentHistoryViewModel>()
     private val myPageViewModel by viewModel<MyPageViewModel>()
 

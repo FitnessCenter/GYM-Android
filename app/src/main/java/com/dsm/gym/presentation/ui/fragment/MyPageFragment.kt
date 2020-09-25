@@ -2,6 +2,8 @@ package com.dsm.gym.presentation.ui.fragment
 
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.dsm.gym.R
@@ -21,8 +23,6 @@ class MyPageFragment : EndPointDataBindingFragment<FragmentMyPageBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.vm = viewModel
-
-
     }
 
 

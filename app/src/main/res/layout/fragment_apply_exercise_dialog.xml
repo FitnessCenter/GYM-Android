@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="vm"
+            type="com.dsm.gym.presentation.viewmodel.applyexercise.ApplyExerciseViewModel"/>
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,6 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:src="@drawable/ic_close"
+        android:onClick="@{()->vm.onClickDialogClose()}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,7 +35,7 @@
         android:layout_marginBottom="30dp"
         android:fontFamily="@font/notosanscjkkrmedium"
         android:includeFontPadding="false"
-        android:text="@string/apply_exercise_time_tv"
+        android:text="@{vm.applyExerciseEvent}"
         android:textColor="@color/colorBlack"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/apply_exercise_question_tv"
@@ -44,7 +52,7 @@
         android:layout_marginEnd="107dp"
         android:fontFamily="@font/notosanscjkkrregular"
         android:includeFontPadding="false"
-        android:text="@string/apply_exercise_question_tv"
+        android:text="@{vm.applyExerciseState[vm.applyExerciseTime].isApplied?   @string/apply_exercise_cancel_question_tv : @string/apply_exercise_question_tv}"
         android:textColor="@color/colorBlack"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,6 +72,7 @@
         android:text="@string/apply_exercise_confirm_tv"
         android:textColor="@color/colorBlack"
         android:textSize="14sp"
+        android:onClick="@{()->vm.applyExerciseState[vm.applyExerciseTime].isApplied ?  vm.cancelApplyExercise() :vm.applyExercise()}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/apply_exercise_cancel_tv"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,9 +90,11 @@
         android:text="@string/apply_exercise_cancel_tv"
         android:textColor="@color/colorBlack"
         android:textSize="14sp"
+        android:onClick="@{()->vm.onClickDialogClose()}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/apply_exercise_question_tv" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
