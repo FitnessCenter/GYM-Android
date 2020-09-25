@@ -5,7 +5,8 @@
             name="vm"
             type="com.dsm.gym.presentation.viewmodel.applyexercise.ApplyExerciseViewModel" />
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
@@ -43,16 +44,14 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/apply_exercise_personnel_rv"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="37dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="37dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="500dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        app:appliedPersonnelItems="@{vm.appliedExercisePersonnel}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/apply_exercise_personnel_list_tv"
-        tools:listitem="@layout/item_apply_exercise_personnel"
-        />
+        tools:listitem="@layout/item_apply_exercise_personnel" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

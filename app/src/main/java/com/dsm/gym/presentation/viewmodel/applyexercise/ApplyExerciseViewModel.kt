@@ -1,6 +1,5 @@
 package com.dsm.gym.presentation.viewmodel.applyexercise
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.dsm.gym.domain.base.Message
 import com.dsm.gym.domain.usecase.ApplyExerciseUseCase
@@ -24,7 +23,9 @@ class ApplyExerciseViewModel(private val applyExerciseUseCase: ApplyExerciseUseC
     val applyExerciseEvent = SingleLiveEvent<String>()
     val applyExerciseState = MutableLiveData<List<ApplyExerciseEntity>>()
     val applyExerciseTime = MutableLiveData<Int>()
-    val appliedExercisePersonnel = MutableLiveData<List<UserInfoModel>>()
+    val appliedExercisePersonnel = MutableLiveData<ArrayList<UserInfoModel>>().apply{
+        value = ArrayList(emptyList())
+    }
     val appliedExercisePersonnelEvent = SingleLiveEvent<Unit>()
     val dismissDialogEvent = SingleLiveEvent<Unit>()
 
@@ -57,12 +58,18 @@ class ApplyExerciseViewModel(private val applyExerciseUseCase: ApplyExerciseUseC
                    is Result.Success -> {
                        applyExerciseState.value = result.data
                    }
+                   is Result.Error->{
+                       when(result.message){
+                           Message.NETWORK_ERROR -> createToastEvent.value = "네트워크 오류가 발생했습니다."
+                           else -> createToastEvent.value = "알 수 없는 오류가 발생했습니다."
+                       }
+                   }
 
                }
             }
 
             override fun onError(e: Throwable) {
-                e.printStackTrace()
+                createToastEvent.value = "알 수 없는 오류가 발생했습니다."
             }
 
         })
@@ -72,18 +79,21 @@ class ApplyExerciseViewModel(private val applyExerciseUseCase: ApplyExerciseUseC
             override fun onSuccess(result: Result<List<UserInfoEntity>>) {
                 when(result){
                     is Result.Success ->{
-                        appliedExercisePersonnel.value = result.data.map { it.toModel() }
+                        appliedExercisePersonnel.value = ArrayList(result.data.map { it.toModel() })
 
                     }
                     is Result.Error ->{
+                        when(result.message){
+                            Message.NETWORK_ERROR -> createToastEvent.value = "네트워크 오류가 발생했습니다."
+                            else -> createToastEvent.value = "알 수 없는 오류가 발생했습니다."
+                        }
 
                     }
                 }
             }
 
             override fun onError(e: Throwable) {
-                e.printStackTrace()
-            }
+                createToastEvent.value = "알 수 없는 오류가 발생했습니다."            }
 
         })
     }
@@ -106,7 +116,7 @@ class ApplyExerciseViewModel(private val applyExerciseUseCase: ApplyExerciseUseC
             }
 
             override fun onError(e: Throwable) {
-                e.printStackTrace()
+                createToastEvent.value = "알 수 없는 오류가 발생했습니다."
             }
 
         })
@@ -136,7 +146,7 @@ class ApplyExerciseViewModel(private val applyExerciseUseCase: ApplyExerciseUseC
             }
 
             override fun onError(e: Throwable) {
-                e.printStackTrace()
+                createToastEvent.value = "알 수 없는 오류가 발생했습니다."
             }
 
         }
