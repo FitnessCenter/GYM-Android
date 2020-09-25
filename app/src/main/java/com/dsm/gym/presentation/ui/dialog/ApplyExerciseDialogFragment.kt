@@ -17,14 +17,13 @@ class ApplyExerciseDialogFragment : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_apply_exercise_dialog, container,false)
-        dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-        return view
+        return inflater.inflate(R.layout.fragment_apply_exercise_dialog, container,false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
         view.apply_exercise_close_img.setOnClickListener {
             dialog!!.dismiss()
         }

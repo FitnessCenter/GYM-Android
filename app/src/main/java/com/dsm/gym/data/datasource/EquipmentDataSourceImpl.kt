@@ -14,4 +14,10 @@ class EquipmentDataSourceImpl(
 
     override fun getAllEquipment(): Single<List<EquipmentListData>> =
         api.getAllEquipment()
+
+    override fun getMyEquipment(whose: String): Single<List<EquipmentListData>> =
+        api.getMyEquipment(whose)
+
+    override fun cancelMyEquipment(applyEquipmentId: Int): Completable =
+        api.cancelMyEquipment(applyEquipmentId)
 }

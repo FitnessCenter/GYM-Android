@@ -16,15 +16,16 @@ class ApplyEquipmentDetailDialogFragment : DataBindingDialogFragment<FragmentApp
     override val layoutId: Int
         get() = R.layout.fragment_apply_equipment_detail_dialog
 
-    private val viewModel: EquipmentDetailViewModel by viewModel()
+    override val viewModel: EquipmentDetailViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.vm = viewModel
 
-        viewModel.goMainEquipmentPage.observe(this, Observer { dismiss() })
-        viewModel.closeDialog.observe(this, Observer { dismiss() })
-
-        dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     }
+
+    override fun observeEvent() {
+
+        viewModel.goMainEquipmentPage.observe(this, Observer { dismiss() })
+        viewModel.closeDialog.observe(this, Observer { dismiss() })    }
 }

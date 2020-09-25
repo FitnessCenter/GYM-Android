@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import com.dsm.gym.R
 import com.dsm.gym.presentation.ui.dialog.ApplyExerciseDialogFragment
 import com.dsm.gym.presentation.ui.dialog.ShowPersonnelDialogFragment
-import com.dsm.gym.presentation.ui.fragment.base.EndPointDataBindingFragment
 import kotlinx.android.synthetic.main.fragment_apply_exercise.view.*
 
 
-class ApplyExerciseFragment : EndPointDataBindingFragment() {
+class ApplyExerciseFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

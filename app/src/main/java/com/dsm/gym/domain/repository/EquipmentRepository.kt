@@ -9,4 +9,9 @@ interface EquipmentRepository {
     fun postDetailEquipment(equipment: EquipmentEntity): Completable
 
     fun getAllEquipment(): Single<List<EquipmentListEntity>>
+
+    fun getMyEquipment(whose : String): Single<List<EquipmentListEntity>>
+
+    fun cancelMyEquipment(equipmentApplyId: Int): Completable
+
 }

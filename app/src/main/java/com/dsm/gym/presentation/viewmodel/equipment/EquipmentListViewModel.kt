@@ -4,10 +4,10 @@ import androidx.lifecycle.MutableLiveData
 import com.dsm.gym.domain.base.Message
 import com.dsm.gym.domain.base.Result
 import com.dsm.gym.domain.entity.EquipmentListEntity
-import com.dsm.gym.domain.entity.toModel
 import com.dsm.gym.domain.usecase.GetEquipmentUseCase
 import com.dsm.gym.presentation.base.BaseViewModel
 import com.dsm.gym.presentation.model.EquipmentListModel
+import com.dsm.gym.presentation.model.toModel
 import io.reactivex.observers.DisposableSingleObserver
 
 class EquipmentListViewModel(

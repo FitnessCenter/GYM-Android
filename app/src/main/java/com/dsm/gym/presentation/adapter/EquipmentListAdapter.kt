@@ -21,6 +21,7 @@ class EquipmentListAdapter: RecyclerView.Adapter<EquipmentListAdapter.EquipmentL
     private var equipmentItems = ArrayList<EquipmentListModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EquipmentListViewHolder {
+
         val binding = ItemApplyEquipmentBinding.inflate(LayoutInflater.from(parent.context),parent,false)
 
         return EquipmentListViewHolder(binding)
