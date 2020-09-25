@@ -12,14 +12,3 @@ data class EquipmentListEntity(
     val purchaseLink:String = "",
     val appliedUser: AppliedUserData
 )
-
-fun EquipmentListEntity.toModel() =
-    EquipmentListModel(
-        id = id,
-        numberOfApply = numberOfApply,
-        price = price,
-        equipmentName = equipmentName,
-        sex = sex,
-        purchaseLink = purchaseLink,
-        appliedUser = appliedUser
-    )

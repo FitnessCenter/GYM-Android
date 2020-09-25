@@ -1,6 +1,7 @@
 package com.dsm.gym.data.datasource
 
 import com.dsm.gym.data.entity.AuthData
+import com.dsm.gym.data.entity.ChangePasswordData
 import com.dsm.gym.data.entity.RegisterData
 import com.dsm.gym.data.entity.TokenData
 import com.dsm.gym.data.local.pref.SharedPrefStorage
@@ -22,4 +23,6 @@ class AuthDataSourceImpl(
 
     override fun getToken(isAccess: Boolean): String
             = pref.getToken(isAccess)
+
+    override fun changePassword(passwordData: ChangePasswordData): Completable = api.changePassword(passwordData)
 }

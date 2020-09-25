@@ -23,3 +23,13 @@ fun EquipmentListModel.toEntity() =
         purchaseLink = purchaseLink,
         appliedUser = appliedUser
     )
+fun EquipmentListEntity.toModel() =
+    EquipmentListModel(
+        id = id,
+        numberOfApply = numberOfApply,
+        price = price,
+        equipmentName = equipmentName,
+        sex = sex,
+        purchaseLink = purchaseLink,
+        appliedUser = appliedUser
+    )

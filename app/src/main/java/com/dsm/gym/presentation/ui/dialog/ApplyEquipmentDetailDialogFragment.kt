@@ -22,13 +22,11 @@ class ApplyEquipmentDetailDialogFragment : DataBindingDialogFragment<FragmentApp
         super.onViewCreated(view, savedInstanceState)
         binding.vm = viewModel
 
-        viewModel.goMainEquipmentPage.observe(this, Observer { dismiss() })
-        viewModel.closeDialog.observe(this, Observer { dismiss() })
-
-        dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     }
 
     override fun observeEvent() {
-
+        viewModel.goMainEquipmentPage.observe(this, Observer { dismiss() })
+        viewModel.closeDialog.observe(this, Observer { dismiss() })  
     }
+
 }
