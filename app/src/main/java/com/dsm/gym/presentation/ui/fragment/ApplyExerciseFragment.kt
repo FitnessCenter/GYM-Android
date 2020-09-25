@@ -11,13 +11,14 @@ import com.dsm.gym.presentation.ui.dialog.ApplyExerciseDialogFragment
 import com.dsm.gym.presentation.ui.dialog.ShowPersonnelDialogFragment
 import com.dsm.gym.presentation.viewmodel.applyexercise.ApplyExerciseViewModel
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
 class ApplyExerciseFragment : EndPointDataBindingFragment<FragmentApplyExerciseBinding>() {
 
     override val layoutId: Int = R.layout.fragment_apply_exercise
 
-    override val viewModel: ApplyExerciseViewModel by inject()
+    override val viewModel by sharedViewModel<ApplyExerciseViewModel>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.vm = viewModel

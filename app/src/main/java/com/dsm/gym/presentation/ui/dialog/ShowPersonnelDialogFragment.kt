@@ -17,13 +17,14 @@ import com.dsm.gym.presentation.base.DataBindingDialogFragment
 import com.dsm.gym.presentation.viewmodel.applyexercise.ApplyExerciseViewModel
 import kotlinx.android.synthetic.main.fragment_show_personnel_dialog.view.*
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
 class ShowPersonnelDialogFragment : DataBindingDialogFragment<FragmentShowPersonnelDialogBinding>() {
 
     override val layoutId: Int
         get() = R.layout.fragment_show_personnel_dialog
-    override val viewModel : ApplyExerciseViewModel by inject()
+    override val viewModel by sharedViewModel<ApplyExerciseViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
