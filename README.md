@@ -12,7 +12,7 @@ Create DSM Gym App (feat. COVID-19)💥
 * MVP
 * Rxjava2
 * Android Jetpack
-* Dagger2
+* koin
 * Clean Architecture
 
 ![Clean Architecture](https://miro.medium.com/max/3780/1*FRgFgSG2mu4nRPyhwsPn3Q.png)
