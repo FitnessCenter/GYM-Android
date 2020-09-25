@@ -17,9 +17,8 @@ class ChangePasswordViewModel(private val changePasswordUseCase: ChangePasswordU
     val passwordChangedEvent = SingleLiveEvent<Unit>()
 
     fun changePassword(){
-        changePasswordUseCase.execute(ChangePasswordModel(
-            newPassword.value!!,currentPassword.value!!
-        ).toEntity(), object : DisposableSingleObserver<Result<Unit>>(){
+        val changePasswordModel = ChangePasswordModel(newPassword.value!!,currentPassword.value!!).toEntity()
+        changePasswordUseCase.execute(changePasswordModel, object : DisposableSingleObserver<Result<Unit>>(){
             override fun onSuccess(result: Result<Unit>) {
                 when(result){
                     is Result.Success-> {
@@ -28,7 +27,10 @@ class ChangePasswordViewModel(private val changePasswordUseCase: ChangePasswordU
                     }
                     is Result.Error->{
                         when(result.message){
-                            Message.FORBIDDEN-> createToastEvent.value = "현재 비밀번호가 맞지 않습니다."
+                            Message.FORBIDDEN -> createToastEvent.value = "현재 비밀번호가 맞지 않습니다."
+
+                            Message.NETWORK_ERROR -> createToastEvent.value = "네트워크 오류가 발생했습니다."
+
                             else ->  createToastEvent.value = "알 수 없는 오류가 발생하였습니다."
                         }
 
@@ -37,7 +39,7 @@ class ChangePasswordViewModel(private val changePasswordUseCase: ChangePasswordU
             }
 
             override fun onError(e: Throwable) {
-                e.printStackTrace()
+                createToastEvent.value = "알 수 없는 오류가 발생했습니다"
             }
 
         }

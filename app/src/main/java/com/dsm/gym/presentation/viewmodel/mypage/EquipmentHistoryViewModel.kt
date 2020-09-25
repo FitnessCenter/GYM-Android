@@ -25,7 +25,7 @@ class EquipmentHistoryViewModel(
     val myEquipment = MutableLiveData<ArrayList<EquipmentListModel>>().apply{
         value = ArrayList(emptyList())
     }
-    var cancelEquipmentId = 0
+    private var cancelEquipmentId = 0
 
     val cancelEquipmentEvent = SingleLiveEvent<Unit>()
 
@@ -47,13 +47,20 @@ class EquipmentHistoryViewModel(
                         createToastEvent.value = "신청이 취소되었습니다."
                         dismissEvent.call()
                         getMyEquipment()
+                    }
+                    is Result.Error->{
+                        when(result.message){
+                            Message.UNAUTHORIZED -> createToastEvent.value = "인증되지 않은 사용자입니다."
 
+                            Message.NETWORK_ERROR -> createToastEvent.value = "네트워크 오류가 발생했습니다."
+
+                            else ->  createToastEvent.value = "알 수 없는 오류가 발생하였습니다."                        }
                     }
                 }
             }
 
             override fun onError(e: Throwable) {
-                e.printStackTrace()
+                createToastEvent.value = "알 수 없는 오류가 발생했습니다"
             }
 
         })
@@ -68,15 +75,22 @@ class EquipmentHistoryViewModel(
                         })
 
                     }
-                    is Result.Error->{
+                    is Result.Error-> {
+                        when (result.message) {
+                            Message.SERVER_ERROR -> createToastEvent.value = "서버 오류가 발생했습니다"
 
+                            Message.NETWORK_ERROR -> createToastEvent.value = "네트워크 오류가 발생했습니다"
+
+                            else -> createToastEvent.value = "알 수 없는 오류가 발생했습니다"
+
+                        }
                     }
                 }
 
             }
 
             override fun onError(e: Throwable) {
-                e.printStackTrace()
+                createToastEvent.value = "알 수 없는 오류가 발생했습니다"
             }
 
         })
