@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:src="@drawable/ic_close"
+        android:onClick="@{()->vm.onClickDialogClose()}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

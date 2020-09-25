@@ -154,4 +154,7 @@ class ApplyExerciseViewModel(private val applyExerciseUseCase: ApplyExerciseUseC
 
 
     }
+    fun onClickDialogClose(){
+        dismissDialogEvent.call()
+    }
 }

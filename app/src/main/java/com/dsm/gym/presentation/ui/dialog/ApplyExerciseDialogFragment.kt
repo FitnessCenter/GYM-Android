@@ -29,10 +29,12 @@ class ApplyExerciseDialogFragment : DataBindingDialogFragment<FragmentApplyExerc
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.vm = viewModel
-        view.apply_exercise_close_img.onClick { dismiss()}
     }
 
     override fun observeEvent() {
+        viewModel.dismissDialogEvent.observe(viewLifecycleOwner, Observer {
+            dismiss()
+        })
 
     }
 

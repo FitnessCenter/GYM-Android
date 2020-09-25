@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.dsm.gym.R
 import com.dsm.gym.databinding.FragmentApplyExerciseDialogBinding
@@ -31,19 +32,12 @@ class ShowPersonnelDialogFragment : DataBindingDialogFragment<FragmentShowPerson
         binding.vm = viewModel
         binding.applyExercisePersonnelRv.layoutManager = GridLayoutManager(context,2)
         binding.applyExercisePersonnelRv.adapter = ApplyExercisePersonnelAdapter()
-
-
-        dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-
-        view.apply_exercise_personnel_close_img.setOnClickListener {
-            dismiss()
-        }
     }
 
-
-
     override fun observeEvent() {
+        viewModel.dismissDialogEvent.observe(viewLifecycleOwner, Observer {
+            dismiss()
+        })
     }
 
 }
