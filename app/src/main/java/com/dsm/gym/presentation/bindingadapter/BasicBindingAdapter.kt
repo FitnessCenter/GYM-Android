@@ -15,12 +15,6 @@ fun RecyclerView.bindEquipmentItems(equipmentItems: MutableLiveData<ArrayList<Eq
 }
 
 @BindingAdapter("appliedPersonnelItems")
-fun RecyclerView.bindAppliedPersonnel(appliedPersonnelItems: MutableLiveData<List<UserInfoModel>>){
-    try {
-
-        (adapter as ApplyExercisePersonnelAdapter).updateData(appliedPersonnelItems)
-    }
-    catch (e : Exception){
-        e.printStackTrace()
-    }
+fun RecyclerView.bindAppliedPersonnelItems(appliedPersonnelItems: MutableLiveData<ArrayList<UserInfoModel>>){
+    (adapter as ApplyExercisePersonnelAdapter).setItem(appliedPersonnelItems)
 }
