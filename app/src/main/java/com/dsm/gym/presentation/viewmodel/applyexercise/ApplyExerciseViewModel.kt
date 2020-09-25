@@ -101,8 +101,11 @@ class ApplyExerciseViewModel(private val applyExerciseUseCase: ApplyExerciseUseC
         cancelApplyExerciseUseCase.execute(Unit, object : DisposableSingleObserver<Result<Unit>>(){
             override fun onSuccess(result: Result<Unit>) {
                 when(result){
-                    is Result.Success ->
+                    is Result.Success -> {
                         createToastEvent.value = "취소 되었습니다."
+                        dismissDialogEvent.call()
+                        getApplyExerciseState()
+                    }
                     is Result.Error ->
                         when(result.message){
                             Message.FORBIDDEN -> createToastEvent.value = "지금은 신청시간이 아닙니다."
@@ -137,6 +140,7 @@ class ApplyExerciseViewModel(private val applyExerciseUseCase: ApplyExerciseUseC
                             Message.UNAUTHORIZED -> createToastEvent.value = "인증되지 않은 사용자입니다."
                             Message.SERVER_ERROR -> createToastEvent.value = "서버 오류가 발생했습니다."
                             Message.NETWORK_ERROR -> createToastEvent.value = "네트워크 오류가 발생했습니다."
+                            Message.CONFLICT -> createToastEvent.value = "이미 다른 시간에 신청하셨습니다."
                             else-> createToastEvent.value = "알 수 없는 오류가 발생했습니다."
                         }
 
