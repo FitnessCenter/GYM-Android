@@ -15,10 +15,11 @@ fun RecyclerView.bindEquipmentItems(equipmentItems: MutableLiveData<ArrayList<Eq
 }
 
 @BindingAdapter("appliedPersonnelItems")
-fun RecyclerView.bindAppliedPersonnelItems(appliedPersonnelItems: MutableLiveData<ArrayList<UserInfoModel>>){
+fun RecyclerView.bindAppliedPersonnelItems(appliedPersonnelItems: MutableLiveData<ArrayList<UserInfoModel>>) {
     (adapter as ApplyExercisePersonnelAdapter).setItem(appliedPersonnelItems)
+}
 
-  @BindingAdapter("myEquipmentItems")
+@BindingAdapter("myEquipmentItems")
 fun RecyclerView.bindMyEquipmentItems(equipmentItems: MutableLiveData<ArrayList<EquipmentListModel>>){
     (adapter as MyEquipmentAdapter).setItems(equipmentItems)
 }
