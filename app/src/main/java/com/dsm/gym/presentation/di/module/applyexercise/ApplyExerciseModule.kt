@@ -13,11 +13,12 @@ import com.dsm.gym.domain.usecase.CancelApplyExerciseUseCase
 import com.dsm.gym.domain.usecase.GetAppliedExercisePersonnelUseCase
 import com.dsm.gym.domain.usecase.GetApplyExerciseStateUseCase
 import com.dsm.gym.presentation.viewmodel.applyexercise.ApplyExerciseViewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
 val applyExerciseModule: Module = module {
-    single { ApplyExerciseViewModel(get(),get(),get(),get()) }
+    viewModel { ApplyExerciseViewModel(get(),get(),get(),get()) }
     factory { ApplyExerciseUseCase(get(), get()) }
     factory { GetAppliedExercisePersonnelUseCase(get(), get()) }
     factory { GetApplyExerciseStateUseCase(get(), get()) }
