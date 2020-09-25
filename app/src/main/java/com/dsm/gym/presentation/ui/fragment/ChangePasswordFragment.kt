@@ -14,6 +14,7 @@ import com.dsm.gym.presentation.base.DataBindingFragment
 import com.dsm.gym.presentation.base.EndPointDataBindingFragment
 import com.dsm.gym.presentation.viewmodel.mypage.ChangePasswordViewModel
 import kotlinx.android.synthetic.main.fragment_change_password.*
+import kotlinx.android.synthetic.main.fragment_second_signup.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -35,7 +36,11 @@ class ChangePasswordFragment : DataBindingFragment<FragmentChangePasswordBinding
         viewModel.passwordChangedEvent.observe(this, Observer {
             requireActivity().findNavController(R.id.account_service_container).navigate(R.id.action_changePasswordFragment_to_signInFragment)
         })
-    }
+
+        viewModel.passwordErrorEvent.observe(this, Observer { change_password_new_password_layout.error = it })
+
+        viewModel.passwordCheckErrorEvent.observe(this, Observer { change_password_new_password_confirm_layout.error = it })
+        }
 
 
 }

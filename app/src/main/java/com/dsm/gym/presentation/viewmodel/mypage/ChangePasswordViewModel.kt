@@ -14,35 +14,48 @@ class ChangePasswordViewModel(private val changePasswordUseCase: ChangePasswordU
 
     val currentPassword = MutableLiveData<String>()
     val newPassword = MutableLiveData<String>()
+    val newPasswordCheck = MutableLiveData<String>()
     val passwordChangedEvent = SingleLiveEvent<Unit>()
 
+    val passwordErrorEvent = SingleLiveEvent<String>()
+    val passwordCheckErrorEvent = SingleLiveEvent<String>()
+
     fun changePassword(){
-        val changePasswordModel = ChangePasswordModel(newPassword.value!!,currentPassword.value!!).toEntity()
-        changePasswordUseCase.execute(changePasswordModel, object : DisposableSingleObserver<Result<Unit>>(){
-            override fun onSuccess(result: Result<Unit>) {
-                when(result){
-                    is Result.Success-> {
-                        createToastEvent.value = "비밀번호를 변경하였습니다."
-                        passwordChangedEvent.call()
-                    }
-                    is Result.Error->{
-                        when(result.message){
-                            Message.FORBIDDEN -> createToastEvent.value = "현재 비밀번호가 맞지 않습니다."
-
-                            Message.NETWORK_ERROR -> createToastEvent.value = "네트워크 오류가 발생했습니다."
-
-                            else ->  createToastEvent.value = "알 수 없는 오류가 발생하였습니다."
+        if(checkPasswordIsSame()){
+            val changePasswordModel = ChangePasswordModel(newPassword.value!!,currentPassword.value!!).toEntity()
+            changePasswordUseCase.execute(changePasswordModel, object : DisposableSingleObserver<Result<Unit>>(){
+                override fun onSuccess(result: Result<Unit>) {
+                    when(result){
+                        is Result.Success-> {
+                            createToastEvent.value = "비밀번호를 변경하였습니다."
+                            passwordChangedEvent.call()
                         }
+                        is Result.Error->{
+                            when(result.message){
+                                Message.FORBIDDEN -> createToastEvent.value = "현재 비밀번호가 맞지 않습니다."
 
+                                Message.NETWORK_ERROR -> createToastEvent.value = "네트워크 오류가 발생했습니다."
+
+                                else ->  createToastEvent.value = "알 수 없는 오류가 발생하였습니다."
+                            }
+                        }
                     }
                 }
-            }
-
             override fun onError(e: Throwable) {
                 createToastEvent.value = "알 수 없는 오류가 발생했습니다"
             }
 
+        })
         }
-    )}
+    }
+    private fun checkPasswordIsSame() : Boolean{
+        if (newPassword.value != newPasswordCheck.value) {
+            passwordErrorEvent.value = "비밀번호와 비밀번호 확인이 일치하지 않습니다"
+            passwordCheckErrorEvent.value = "비밀번호와 비밀번호 확인이 일치하지 않습니다"
+            return false
+        }
+        return true
+    }
+
 
 }
