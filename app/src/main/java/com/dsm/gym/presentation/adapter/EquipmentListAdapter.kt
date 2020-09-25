@@ -16,18 +16,14 @@ import com.dsm.gym.presentation.viewmodel.equipment.EquipmentListViewModel
 import splitties.systemservices.clipboardManager
 import splitties.toast.toast
 
-
-class EquipmentListAdapter(private val viewModel: EquipmentListViewModel): RecyclerView.Adapter<EquipmentListAdapter.EquipmentListViewHolder>(){
+class EquipmentListAdapter: RecyclerView.Adapter<EquipmentListAdapter.EquipmentListViewHolder>(){
 
     private var equipmentItems = ArrayList<EquipmentListModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EquipmentListViewHolder {
-        val binding
-                = ItemApplyEquipmentBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
-            false
-        )
+
+        val binding = ItemApplyEquipmentBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+
         return EquipmentListViewHolder(binding)
     }
 
@@ -49,12 +45,10 @@ class EquipmentListAdapter(private val viewModel: EquipmentListViewModel): Recyc
         notifyDataSetChanged()
     }
 
-    inner class EquipmentListViewHolder(val binding: ItemApplyEquipmentBinding): RecyclerView.ViewHolder(
-        binding.root.rootView
-    ) {
+    inner class EquipmentListViewHolder(val binding: ItemApplyEquipmentBinding): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(equipment: EquipmentListModel) {
-            binding.setVariable(BR.equipmentItem, equipment)
+            binding.equipmentItem = equipment
         }
 
     }

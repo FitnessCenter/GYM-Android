@@ -6,8 +6,6 @@
     <data>
         <variable name="equipmentItem"
             type="com.dsm.gym.presentation.model.EquipmentListModel"/>
-        <variable name="vm"
-            type="com.dsm.gym.presentation.viewmodel.equipment.EquipmentListViewModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -49,11 +47,11 @@
                     android:id="@+id/equipment_link_copy_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:maxLines="1"
-                    android:ellipsize="end"
                     android:layout_marginEnd="16dp"
+                    android:ellipsize="end"
                     android:fontFamily="@font/notosanscjkkrregular"
                     android:includeFontPadding="false"
+                    android:maxLines="1"
                     android:text="@string/equipment_link_copy_text"
                     android:textColor="@color/colorDefault"
                     android:textSize="14sp"
@@ -69,9 +67,9 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:includeFontPadding="false"
-                    android:textSize="12sp"
                     android:text="@{@string/equipment_price_format_text(equipmentItem.price)}"
                     android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
                     app:fontFamily="@font/notosanscjkkrregular"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/equipment_name_tv" />
@@ -83,11 +81,11 @@
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/notosanscjkkrregular"
                     android:includeFontPadding="false"
-                    android:textSize="12sp"
                     android:text="@{@string/equipment_amount_format_text(equipmentItem.numberOfApply)}"
                     android:textColor="@color/colorBlack"
-                    app:layout_constraintEnd_toStartOf="@+id/appCompatTextView4"
-                    app:layout_constraintStart_toEndOf="@+id/appCompatTextView2"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/apply_equipment_item_gl_middle"
+                    app:layout_constraintStart_toEndOf="@+id/apply_equipment_item_gl_middle"
                     app:layout_constraintTop_toBottomOf="@+id/equipment_name_tv" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -96,13 +94,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    android:textSize="12sp"
                     android:includeFontPadding="false"
                     android:text="@{@string/equipment_person_format_text(equipmentItem.appliedUser.studentName)}"
                     android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
                     app:fontFamily="@font/notosanscjkkrregular"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/equipment_name_tv" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/apply_equipment_item_gl_middle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
