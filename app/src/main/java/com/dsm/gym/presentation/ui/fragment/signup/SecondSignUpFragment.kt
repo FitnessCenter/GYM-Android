@@ -6,12 +6,13 @@ import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.dsm.gym.R
 import com.dsm.gym.databinding.FragmentSecondSignupBinding
+import com.dsm.gym.presentation.base.DataBindingFragment
 import com.dsm.gym.presentation.base.EndPointDataBindingFragment
 import com.dsm.gym.presentation.viewmodel.signup.SignUpViewModel
 import kotlinx.android.synthetic.main.fragment_second_signup.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class SecondSignUpFragment : EndPointDataBindingFragment<FragmentSecondSignupBinding>() {
+class SecondSignUpFragment : DataBindingFragment<FragmentSecondSignupBinding>() {
 
     override val layoutId: Int
         get() = R.layout.fragment_second_signup

@@ -6,11 +6,12 @@ import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.dsm.gym.R
 import com.dsm.gym.databinding.FragmentCompleteSignupBinding
+import com.dsm.gym.presentation.base.DataBindingFragment
 import com.dsm.gym.presentation.base.EndPointDataBindingFragment
 import com.dsm.gym.presentation.viewmodel.signup.SignUpViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class CompleteSignUpFragment : EndPointDataBindingFragment<FragmentCompleteSignupBinding>() {
+class CompleteSignUpFragment : DataBindingFragment<FragmentCompleteSignupBinding>() {
 
     override val layoutId: Int
         get() = R.layout.fragment_complete_signup
