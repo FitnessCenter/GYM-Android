@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="vm"
+            type="com.dsm.gym.presentation.viewmodel.mypage.EquipmentHistoryViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_radius_dialog"
+    tools:context=".presentation.ui.dialog.ApplyEquipmentCancelDialogFragment">
+
+
+    <TextView
+        android:id="@+id/equipment_history_apply_cancel_question_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="46dp"
+        android:fontFamily="@font/notosanscjkkrregular"
+        android:includeFontPadding="false"
+        android:text="@string/equipment_history_apply_cancel_question_tv"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/equipment_history_apply_cancel_confirm_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/equipment_history_apply_cancel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="14dp"
+        android:text="@string/equipment_history_apply_cancel_tv"
+        android:textSize="14sp"
+        android:textColor="@color/colorBlack"
+        android:fontFamily="@font/notosanscjkkrregular"
+        android:includeFontPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/equipment_history_apply_cancel_confirm_tv" />
+
+    <TextView
+        android:id="@+id/equipment_history_apply_cancel_confirm_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="14dp"
+        android:text="@string/equipment_history_apply_cancel_confirm_tv"
+        android:textSize="14sp"
+        android:textColor="@color/colorBlack"
+        android:fontFamily="@font/notosanscjkkrregular"
+        android:onClick="@{()->vm.cancelMyEquipment()}"
+        android:includeFontPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

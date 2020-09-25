@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="equipmentItem"
+            type="com.dsm.gym.presentation.model.EquipmentListModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/equipment_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/notosanscjkkrregular"
+                    android:includeFontPadding="false"
+                    android:text="@{equipmentItem.equipmentName}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/equipment_link_copy_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/notosanscjkkrregular"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:text="@string/equipment_link_copy_text"
+                    android:textColor="@color/colorDefault"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/appCompatTextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:includeFontPadding="false"
+                    android:text="@{@string/equipment_price_format_text(equipmentItem.price)}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    app:fontFamily="@font/notosanscjkkrregular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/equipment_name_tv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/appCompatTextView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/notosanscjkkrregular"
+                    android:includeFontPadding="false"
+                    android:text="@{@string/equipment_amount_format_text(equipmentItem.numberOfApply)}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/apply_equipment_item_gl_middle"
+                    app:layout_constraintStart_toEndOf="@+id/apply_equipment_item_gl_middle"
+                    app:layout_constraintTop_toBottomOf="@+id/equipment_name_tv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/appCompatTextView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:includeFontPadding="false"
+                    android:text="@{@string/equipment_person_format_text(equipmentItem.appliedUser.studentName)}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    app:fontFamily="@font/notosanscjkkrregular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/equipment_name_tv" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/apply_equipment_item_gl_middle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

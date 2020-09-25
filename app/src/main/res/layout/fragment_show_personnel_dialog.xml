@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="vm"
+            type="com.dsm.gym.presentation.viewmodel.applyexercise.ApplyExerciseViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_radius_dialog"
+    tools:context=".presentation.ui.dialog.ShowPersonnelDialogFragment">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/apply_exercise_personnel_list_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="143dp"
+        android:text="@string/apply_exercise_personnel_list_tv"
+        android:textSize="16sp"
+        android:textColor="@color/colorBlack"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/notosanscjkkrmedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/apply_exercise_personnel_close_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_close"
+        android:onClick="@{()->vm.onClickDialogClose()}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/apply_exercise_personnel_rv"
+        android:layout_width="0dp"
+        android:layout_height="500dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        app:appliedPersonnelItems="@{vm.appliedExercisePersonnel}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apply_exercise_personnel_list_tv"
+        tools:listitem="@layout/item_apply_exercise_personnel" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

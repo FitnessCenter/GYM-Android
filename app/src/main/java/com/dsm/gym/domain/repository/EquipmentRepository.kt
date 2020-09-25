@@ -1,0 +1,17 @@
+package com.dsm.gym.domain.repository
+
+import com.dsm.gym.domain.entity.EquipmentEntity
+import com.dsm.gym.domain.entity.EquipmentListEntity
+import io.reactivex.Completable
+import io.reactivex.Single
+
+interface EquipmentRepository {
+    fun postDetailEquipment(equipment: EquipmentEntity): Completable
+
+    fun getAllEquipment(): Single<List<EquipmentListEntity>>
+
+    fun getMyEquipment(whose : String): Single<List<EquipmentListEntity>>
+
+    fun cancelMyEquipment(equipmentApplyId: Int): Completable
+
+}

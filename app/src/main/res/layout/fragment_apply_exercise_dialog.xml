@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="vm"
+            type="com.dsm.gym.presentation.viewmodel.applyexercise.ApplyExerciseViewModel"/>
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_radius_dialog"
+    tools:context=".presentation.ui.dialog.ApplyExerciseDialogFragment">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/apply_exercise_close_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_close"
+        android:onClick="@{()->vm.onClickDialogClose()}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/apply_exercise_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/notosanscjkkrmedium"
+        android:includeFontPadding="false"
+        android:text="@{vm.applyExerciseEvent}"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/apply_exercise_question_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/apply_exercise_question_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="107dp"
+        android:fontFamily="@font/notosanscjkkrregular"
+        android:includeFontPadding="false"
+        android:text="@{vm.applyExerciseState[vm.applyExerciseTime].isApplied?   @string/apply_exercise_cancel_question_tv : @string/apply_exercise_question_tv}"
+        android:textColor="@color/colorBlack"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apply_exercise_time_tv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/apply_exercise_confirm_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/notosanscjkkrregular"
+        android:includeFontPadding="false"
+        android:text="@string/apply_exercise_confirm_tv"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
+        android:onClick="@{()->vm.applyExerciseState[vm.applyExerciseTime].isApplied ?  vm.cancelApplyExercise() :vm.applyExercise()}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/apply_exercise_cancel_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apply_exercise_question_tv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/apply_exercise_cancel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/notosanscjkkrregular"
+        android:includeFontPadding="false"
+        android:text="@string/apply_exercise_cancel_tv"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
+        android:onClick="@{()->vm.onClickDialogClose()}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apply_exercise_question_tv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

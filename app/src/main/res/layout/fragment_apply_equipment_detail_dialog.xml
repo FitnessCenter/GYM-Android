@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.dsm.gym.presentation.viewmodel.equipment.EquipmentDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.dialog.ApplyEquipmentDetailDialogFragment">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/apply_equipment_detail_card"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Dialog"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/apply_equipment_detail_close_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->vm.closeDialog()}"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_close"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/apply_equipment_detail_name_layout"
+                    style="@style/MyDenseOutlined"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="64dp"
+                    android:hint="@string/equipment_name_text"
+                    app:layout_constraintEnd_toStartOf="@+id/apply_equipment_detail_gl_right"
+                    app:layout_constraintStart_toStartOf="@+id/apply_equipment_detail_gl_left"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/apply_equipment_detail_name_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@null"
+                        android:cursorVisible="false"
+                        android:fontFamily="@font/notosanscjkkrregular"
+                        android:includeFontPadding="false"
+                        android:inputType="text"
+                        android:text="@={vm.equipmentName}"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/apply_equipment_detail_link_layout" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/apply_equipment_detail_link_layout"
+                    style="@style/MyDenseOutlined"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="32dp"
+                    android:hint="@string/equipment_link_text"
+                    app:layout_constraintEnd_toStartOf="@+id/apply_equipment_detail_gl_right"
+                    app:layout_constraintStart_toStartOf="@+id/apply_equipment_detail_gl_left"
+                    app:layout_constraintTop_toBottomOf="@+id/apply_equipment_detail_name_layout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/apply_equipment_detail_link_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:cursorVisible="false"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/notosanscjkkrregular"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:text="@={vm.equipmentLink}"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/apply_equipment_detail_name_layout" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/apply_equipment_detail_price_layout"
+                    style="@style/MyDenseOutlined"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="32dp"
+                    android:hint="@string/equipment_price_text"
+                    app:layout_constraintStart_toStartOf="@+id/apply_equipment_detail_gl_left"
+                    app:layout_constraintTop_toBottomOf="@+id/apply_equipment_detail_link_layout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/apply_equipment_detail_price_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:cursorVisible="false"
+                        android:fontFamily="@font/notosanscjkkrregular"
+                        android:includeFontPadding="false"
+                        android:inputType="number"
+                        android:text="@={vm.equipmentPrice}"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/apply_equipment_detail_name_layout" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/apply_equipment_detail_amount_layout"
+                    style="@style/MyDenseOutlined"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="32dp"
+                    android:hint="@string/equipment_amount_text"
+                    app:layout_constraintEnd_toStartOf="@+id/apply_equipment_detail_gl_right"
+                    app:layout_constraintTop_toBottomOf="@+id/apply_equipment_detail_link_layout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/apply_equipment_detail_amount_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:cursorVisible="false"
+                        android:fontFamily="@font/notosanscjkkrregular"
+                        android:includeFontPadding="false"
+                        android:inputType="number"
+                        android:text="@={vm.equipmentQuantity}"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/apply_equipment_detail_name_layout" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/apply_equipment_detail_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="56dp"
+                    android:background="@color/colorWhite"
+                    android:fontFamily="@font/notosanscjkkrregular"
+                    android:includeFontPadding="false"
+                    android:onClick="@{()->vm.clickApplyEquipment()}"
+                    android:text="@string/equipment_apply_text"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/apply_equipment_detail_price_layout" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/apply_equipment_detail_gl_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.1" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/apply_equipment_detail_gl_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.9" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
